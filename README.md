@@ -38,11 +38,11 @@
 
 | Column           | Type       | Options                         |
 | ---------------- | -------    | ------------------------------- |
-| country          | references | null: false, foreign_key: true  |
 | nickname         | string     | null: false                     |
 | email            | string     | null: false                     |
 | password         | string     | null: false                     |
-| gender_id        | integer    | null: false  *Active Hash       | 
+| country_id       | integer    | null: false                     |
+| gender_id        | integer    | null: false                     | 
 | city             | string     | null: false                     |
 | birthday         | date       | null: false                     |
 | language         | string     |                                 |
@@ -56,7 +56,6 @@
 - has_many :answers
 - has_many :events, through: :user_events
 - has_many :user_events
-- has_one :country
 
 
 ## articles テーブル
@@ -64,8 +63,8 @@
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
 | user          | references | null: false, foreign_key: true |
-| country       | references | null: false, foreign_key: true |
-| category_id   | string     | null: false                    |
+| country _id   | integer    | null: false                    |
+| category_id   | integer    | null: false                    |
 | title         | string     | null: false                    |
 | content       | string     | null: false                    |
 | image         | -          | *Active Storage                |
@@ -74,7 +73,6 @@
 
 - belongs_to :user
 - has_many :comments
-- has_one :country
 
 ## comments テーブル
 
@@ -95,7 +93,7 @@
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
 | user          | references | null: false, foreign_key: true |
-| country       | references | null: false, foreign_key: true |
+| country_id    | integer    | null: false                    |
 | category_id   | integer    | null: false                    |
 | status_id     | integer    | null: false                    |
 | title         | string     | null: false                    |
@@ -105,7 +103,6 @@
 
 - belongs_to :user
 - has_many :answers
-- has_one :country
 
 ## answers テーブル
 
@@ -124,9 +121,9 @@
 ## events テーブル
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
-| country       | references | null: false, foreign_key: true |
 | title         | string     | null: false                    |
-| category_id   | string     | null: false                    |
+| country_id    | integer    | null: false                    |
+| category_id   | integer    | null: false                    |
 | start_time    | datetime   | null: false                    |
 | end_time      | datetime   | null: false                    |
 | place         | string     | null: false                    |
@@ -137,7 +134,6 @@
 
 - has_many :users, through: :user_events
 - has_many :user_events
-- has_one :country
 
 ## user_events テーブル
 | Column        | Type       | Options                        |
@@ -150,18 +146,5 @@
 - belongs_to :user
 - belongs_to :event
 
-## countries テーブル
-| Column        | Type       | Options        |
-| ------------- | ---------- | -------------- |
-| region        | string     | null: false    |
-| name          | string     | null: false    |
-| image         | -          | Active Storage |
-
-### Association
-
-- belongs_to :user
-- belongs_to :article
-- belongs_to :question
-- belongs_to :event
 
 # ローカルでの動作方法
