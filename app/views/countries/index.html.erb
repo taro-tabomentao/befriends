@@ -1,14 +1,4 @@
-<header>
-  <div class="container">
-    <%= link_to "Befriend", root_path %>
-    <nav>
-      <ul>
-        <li><%= link_to "Sign up", "#" %></li>
-        <li><%= link_to "Log in", "#" %></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+<%= render "shared/header"%>
 
 <section class="showcase">
   <div class="showcase-content">
@@ -137,6 +127,4 @@
   </div>
 </section>
 
-<footer>
-  <p>shotaro Okawa</p>
-</footer>
+<%= render "shared/footer"%>
