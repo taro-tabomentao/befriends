@@ -38,7 +38,7 @@
 
 | Column           | Type       | Options                         |
 | ---------------- | -------    | ------------------------------- |
-| nickname         | string     | null: false                     |
+| full_name        | string     | null: false                     |
 | email            | string     | null: false                     |
 | password         | string     | null: false                     |
 | country_id       | integer    | null: false                     |

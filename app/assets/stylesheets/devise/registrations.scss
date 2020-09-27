@@ -1,0 +1,90 @@
+.user-management {
+  position: relative;
+  top: 100px;
+  // background: url('../../images/nepal.JPG') no-repeat center center/cover;
+  padding: 100px 0;
+}
+
+.user-management .container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border: 1px solid #666;
+  background-color: #fff;
+}
+
+.user-management .container-inner {
+  margin: 50px;
+}
+
+.user-management .wrapper-title {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.user-management .image {
+  width: 200px;
+  height: 200px;
+}
+.user-management .title {
+  margin: 10px 0 0 0;
+}
+
+// フォーム
+
+.registration-main .first-row, .registration-main .second-row, .registration-main .third-row, .registration-main .fourth-row, .registration-main .fifth-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.registration-main .left, .registration-main .right {
+  width: 100%;
+}
+
+.registration-main .left {
+  margin-right: 30px;
+}
+ 
+#full_name, #email, #password, #password_confirmation, #country, #city, #birthday, #gender {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #666;
+  border-radius: 5px;
+}
+
+.input:focus {
+  outline: 0;
+}
+
+
+.year,.month,.day {
+  padding: 10px 15px;
+  border: 1px solid #666;
+  border-radius: 5px;
+}
+
+.year {
+  width: 40%
+}
+
+.month, .day {
+  width: 26%
+}
+
+#register-btn {
+  display: inline-block;
+  background: #ff8800;
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 1.5rem;
+  color: #fff;
+  border-radius: 2px;
+  border: 1px solid #666;
+  cursor: pointer; 
+}
+
+#register-btn:hover {
+  opacity: 0.9;
+}
+

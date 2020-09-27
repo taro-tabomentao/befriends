@@ -1,0 +1,82 @@
+<%= render "shared/header"%>
+
+<section class="user-management">
+  <div class="container">
+    <div class="container-inner">
+      <div class="wrapper-title">
+        <%= image_tag "general_user.png", class: "image" %>
+        <h2 class="title">User Registration</h2>
+      </div>
+
+      <hr>
+
+      <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
+          <div class="first-row">
+            <div class="left">
+              <label for="full_name">Full Name</label>
+              <div>
+                <%= f.text_field :full_name, placeholder:"Full Name", id: "full_name", class:"input", autofocus: true %>
+              </div>
+            </div>
+            <div class="right">
+              <label for="email">Email</label>
+              <div>
+                <%= f.email_field :email, placeholder:"Email", id: "email", class: "input" %>
+              </div>
+            </div>
+          </div>
+
+          <div class="second-row">
+            <div class="left">
+              <label for="password">Password</label>
+              <div>
+                <%= f.password_field :password, placeholder:"Password", id: "password", class:"input" %>
+              </div>
+            </div>
+            <div class="right">
+              <label for="password_confirmation">Password Confirmation</label>
+              <div>
+                <%= f.password_field :password_confirmation, placeholder:"Password Confirmation", id: "password_confirmation", class: "input" %>
+              </div>
+            </div>
+          </div>
+
+          <div class="third-row">
+            <div class="left">
+              <label for="country">Country</label>
+              <div>
+                <%= f.collection_select(:country_id, Country.all, :id, :name, {}, {id: "country", class:"input"}) %>
+              </div>
+            </div>
+            <div class="right">
+              <label for="city">City</label>
+              <div>
+                <%= f.text_field :city, placeholder:"City", id: "city", class: "input" %>
+              </div>
+            </div>
+          </div>
+
+          <div class="fourth-row">
+            <div class="left">
+              <label for="gender">Gender</label>
+              <div>
+                <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {id: "gender", class:"input"}) %>
+              </div>
+            </div>
+            
+            <div class="right">
+              <label for="birthday" id="birthday_label">Date of birth</label>
+              <div>
+                <%= raw sprintf(f.date_select(:birthday, with_css_classes:'birthday', id:"birthday", use_month_numbers: true, prompt:'--', start_year: 1930, end_year: (Time.now.year), date_separator: '%s'), " / ", " / ") %>
+              </div>
+            </div>
+          </div>
+
+          <div class='fifth-row'>
+            <%= f.submit "register", id: "register-btn" %>
+          </div>
+
+      <% end %>
+    </div>
+  </div>
+</section>
