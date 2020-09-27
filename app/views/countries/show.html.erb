@@ -1,0 +1,53 @@
+<%= render "shared/header"%>
+
+<section class="showcase country-showcase">
+  <div class="showcase-content">
+    <h1><%= @country.name %></h1>
+  </div>
+</section>
+
+<section class="tabs">
+  <div class="container">
+    <div id="tab-1" class="tab-item tab-border">
+     <%= icon('fas', 'newspaper', class: 'icon') %>
+      <p>Article</p>
+    </div>
+    <div id="tab-2" class="tab-item">
+     <%= icon('fas', 'question', class: 'icon') %>
+      <p>Q&A</p>
+    </div>
+    <div id="tab-3" class="tab-item">
+     <%= icon('fas', 'glass-cheers', class: 'icon') %>
+      <p>Event</p>
+    </div>
+  </div>
+</section>
+
+<section class="tab-content">
+  <div class="container">
+    <!-- Tab Content 1 -->
+    <div id="tab-1-content" class="tab-content-item show">
+      <div class="tab-1-content-inner">
+        <div class="latest-article">
+          <h2>Latest Articles</h2>
+        </div>
+      </div>
+    </div>  
+    <!-- Tab Content 2 -->
+    <div id="tab-2-content" class="tab-content-item">
+      <div class="tab-2-content-inner">
+        <div class="latest-article">
+          <h2>Latest questions</h2>
+        </div>
+      </div>
+    </div>  
+
+    <!-- Tab Content 3 -->
+    <div id="tab-3-content" class="tab-content-item">
+      <div class="tab-3-content-inner">
+        <div class="latest-events">
+          <h2>Latest events</h2>
+        </div>
+      </div>
+    </div>  
+</section>
