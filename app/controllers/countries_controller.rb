@@ -9,4 +9,9 @@ class CountriesController < ApplicationController
     @africa_countries = Country.find_all_by_region "Africa"
     @middle_east_countries = Country.find_all_by_region "Middle East"
   end
+
+  def show
+    @country = Country.find(params[:id])
+  end
+
 end
