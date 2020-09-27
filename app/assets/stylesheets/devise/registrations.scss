@@ -1,29 +1,32 @@
-.user-registration {
+.user-management {
   position: relative;
-  top: 200px;
+  top: 100px;
+  // background: url('../../images/nepal.JPG') no-repeat center center/cover;
+  padding: 100px 0;
 }
 
-.user-registration .container {
+.user-management .container {
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
   border: 1px solid #666;
+  background-color: #fff;
 }
 
-.user-registration .container-inner {
+.user-management .container-inner {
   margin: 50px;
 }
 
-.user-registration .wrapper-title {
+.user-management .wrapper-title {
   text-align: center;
   margin-bottom: 1rem;
 }
 
-.user-registration .image {
+.user-management .image {
   width: 200px;
   height: 200px;
 }
-.user-registration .title {
+.user-management .title {
   margin: 10px 0 0 0;
 }
 
