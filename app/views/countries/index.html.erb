@@ -18,7 +18,9 @@
         <ul class="country-item">
           <% @asia_countries.each do |asia_country| %>
             <li>
-              <%= asia_country.name %>
+              <%= link_to country_path(asia_country.id) do %>
+                <%= asia_country.name %>
+              <% end %>
             </li>
           <% end %>
         </ul>
@@ -32,7 +34,9 @@
         <ul class="country-item">
           <% @europe_countries.each do |europe_country| %>
             <li>
-              <%= europe_country.name %>
+              <%= link_to country_path(europe_country.id) do %>
+                <%= europe_country.name %>
+              <% end %>
             </li>
           <% end %>
         </ul>
@@ -46,7 +50,9 @@
         <ul class="country-item">
           <% @north_america_countries.each do |north_america_country| %>
             <li>
-              <%= north_america_country.name %>
+              <%= link_to country_path(north_america_country.id) do %>
+                <%= north_america_country.name %>
+              <% end %>
             </li>
           <% end %>
         </ul>
@@ -60,7 +66,9 @@
         <ul class="country-item">
           <% @south_america_countries.each do |south_america_country| %>
             <li>
-              <%= south_america_country.name %>
+              <%= link_to country_path(south_america_country.id) do %>
+                <%= south_america_country.name %>
+              <% end %>
             </li>
           <% end %>
         </ul>
@@ -76,7 +84,9 @@
         <ul class="country-item">
           <% @central_america_countries.each do |central_america_country| %>
             <li>
-              <%= central_america_country.name %>
+              <%= link_to country_path(central_america_country.id) do %>
+                <%= central_america_country.name %>
+              <% end %>
             </li>
           <% end %>
         </ul>
@@ -90,7 +100,9 @@
         <ul class="country-item">
           <% @oceania_countries.each do |oceania_country| %>
             <li>
-              <%= oceania_country.name %>
+              <%= link_to country_path(oceania_country.id) do %>
+                <%= oceania_country.name %>
+              <% end %>
             </li>
           <% end %>
         </ul>
@@ -104,7 +116,9 @@
         <ul class="country-item">
           <% @africa_countries.each do |africa_country| %>
             <li>
-              <%= africa_country.name %>
+              <%= link_to country_path(africa_country.id) do %>
+                <%= africa_country.name %>
+              <% end %>
             </li>
           <% end %>
         </ul>
@@ -118,7 +132,9 @@
         <ul class="country-item">
           <% @middle_east_countries.each do |middle_east_country| %>
             <li>
-              <%= middle_east_country.name %>
+              <%= link_to country_path(middle_east_country.id) do %>
+                <%= middle_east_country.name %>
+              <% end %>
             </li>
           <% end %>
         </ul>
