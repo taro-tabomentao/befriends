@@ -1,0 +1,69 @@
+<%= render "shared/header"%>
+
+<section class="user-management">
+  <div class="container">
+    <div class="container-inner">
+      <div class="wrapper-title">
+        <h2 class="title">Let's make a new event!</h2>
+      </div>
+
+      <hr>
+
+      <%= form_with model:@event, url: country_events_path(@country), local: true, class: "event_management" do |f| %>
+          <div class="wrapper">
+            <p class="question">What is your event's name?</p>
+            <div><%= f.text_field :title %></div>
+          </div>
+
+          <div class="wrapper">
+            <p class="question">Choose a cateogry that describe your event</p>
+            <div><%= f.collection_select(:category_id, Category.all, :id, :name, {}, {}) %></div>
+          </div>
+
+          <div class="wrapper">
+            <p class="question">Select your estimated start time for the event</p>
+            <div><%= f.datetime_select :start_time %></div>
+          </div>
+
+          <div class="wrapper">
+            <p class="question">Select your estimated end time for the event</p>
+            <div><%= f.datetime_select :end_time %></div>
+          </div>
+
+          <div class="wrapper">
+            <p class="question">Is this online event?</p>
+            <div>
+              <%= f.radio_button :online, true, value: true%>
+              <%= f.label :online, "Yes", value: true %>
+            </div>
+            <div>
+              <%= f.radio_button :online, false, value: false %>
+              <%= f.label :online, "No", value: false %>
+            </div>
+          </div>
+
+          <div class="wrapper">
+            <p class="question">Choose the place for the event. If this is online event, please input link to have event. </p>
+            <div><%= f.text_field :place %></div>
+          </div>
+
+          <div class="wrapper">
+            <p class="question">Describe what event would be about</p>
+            <div><%= f.text_area :content %></div>
+          </div>
+
+          <div class="wrapper">
+            <p class="question">Please upload image for the event</p>
+            <div><%= f.file_field :image %></div>
+          </div>
+
+          <input name="event[user_ids][]" type="hidden" value=<%= current_user.id %>>
+
+          <div class='wrapper'>
+            <div><%= f.submit "Post", id: "register-btn"%></div>
+          </div>
+
+      <% end %>
+    </div>
+  </div>
+</section>

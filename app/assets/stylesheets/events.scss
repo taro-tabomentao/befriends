@@ -1,3 +1,39 @@
-// Place all the styles related to the events controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.question {
+  color: black;
+  margin-bottom: 10px;
+}
+
+.event_management .wrapper{
+  margin-top: 40px;
+}
+
+#event_title, #event_category_id, #event_place, #event_content {
+  width: 100%;
+  padding: 10px 15px;
+}
+
+#event_start_time_1i, #event_end_time_1i {
+  width: 20%;
+  padding: 10px 15px;
+}
+#event_start_time_2i, #event_end_time_2i  {
+  width: 25%;
+  padding: 10px 15px;
+}
+#event_start_time_3i, #event_end_time_3i  {
+  width: 16%;
+  padding: 10px 15px;
+}
+#event_start_time_4i, #event_end_time_4i  {
+  width: 16%;
+  padding: 10px 15px;
+}
+#event_start_time_5i, #event_end_time_5i  {
+  width: 16%;
+  padding: 10px 15px;
+}
+
+#event_content {
+  height: 200px;
+}
+
