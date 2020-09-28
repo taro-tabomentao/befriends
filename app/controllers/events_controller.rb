@@ -19,6 +19,21 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+  def edit
+    @country = Country.find(params[:country_id])
+    @event = Event.find(params[:id])
+  end
+
+  def update
+    @country = Country.find(params[:country_id])
+    @event = Event.find(params[:id])
+    if @event.update(event_params)
+     redirect_to country_event_path(@country, @event)
+    else
+      render :edit
+    end
+  end
+
   private
   def event_params
     params.require(:event).permit(:title, :country_id, :category_id, :start_time, :end_time, :online, :place, :content, :image, user_ids:[]).merge(country_id: params[:country_id])
