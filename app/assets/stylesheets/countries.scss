@@ -27,7 +27,26 @@ ul {
   list-style-type: none;
 }
 
+// ボタン
 
+.btn-newpost {
+  text-align: center;
+}
+.btn-lg {
+  background: #ff8800;
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  padding: 20px 50px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.45);
+  border-radius: 2px;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
 
 // トップページ
 
@@ -223,4 +242,47 @@ ul {
 
 .show {
   display: block !important;
+}
+
+
+// タブの中身
+
+
+.tab-1-content-inner, .tab-2-content-inner, .tab-3-content-inner, .tab-4-content-inner, .tab-5-content-inner {
+  padding: 48px 16px;
+}
+
+.tab-content ul {
+  padding: 0;
+}
+
+.tab-content div {
+  color: #666666;
+}
+//タブの中身1
+
+.tab-1-content-inner .event-list {
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+
+.tab-1-content-inner .event-item {
+  padding-bottom: 30px;
+  padding-right: 30px;
+}
+
+.tab-1-content-inner img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.tab-1-content-inner .title{
+  width: 300px;
+  height: 100px;
+  padding-top: 5px; 
+  font-size: 1.2rem;
+  word-wrap: break-word;
+  overflow: hidden;
 }

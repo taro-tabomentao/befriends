@@ -28,7 +28,9 @@
     <!-- Tab Content 1 -->
     <div id="tab-1-content" class="tab-content-item show">
       <div class="tab-1-content-inner">
-        <%= link_to "Start a new group", new_country_event_path(@country) %>
+        <div class="btn-newpost">
+          <%= link_to "Start a new event", new_country_event_path(@country), class: "btn-lg" %>
+        </div>
         <div class="latest-events">
           <h2>Latest Events</h2>
           <ul class="event-list">
