@@ -3,7 +3,6 @@ class CreateUserEvents < ActiveRecord::Migration[6.0]
     create_table :user_events do |t|
       t.references  :user,          null: false
       t.references  :event,         null: false
-      t.boolean     :host,          null: false
       t.timestamps
     end
   end
