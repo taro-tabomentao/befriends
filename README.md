@@ -66,7 +66,7 @@
 | country _id   | integer    | null: false                    |
 | category_id   | integer    | null: false                    |
 | title         | string     | null: false                    |
-| content       | string     | null: false                    |
+| content       | text       | null: false                    |
 | image         | -          | *Active Storage                |
 
 ### Association
@@ -80,7 +80,7 @@
 | ------------- | ---------- | ------------------------------ |
 | user          | references | null: false, foreign_key: true |
 | article       | references | null: false, foreign_key: true |
-| comment       | string     | null: false                    |
+| comment       | text       | null: false                    |
 
 ### Association
 
@@ -97,7 +97,7 @@
 | category_id   | integer    | null: false                    |
 | status_id     | integer    | null: false                    |
 | title         | string     | null: false                    |
-| text          | string     | null: false                    |
+| text          | text       | null: false                    |
 
 ### Association
 
@@ -110,7 +110,7 @@
 | ------------- | ---------- | ------------------------------ |
 | user          | references | null: false, foreign_key: true |
 | question      | references | null: false, foreign_key: true |
-| content       | string     | null: false                    |
+| content       | text       | null: false                    |
 
 ### Association
 
@@ -126,8 +126,9 @@
 | category_id   | integer    | null: false                    |
 | start_time    | datetime   | null: false                    |
 | end_time      | datetime   | null: false                    |
+| online        | boolean    | null: false                    |
 | place         | string     | null: false                    |
-| content       | string     | null: false                    |
+| content       | text       | null: false                    |
 | image         | -          | Active Storage                 |
 
 ### Association
