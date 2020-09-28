@@ -36,7 +36,7 @@
           <ul class="event-list">
             <% @events.each do |event| %>
               <li class="event-item">
-                <%= link_to event_path(event.id) do %>
+                <%= link_to country_event_path(event.id) do %>
                   <div class="image"><%= image_tag event.image %></div>
                   <div class="title"><%= event.title %></div>
                 <% end %>
