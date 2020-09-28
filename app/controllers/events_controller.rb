@@ -34,6 +34,16 @@ class EventsController < ApplicationController
     end
   end
 
+  def destroy
+    @country = Country.find(params[:country_id])
+    @event = Event.find(params[:id])
+    if @event.destroy
+     redirect_to country_path(@country)
+    else
+      render :show
+    end
+  end
+
   private
   def event_params
     params.require(:event).permit(:title, :country_id, :category_id, :start_time, :end_time, :online, :place, :content, :image, user_ids:[]).merge(country_id: params[:country_id])
