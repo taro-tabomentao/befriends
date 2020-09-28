@@ -11,7 +11,7 @@
       </div>
       <div class="wrapper">
         <div class="place">
-          <p class="row">Place</p>
+          <p class="row">Place: </p>
           <p><%= @event.place %></p>
         </div>
         <div class="time">
@@ -28,6 +28,16 @@
     </div>
   </div>
 </section>
+<section class="btn-wrapper"> 
+  <div class="btn-wrapper-inner-top">
+    <p class="btn"><%= link_to "Join this event", country_event_user_events_path(@country, @event), method: :post %></p>
+  </div>
+  <div class="btn-wrapper-inner-bottom">
+    <p class="btn"><%= link_to "Edit this event", edit_country_event_path(@country, @event) %></p>
+    <p class="btn"><%= link_to "Delete this event", edit_country_event_path(@country, @event) %></p>
+  </div>
+</section>
+
 <div class="footer">
   <%= render "shared/footer"%>
 <div>

@@ -93,6 +93,36 @@
   word-wrap: break-word;
 }
 
+.btn-wrapper {
+  position: relative;
+  top: 100px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 20px 60px;
+  background: orange;
+  text-align: center;
+  margin: 20px auto;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.45);
+}
+
+.btn-wrapper-inner-top {
+  text-align: center;
+}
+
+.btn-wrapper-inner-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+
+
 .footer {
   position: relative;
   top: 100px;

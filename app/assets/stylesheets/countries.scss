@@ -21,6 +21,7 @@ p {
 
 a {
   text-decoration: none;
+  color: #fff;
 }
 
 ul {
@@ -45,6 +46,10 @@ ul {
 }
 
 .btn:hover {
+  opacity: 0.9;
+}
+
+.btn-lg:hover {
   opacity: 0.9;
 }
 
