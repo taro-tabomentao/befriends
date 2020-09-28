@@ -1,3 +1,5 @@
+// 新規投稿画面
+
 .question {
   color: black;
   margin-bottom: 10px;
@@ -37,3 +39,61 @@
   height: 200px;
 }
 
+// 詳細画面
+.event-show {
+  position: relative;
+  top: 100px;
+  height: 50%;
+}
+
+.event-show .title {
+  padding: 20px;
+}
+
+.event-show h1 {
+  color: #666;
+  font-size: 2rem;
+}
+
+.event-show .body {
+  padding: 20px 20px 100px;;
+}
+
+.event-show .body {
+  background: #f0f3f7;
+}
+
+.event-show .image{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.event-show .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.event-show .place, .event-show .time {
+  padding: 30px 60px;
+  background-color: #fff;
+  margin-right: 20px;
+  border-radius: 10px;
+}
+
+.event-show  p, .event-show h2 {
+  color: #666;
+}
+
+.event-show .row {
+  margin-bottom: 5px;
+}
+
+.event-show .content {
+  word-wrap: break-word;
+}
+
+.footer {
+  position: relative;
+  top: 100px;
+}

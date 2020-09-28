@@ -1,0 +1,33 @@
+<%= render "shared/header"%>
+
+<section class="event-show"> 
+  <div class="title">
+    <h1><%= @event.title %></h1>
+  </div>
+  <div class="body">
+    <div class="top-info">
+      <div class="image">
+        <%= image_tag @event.image %>
+      </div>
+      <div class="wrapper">
+        <div class="place">
+          <p class="row">Place</p>
+          <p><%= @event.place %></p>
+        </div>
+        <div class="time">
+          <p class="row">Start Time:  <%= @event.start_time %></p>
+          <p class="row">End Time:  <%= @event.end_time %></p>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper-bottom">
+      <h2>Detail</h2>
+      <p class="content">
+        <%= @event.content %>
+      </p>
+    </div>
+  </div>
+</section>
+<div class="footer">
+  <%= render "shared/footer"%>
+<div>
