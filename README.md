@@ -141,6 +141,7 @@
 | ------------- | ---------- | ------------------------------ |
 | user          | references | null: false, foreign_key: true |
 | event         | references | null: false, foreign_key: true |
+| host          | boolean    | null: false                    |
 
 ### Association
 
