@@ -7,7 +7,7 @@
   <div class="body">
     <div class="top-info">
       <div class="image">
-        <%= image_tag @event.image %>
+        <%= image_tag @event.image.variant(resize:'500x500') %>
       </div>
       <div class="wrapper">
         <div class="place">
