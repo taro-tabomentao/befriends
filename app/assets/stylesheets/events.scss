@@ -1,0 +1,129 @@
+// 新規投稿画面
+
+.question {
+  color: black;
+  margin-bottom: 10px;
+}
+
+.event_management .wrapper{
+  margin-top: 40px;
+}
+
+#event_title, #event_category_id, #event_place, #event_content {
+  width: 100%;
+  padding: 10px 15px;
+}
+
+#event_start_time_1i, #event_end_time_1i {
+  width: 20%;
+  padding: 10px 15px;
+}
+#event_start_time_2i, #event_end_time_2i  {
+  width: 25%;
+  padding: 10px 15px;
+}
+#event_start_time_3i, #event_end_time_3i  {
+  width: 16%;
+  padding: 10px 15px;
+}
+#event_start_time_4i, #event_end_time_4i  {
+  width: 16%;
+  padding: 10px 15px;
+}
+#event_start_time_5i, #event_end_time_5i  {
+  width: 16%;
+  padding: 10px 15px;
+}
+
+#event_content {
+  height: 200px;
+}
+
+// 詳細画面
+.event-show {
+  position: relative;
+  top: 100px;
+  height: 50%;
+}
+
+.event-show .title {
+  padding: 20px;
+}
+
+.event-show h1 {
+  color: #666;
+  font-size: 2rem;
+}
+
+.event-show .body {
+  padding: 20px 20px 100px;;
+}
+
+.event-show .body {
+  background: #f0f3f7;
+}
+
+.event-show .image{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.event-show .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.event-show .place, .event-show .time {
+  padding: 30px 60px;
+  background-color: #fff;
+  margin-right: 20px;
+  border-radius: 10px;
+}
+
+.event-show  p, .event-show h2 {
+  color: #666;
+}
+
+.event-show .row {
+  margin-bottom: 5px;
+}
+
+.event-show .content {
+  word-wrap: break-word;
+}
+
+.btn-wrapper {
+  position: relative;
+  top: 100px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 20px 60px;
+  background: orange;
+  text-align: center;
+  margin: 20px auto;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.45);
+}
+
+.btn-wrapper-inner-top {
+  text-align: center;
+}
+
+.btn-wrapper-inner-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+
+
+.footer {
+  position: relative;
+  top: 100px;
+}

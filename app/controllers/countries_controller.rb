@@ -12,6 +12,7 @@ class CountriesController < ApplicationController
 
   def show
     @country = Country.find(params[:id])
+    @events = Event.where(country_id: params[:id]).order(id: "desc")
   end
 
 end

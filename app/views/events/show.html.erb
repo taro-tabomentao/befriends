@@ -1,0 +1,43 @@
+<%= render "shared/header"%>
+
+<section class="event-show"> 
+  <div class="title">
+    <h1><%= @event.title %></h1>
+  </div>
+  <div class="body">
+    <div class="top-info">
+      <div class="image">
+        <%= image_tag @event.image.variant(resize:'500x500') %>
+      </div>
+      <div class="wrapper">
+        <div class="place">
+          <p class="row">Place: </p>
+          <p><%= @event.place %></p>
+        </div>
+        <div class="time">
+          <p class="row">Start Time:  <%= @event.start_time %></p>
+          <p class="row">End Time:  <%= @event.end_time %></p>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper-bottom">
+      <h2>Detail</h2>
+      <p class="content">
+        <%= @event.content %>
+      </p>
+    </div>
+  </div>
+</section>
+<section class="btn-wrapper"> 
+  <div class="btn-wrapper-inner-top">
+    <p class="btn"><%= link_to "Join this event", country_event_user_events_path(@country, @event), method: :post %></p>
+  </div>
+  <div class="btn-wrapper-inner-bottom">
+    <p class="btn"><%= link_to "Edit this event", edit_country_event_path(@country, @event) %></p>
+    <p class="btn"><%= link_to "Delete this event", country_event_path(@country, @event),method: :delete %></p>
+  </div>
+</section>
+
+<div class="footer">
+  <%= render "shared/footer"%>
+<div>
