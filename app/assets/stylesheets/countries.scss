@@ -291,3 +291,16 @@ ul {
   word-wrap: break-word;
   overflow: hidden;
 }
+
+//タブの中身2
+
+.tab-2-content-inner .article-list {
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+
+.tab-2-content-inner .article-item {
+  padding-bottom: 30px;
+  padding-right: 30px;
+}
