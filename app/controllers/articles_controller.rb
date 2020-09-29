@@ -29,7 +29,7 @@ class ArticlesController < ApplicationController
     @country = Country.find(params[:country_id])
     @article = Article.find(params[:id])
     if @article.update(article_params)
-     redirect_to country_article_path(@country, @article)
+      redirect_to country_article_path(@country, @article)
     else
       render :edit
     end
@@ -38,8 +38,8 @@ class ArticlesController < ApplicationController
   def destroy
     @country = Country.find(params[:country_id])
     @article = Article.find(params[:id])
-    if @event.destroy
-     redirect_to country_path(@country)
+    if @article.destroy
+      redirect_to country_path(@country)
     else
       render :show
     end
