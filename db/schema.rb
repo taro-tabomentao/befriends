@@ -36,10 +36,9 @@ ActiveRecord::Schema.define(version: 2020_09_29_074608) do
   create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "question_id", null: false
-    t.bigint "content_id", null: false
+    t.string "content", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["content_id"], name: "index_answers_on_content_id"
     t.index ["question_id"], name: "index_answers_on_question_id"
     t.index ["user_id"], name: "index_answers_on_user_id"
   end
@@ -112,4 +111,6 @@ ActiveRecord::Schema.define(version: 2020_09_29_074608) do
   add_foreign_key "answers", "users"
   add_foreign_key "articles", "users"
   add_foreign_key "questions", "users"
+  add_foreign_key "user_events", "events"
+  add_foreign_key "user_events", "users"
 end
