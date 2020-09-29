@@ -304,3 +304,27 @@ ul {
   padding-bottom: 30px;
   padding-right: 30px;
 }
+
+// タブの中身3
+
+.tab-3-content-inner .status {
+  padding: 5px 10px;
+  border-radius: 2px;
+  background-color: #ff8800;
+  color: #fff;
+  display: inline-block;
+}
+
+.tab-3-content-inner .upper-container {
+  // display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+} 
+
+.tab-3-content-inner .question-title {
+  padding-top: 10px;
+  word-wrap: break-word;
+}
+.tab-3-content-inner .question-item { 
+  padding-bottom: 30px;
+}

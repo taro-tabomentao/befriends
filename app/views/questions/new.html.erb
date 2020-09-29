@@ -1,0 +1,35 @@
+<%= render "shared/header"%>
+
+<section class="user-management">
+  <div class="container">
+    <div class="container-inner">
+      <div class="wrapper-title">
+        <h2 class="title">Let's ask question to your friends!</h2>
+      </div>
+
+      <hr>
+
+      <%= form_with model:@question, url: country_questions_path(@country), local: true, class: "event_management" do |f| %>
+          <div class="wrapper">
+            <p class="question">What is your question?</p>
+            <div><%= f.text_field :title, class:"input" %></div>
+          </div>
+
+          <div class="wrapper">
+            <p class="question">Choose a cateogry that describe your question</p>
+            <div><%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"input"}) %></div>
+          </div>
+
+          <div class="wrapper">
+            <p class="question">Write detail</p>
+            <div><%= f.text_area :text, class:"input content" %></div>
+          </div>
+
+          <div class='wrapper'>
+            <div><%= f.submit "Post", id: "register-btn"%></div>
+          </div>
+
+      <% end %>
+    </div>
+  </div>
+</section>

@@ -14,6 +14,7 @@ class CountriesController < ApplicationController
     @country = Country.find(params[:id])
     @events = Event.where(country_id: params[:id]).order(id: "desc")
     @articles = Article.where(country_id: params[:id]).order(id: "desc")
+    @questions = Question.where(country_id: params[:id]).order(id: "desc")
   end
 
 end
