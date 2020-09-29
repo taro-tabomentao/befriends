@@ -13,7 +13,31 @@ class QuestionsController < ApplicationController
       render :new
     end
   end
+  
+  def edit
+    @country = Country.find(params[:country_id])
+    @question = Question.find(params[:id])
+  end
 
+  def update
+    @country = Country.find(params[:country_id])
+    @question = Question.find(params[:id])
+    if @question.update(edit_question_params)
+      redirect_to country_question_path(@country, @question)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @country = Country.find(params[:country_id])
+    @question = Question.find(params[:id])
+    if @question.destroy
+      redirect_to country_path(@country)
+    else
+      render :show
+    end
+  end
 
   def show
     @country = Country.find(params[:country_id])
