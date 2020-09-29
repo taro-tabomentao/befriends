@@ -23,6 +23,21 @@
   </div>
 </section>
 
+<section class="answer-wrapper">
+  <div class="answers">
+    <h2>Answers</h2>
+    <ul class="answer-list">
+      <% @answers.each do |answer| %>
+        <li class="answer-item">
+          <div class="upper-container">
+            <div class="content"><%= answer.content %></div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</section>
+
 <div class="footer">
   <%= render "shared/footer"%>
 <div>

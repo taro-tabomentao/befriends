@@ -13,7 +13,7 @@ class QuestionsController < ApplicationController
       render :new
     end
   end
-  
+
   def edit
     @country = Country.find(params[:country_id])
     @question = Question.find(params[:id])
@@ -42,6 +42,7 @@ class QuestionsController < ApplicationController
   def show
     @country = Country.find(params[:country_id])
     @question = Question.find(params[:id])
+    @answers = Answer.where(question_id: params[:id]).order(id: "desc")
   end
 
   private
