@@ -1,0 +1,25 @@
+<%= render "shared/header"%>
+
+<section class="event-show"> 
+  <div class="title">
+    <h1><%= @question.title %></h1>
+  </div>
+  <div class="body">
+    <div class="wrapper-bottom">
+      <h2>Detail</h2>
+      <p class="content">
+        <%= @question.text %>
+      </p>
+    </div>
+  </div>
+</section>
+<section class="btn-wrapper"> 
+  <div class="btn-wrapper-inner-bottom">
+    <p class="btn"><%= link_to "Edit this question", edit_country_question_path(@country, @question) %></p>
+    <p class="btn"><%= link_to "Delete this question", country_question_path(@country, @question),method: :delete %></p>
+  </div>
+</section>
+
+<div class="footer">
+  <%= render "shared/footer"%>
+<div>
