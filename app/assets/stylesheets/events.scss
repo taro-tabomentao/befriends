@@ -9,7 +9,7 @@
   margin-top: 40px;
 }
 
-#event_title, #event_category_id, #event_place, #event_content {
+.event_management .input {
   width: 100%;
   padding: 10px 15px;
 }
@@ -35,8 +35,8 @@
   padding: 10px 15px;
 }
 
-#event_content {
-  height: 200px;
+.event_management .content {
+  height: 400px;
 }
 
 // 詳細画面
