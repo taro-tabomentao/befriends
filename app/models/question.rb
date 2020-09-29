@@ -4,4 +4,5 @@ class Question < ApplicationRecord
   belongs_to_active_hash :category
   belongs_to_active_hash :status
   belongs_to :user
+  has_many :answers
 end
