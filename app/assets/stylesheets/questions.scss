@@ -1,3 +1,22 @@
-// Place all the styles related to the questions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.answer-wrapper{
+  position: relative;
+  top: 100px;
+}
+
+.answer-wrapper  {
+  padding: 20px 20px;
+}
+
+.answer-wrapper .answer-list {
+  padding: 0;
+}
+
+.answer-wrapper .answer-item {
+  padding: 30px 15px;
+  margin-bottom: 30px;
+  border: 1px solid #666;
+}
+
+.answer-wrapper h2, .answer-wrapper li {
+  color: #666;
+}

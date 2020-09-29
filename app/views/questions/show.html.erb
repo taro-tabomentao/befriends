@@ -14,9 +14,27 @@
   </div>
 </section>
 <section class="btn-wrapper"> 
+  <div class="btn-wrapper-inner-top">
+    <p class="btn"><%= link_to "Comment", new_country_question_answer_path(@country, @question) %></p>
+  </div>
   <div class="btn-wrapper-inner-bottom">
     <p class="btn"><%= link_to "Edit this question", edit_country_question_path(@country, @question) %></p>
     <p class="btn"><%= link_to "Delete this question", country_question_path(@country, @question),method: :delete %></p>
+  </div>
+</section>
+
+<section class="answer-wrapper">
+  <div class="answers">
+    <h2>Answers</h2>
+    <ul class="answer-list">
+      <% @answers.each do |answer| %>
+        <li class="answer-item">
+          <div class="upper-container">
+            <div class="content"><%= answer.content %></div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
   </div>
 </section>
 

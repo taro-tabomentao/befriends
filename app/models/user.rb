@@ -9,5 +9,6 @@ class User < ApplicationRecord
   has_one_attached :image
   has_many :events, through: :user_events
   has_many :articles
-  has_many :questions
+  has_many :questions  
+  has_many :answers
 end

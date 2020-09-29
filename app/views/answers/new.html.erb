@@ -1,0 +1,24 @@
+<%= render "shared/header"%>
+
+<section class="user-management">
+  <div class="container">
+    <div class="container-inner">
+      <div class="wrapper-title">
+        <h2 class="title">Let's ask question to your friends!</h2>
+      </div>
+
+      <hr>
+
+      <%= form_with model:@answer, url: country_question_answers_path(@country, @question), local: true, class: "event_management" do |f| %>
+        <div class="wrapper">
+          <p class="question">Comment here</p>
+          <div><%= f.text_area :content, class:"input content" %></div>
+        </div>
+
+        <div class='wrapper'>
+          <div><%= f.submit "Post", id: "register-btn"%></div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
