@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :events do
       resources :user_events, only: :create
     end
+    resources :articles
   end
   resources :users, only: :show
   root to: "countries#index"

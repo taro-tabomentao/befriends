@@ -277,17 +277,30 @@ ul {
   padding-right: 30px;
 }
 
-.tab-1-content-inner img {
+.tab-content img {
   width: 300px;
   height: 200px;
   object-fit: cover;
 }
 
-.tab-1-content-inner .title{
+.tab-content .title{
   width: 300px;
   height: 100px;
   padding-top: 5px; 
   font-size: 1.2rem;
   word-wrap: break-word;
   overflow: hidden;
+}
+
+//タブの中身2
+
+.tab-2-content-inner .article-list {
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+
+.tab-2-content-inner .article-item {
+  padding-bottom: 30px;
+  padding-right: 30px;
 }

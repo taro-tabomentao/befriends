@@ -1,0 +1,40 @@
+<%= render "shared/header"%>
+
+<section class="user-management">
+  <div class="container">
+    <div class="container-inner">
+      <div class="wrapper-title">
+        <h2 class="title">Let's share great information  at the article!</h2>
+      </div>
+
+      <hr>
+
+      <%= form_with model: [@country, @article], local: true, class: "event_management" do |f| %>
+          <div class="wrapper">
+            <p class="question">What is your article's title?</p>
+            <div><%= f.text_field :title, class:"input" %></div>
+          </div>
+
+          <div class="wrapper">
+            <p class="question">Choose a cateogry that describe your article</p>
+            <div><%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"input"}) %></div>
+          </div>
+
+          <div class="wrapper">
+            <p class="question">Write contents</p>
+            <div><%= f.text_area :content, class:"input content" %></div>
+          </div>
+
+          <div class="wrapper">
+            <p class="question">Please upload image for the article</p>
+            <div><%= f.file_field :image %></div>
+          </div>
+
+          <div class='wrapper'>
+            <div><%= f.submit "Post", id: "register-btn"%></div>
+          </div>
+
+      <% end %>
+    </div>
+  </div>
+</section>
