@@ -1,17 +1,15 @@
 class AnswersController < ApplicationController
   def new
-    @country = Country.find(params[:country_id])
     @question = Question.find(params[:question_id])
     @answer = Answer.new
   end
 
   def create
-    @country = Country.find(params[:country_id])
     @question = Question.find(params[:question_id])
     @answer = Answer.new(answer_params)
     if @answer.valid?
       @answer.save
-      redirect_to country_question_path(@country, @question)
+      redirect_to question_path(@question)
     else
       render :new
     end

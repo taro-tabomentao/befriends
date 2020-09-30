@@ -29,14 +29,14 @@
     <div id="tab-1-content" class="tab-content-item show">
       <div class="tab-1-content-inner">
         <div class="btn-newpost">
-          <%= link_to "Start a new event", new_country_event_path(@country), class: "btn-lg" %>
+          <%= link_to "Go to My Page to Start a New Event", user_path(current_user), class: "btn-lg" %>
         </div>
         <div class="latest-events">
           <h2>Latest Events</h2>
           <ul class="event-list">
             <% @events.each do |event| %>
               <li class="event-item">
-                <%= link_to country_event_path(@country, event.id) do %>
+                <%= link_to event_path(event.id) do %>
                   <div class="image"><%= image_tag event.image %></div>
                   <div class="title"><%= event.title %></div>
                 <% end %>
@@ -50,14 +50,14 @@
     <div id="tab-2-content" class="tab-content-item">
       <div class="tab-2-content-inner">
         <div class="btn-newpost">
-          <%= link_to "Write a new article", new_country_article_path(@country), class: "btn-lg" %>
+          <%= link_to "Go to My Page to Write a New Article", user_path(current_user), class: "btn-lg" %>
         </div>
         <div class="latest-articles">
           <h2>Latest Articles</h2>
           <ul class="article-list">
             <% @articles.each do |article| %>
               <li class="article-item">
-                <%= link_to country_article_path(@country, article.id) do %>
+                <%= link_to article_path(article.id) do %>
                   <div class="image"><%= image_tag article.image %></div>
                   <div class="title"><%= article.title %></div>
                 <% end %>
@@ -72,14 +72,14 @@
     <div id="tab-3-content" class="tab-content-item">
       <div class="tab-3-content-inner">
         <div class="btn-newpost">
-          <%= link_to "Ask your question", new_country_question_path(@country), class: "btn-lg" %>
+          <%= link_to "Go to My Page to Ask Your Question", user_path(current_user), class: "btn-lg" %>
         </div>
         <div class="latest-questions">
           <h2>Latest Questions</h2>
           <ul class="question-list">
           <% @questions.each do |question| %>
             <li class="question-item">
-              <%= link_to country_question_path(@country, question.id) do %>
+              <%= link_to question_path(question.id) do %>
                 <div class="upper-container">
                   <div class="status"><%= question.status.name %></div>
                   <div class="question-title"><%= question.title %></div>

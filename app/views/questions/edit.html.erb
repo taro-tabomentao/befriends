@@ -9,7 +9,12 @@
 
       <hr>
 
-      <%= form_with model: [@country, @question], local: true, class: "event_management" do |f| %>
+      <%= form_with model: @question, local: true, class: "event_management" do |f| %>
+          <div class="wrapper">
+            <p class="question">Choose country of your article</p>
+            <div><%= f.collection_select(:country_id, Country.all, :id, :name, {}, {class:"input"}) %></div>
+          </div>
+
           <div class="wrapper">
             <p class="question">Choose status about this question</p>
             <div><%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"input"}) %></div>

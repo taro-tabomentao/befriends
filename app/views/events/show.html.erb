@@ -21,6 +21,10 @@
       </div>
     </div>
     <div class="wrapper-bottom">
+      <h2>Country</h2>
+      <p class="content">
+        <%= @event.country.name %>
+      </p>
       <h2>Detail</h2>
       <p class="content">
         <%= @event.content %>
@@ -30,11 +34,11 @@
 </section>
 <section class="btn-wrapper"> 
   <div class="btn-wrapper-inner-top">
-    <p class="btn"><%= link_to "Join this event", country_event_user_events_path(@country, @event), method: :post %></p>
+    <p class="btn"><%= link_to "Join this event", event_user_events_path(@event), method: :post %></p>
   </div>
   <div class="btn-wrapper-inner-bottom">
-    <p class="btn"><%= link_to "Edit this event", edit_country_event_path(@country, @event) %></p>
-    <p class="btn"><%= link_to "Delete this event", country_event_path(@country, @event),method: :delete %></p>
+    <p class="btn"><%= link_to "Edit this event", edit_event_path(@event) %></p>
+    <p class="btn"><%= link_to "Delete this event", event_path(@event),method: :delete %></p>
   </div>
 </section>
 

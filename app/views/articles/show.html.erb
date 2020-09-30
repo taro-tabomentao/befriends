@@ -11,6 +11,10 @@
       </div>
     </div>
     <div class="wrapper-bottom">
+      <h2>Country</h2>
+      <p class="content">
+        <%= @article.country.name %>
+      </p>
       <h2>Content</h2>
       <p class="content">
         <%= @article.content %>
@@ -20,8 +24,8 @@
 </section>
 <section class="btn-wrapper"> 
   <div class="btn-wrapper-inner-bottom">
-    <p class="btn"><%= link_to "Edit this article", edit_country_article_path(@country, @article) %></p>
-    <p class="btn"><%= link_to "Delete this article", country_article_path(@country, @article),method: :delete %></p>
+    <p class="btn"><%= link_to "Edit this article", edit_article_path(@article) %></p>
+    <p class="btn"><%= link_to "Delete this article", article_path(@article),method: :delete %></p>
   </div>
 </section>
 
