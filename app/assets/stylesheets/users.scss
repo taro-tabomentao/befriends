@@ -1,0 +1,73 @@
+
+
+//トップ画面
+.user-top {
+  position: relative;
+  top: 100px;
+  width: 100%;
+  height: 500px;
+}
+
+.top-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-image .image {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  margin-top: 2rem;
+  object-fit: cover;
+}
+
+.top-image .name {
+  font-size: 2rem;
+  color: #666666;
+  text-align: center;
+}
+
+
+//タブ
+.user-tabs {
+  position: relative;
+  background: #f0f3f7;
+  padding-top: 1rem;
+  box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.25);
+}
+
+.user-tabs .container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.user-tabs p {
+  padding-top: 0.5rem;
+  font-size: 1.5rm;
+  color: #666666;
+}
+
+.user-tabs .container div {
+  padding: 1.5rem 0;
+  color: #666666;
+}
+
+.user-tabs .container div:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.user-tabs .icon {
+  font-size: 3rem;
+  padding: 10px; 
+}
+
+// タブの中身
