@@ -41,16 +41,18 @@
     <!-- タブ中身 1 -->
     <div id="tab-1-content" class="tab-content-item show">
       <div class="tab-1-content-inner">
+        <div class="btn-newpost">
+          <%= link_to "Start a New Event", new_event_path, class: "btn-lg" %>
+        </div>
         <div class="latest-events">
-          <%# <%= link_to "Make new event", new_event_path, class: "btn" %>
           <h2>Latest events</h2>
           <ul class="event-list">
           <% @user_events.each do |user_event| %>
             <li class="event-item">
-              <%# <%= link_to event_path(user_event.event.id) do %> 
+              <%= link_to event_path(user_event.event.id) do %>
                 <div class="image"><%= image_tag user_event.event.image %></div>
                 <div class="title"><%= user_event.event.title %></div>
-              <%# <% end %> 
+              <% end %>
             </li>
           <% end %>
           </ul>
