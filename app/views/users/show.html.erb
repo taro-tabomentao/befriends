@@ -106,9 +106,29 @@
       <div class="tab-4-content-inner">
         <div class="profile">
           <h2>My Profile</h2>
-          <%= @user.gender.name %>
-          <%= @user.city %>
-          <%= @user.birthday %>
+          <div class="wrapper">
+            <p class="category">Gender</p>
+            <p class="data"><%= @user.gender.name %></p>
+          </div>          
+          <div class="wrapper">
+            <p class="category">Country</p>
+            <p class="data"><%= @user.country.name %></p>
+          </div>          
+          <div class="wrapper">
+            <p class="category">City</p>
+            <p class="data"><%= @user.city %></p>
+          </div>          
+          <div class="wrapper">
+            <p class="category">Birthday</p>
+            <p class="data"><%= @user.birthday %></p>
+          </div>          
+          <div class="wrapper">
+            <p class="category">Language</p>
+            <p class="data"><%= @user.language %></p>
+          </div>
+        </div>
+        <div class="btn-wrapper-inner-top">
+          <p class="btn"><%= link_to "Edit user information", "#" %></p>
         </div>
       </div>
     </div> 

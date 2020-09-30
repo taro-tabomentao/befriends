@@ -70,4 +70,20 @@
   padding: 10px; 
 }
 
-// タブの中身
+// マイページ プロフィール
+
+.category, .data {
+  color: #666;
+}
+
+.category {
+  display: inline-block;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #666;
+}
+
+.data {
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
