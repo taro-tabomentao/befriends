@@ -11,4 +11,7 @@ class User < ApplicationRecord
   has_many :articles
   has_many :questions  
   has_many :answers
+  
+  validates :full_name, presence: true
+
 end
