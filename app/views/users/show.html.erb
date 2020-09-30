@@ -109,6 +109,9 @@
     <div id="tab-4-content" class="tab-content-item">
       <div class="tab-4-content-inner">
         <div class="profile">
+          <div class="btn-newpost">
+            <%= link_to "Edit User Information", "#", class: "btn-lg" %>
+          </div>
           <h2>My Profile</h2>
           <div class="wrapper">
             <p class="category">Gender</p>
@@ -130,9 +133,6 @@
             <p class="category">Language</p>
             <p class="data"><%= @user.language %></p>
           </div>
-        </div>
-        <div class="btn-wrapper-inner-top">
-          <p class="btn"><%= link_to "Edit user information", "#" %></p>
         </div>
       </div>
     </div> 
