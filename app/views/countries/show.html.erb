@@ -72,14 +72,14 @@
     <div id="tab-3-content" class="tab-content-item">
       <div class="tab-3-content-inner">
         <div class="btn-newpost">
-          <%= link_to "Ask your question", new_country_question_path(@country), class: "btn-lg" %>
+          <%= link_to "Go to My Page to Ask Your Question", user_path(current_user), class: "btn-lg" %>
         </div>
         <div class="latest-questions">
           <h2>Latest Questions</h2>
           <ul class="question-list">
           <% @questions.each do |question| %>
             <li class="question-item">
-              <%= link_to country_question_path(@country, question.id) do %>
+              <%= link_to question_path(question.id) do %>
                 <div class="upper-container">
                   <div class="status"><%= question.status.name %></div>
                   <div class="question-title"><%= question.title %></div>

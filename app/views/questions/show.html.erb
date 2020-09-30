@@ -15,11 +15,11 @@
 </section>
 <section class="btn-wrapper"> 
   <div class="btn-wrapper-inner-top">
-    <p class="btn"><%= link_to "Comment", new_country_question_answer_path(@country, @question) %></p>
+    <p class="btn"><%= link_to "Comment", new_question_answer_path( @question) %></p>
   </div>
   <div class="btn-wrapper-inner-bottom">
-    <p class="btn"><%= link_to "Edit this question", edit_country_question_path(@country, @question) %></p>
-    <p class="btn"><%= link_to "Delete this question", country_question_path(@country, @question),method: :delete %></p>
+    <p class="btn"><%= link_to "Edit this question", edit_question_path(@question) %></p>
+    <p class="btn"><%= link_to "Delete this question", question_path(@question),method: :delete %></p>
   </div>
 </section>
 
