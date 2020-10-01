@@ -41,10 +41,10 @@
 | full_name        | string     | null: false                     |
 | email            | string     | null: false                     |
 | password         | string     | null: false                     |
-| country_id       | integer    |                                 |
-| gender_id        | integer    |                                 | 
-| city             | string     |                                 |
-| birthday         | date       |                                 |
+| country_id       | integer    | null: false                     |
+| gender_id        | integer    | null: false                     | 
+| city             | string     | null: false                     |
+| birthday         | date       | null: false                     |
 | language         | string     |                                 |
 | image            | -          | *Active Storage                 |
 
