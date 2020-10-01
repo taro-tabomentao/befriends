@@ -1,5 +1,4 @@
 class ArticlesController < ApplicationController
-
   def new
     @article = Article.new
   end
@@ -8,7 +7,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
     if @article.valid?
       @article.save
-     redirect_to user_path(current_user)
+      redirect_to user_path(current_user)
     else
       render :new
     end
@@ -40,11 +39,9 @@ class ArticlesController < ApplicationController
     end
   end
 
-
   private
+
   def article_params
     params.require(:article).permit(:title, :country_id, :category_id, :content, :image).merge(user_id: current_user.id)
   end
-
-
 end
