@@ -5,8 +5,8 @@ RSpec.describe Answer, type: :model do
     before do
       @answer = FactoryBot.build(:answer)
     end
-    
-    context '新規登録がうまくいくとき' do 
+
+    context '新規登録がうまくいくとき' do
       it '全ての項目（content)が存在すれば、登録出来る' do
         expect(@answer).to be_valid
       end
@@ -22,13 +22,13 @@ RSpec.describe Answer, type: :model do
       it 'Userが紐付いていないと保存できない' do
         @answer.user = nil
         @answer.valid?
-        expect(@answer.errors.full_messages).to include "User must exist"
+        expect(@answer.errors.full_messages).to include 'User must exist'
       end
 
       it 'Questionが紐付いていないと保存できない' do
         @answer.question = nil
         @answer.valid?
-        expect(@answer.errors.full_messages).to include "Question must exist"
+        expect(@answer.errors.full_messages).to include 'Question must exist'
       end
     end
   end

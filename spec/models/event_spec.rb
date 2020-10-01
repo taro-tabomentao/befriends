@@ -7,8 +7,8 @@ RSpec.describe Event, type: :model do
       @event.image = fixture_file_upload('public/images/test_image.png')
       @event.online = 1
     end
-    
-    context '新規登録がうまくいくとき' do 
+
+    context '新規登録がうまくいくとき' do
       it '全ての項目（title, country_id, category_id, start_time, end_time, online, place, content）が存在すれば、登録出来る' do
         expect(@event).to be_valid
       end
@@ -18,7 +18,7 @@ RSpec.describe Event, type: :model do
       it "country_idが'--'だと登録出来ない" do
         @event.country_id = 1
         @event.valid?
-        expect(@event.errors.full_messages).to include "Country must be other than 1"
+        expect(@event.errors.full_messages).to include 'Country must be other than 1'
       end
 
       it 'titleが空だと登録できない' do
@@ -26,13 +26,13 @@ RSpec.describe Event, type: :model do
         @event.valid?
         expect(@event.errors.full_messages).to include "Title can't be blank"
       end
-      
+
       it "category_idが'--'だと登録出来ない" do
         @event.category_id = 1
         @event.valid?
-        expect(@event.errors.full_messages).to include "Category must be other than 1"
+        expect(@event.errors.full_messages).to include 'Category must be other than 1'
       end
-      
+
       it 'start_timeが空だと登録できない' do
         @event.start_time = nil
         @event.valid?
