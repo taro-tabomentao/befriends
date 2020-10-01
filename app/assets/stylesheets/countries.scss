@@ -61,7 +61,7 @@ ul {
   top: 100px;
   width: 100%;
   height: 85vh;
-  background: url('nepal.JPG') no-repeat center center/cover;
+  background: image-url('nepal.JPG') no-repeat center center/cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -129,36 +129,36 @@ ul {
 }
 
 .country-list .asia {
-  background: url('asia.jpg') no-repeat center center/cover;
+  background: image-url('asia.jpg') no-repeat center center/cover;
 }
 
 .country-list .europe {
-  background: url('europe.jpg') no-repeat center center/cover;
+  background: image-url('europe.jpg') no-repeat center center/cover;
 }
 
 .country-list .north-america {
-  background: url('north-america.jpg') no-repeat center center/cover;
+  background: image-url('north-america.jpg') no-repeat center center/cover;
 }
 
 .country-list .south-america {
-  background: url('south-america.jpg') no-repeat center center/cover;
+  background: image-url('south-america.jpg') no-repeat center center/cover;
 }
 
 .country-list .central-america {
-  background: url('central-america.jpg') no-repeat center center/cover;
+  background: image-url('central-america.jpg') no-repeat center center/cover;
 }
 
 .country-list .oceania {
-  background: url('oceania.jpg') no-repeat center center/cover;
+  background: image-url('oceania.jpg') no-repeat center center/cover;
 }
 
 .country-list .africa {
-  background: url('africa.jpg') no-repeat center center/cover;
+  background: image-url('africa.jpg') no-repeat center center/cover;
   border-radius: 2rem;
 }
 
 .country-list .middle-east {
-  background: url('middle-east.jpg') no-repeat center center/cover;
+  background: image-url('middle-east.jpg') no-repeat center center/cover;
 }
 
 .country-list .country-item {
