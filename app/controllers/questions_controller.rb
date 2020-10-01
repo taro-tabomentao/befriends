@@ -7,7 +7,7 @@ class QuestionsController < ApplicationController
     @question = Question.new(new_question_params)
     if @question.valid?
       @question.save
-     redirect_to user_path(current_user)
+      redirect_to user_path(current_user)
     else
       render :new
     end
@@ -37,10 +37,11 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
-    @answers = Answer.where(question_id: params[:id]).order(id: "desc")
+    @answers = Answer.where(question_id: params[:id]).order(id: 'desc')
   end
 
   private
+
   def new_question_params
     params.require(:question).permit(:title, :category_id, :country_id, :text).merge(user_id: current_user.id, status_id: 2)
   end
@@ -49,5 +50,3 @@ class QuestionsController < ApplicationController
     params.require(:question).permit(:title, :category_id, :country_id, :text, :status_id).merge(user_id: current_user.id)
   end
 end
-
-

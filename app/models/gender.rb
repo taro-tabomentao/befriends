@@ -3,6 +3,6 @@ class Gender < ActiveHash::Base
     { id: 1, name: '--' },
     { id: 2, name: 'Male' },
     { id: 3, name: 'Female' },
-    { id: 4, name: 'Other' },
+    { id: 4, name: 'Other' }
   ]
 end

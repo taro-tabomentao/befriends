@@ -11,7 +11,7 @@ class Question < ApplicationRecord
     validates :category_id
     validates :status_id
   end
-  
+
   with_options presence: true do
     validates :title
     validates :text

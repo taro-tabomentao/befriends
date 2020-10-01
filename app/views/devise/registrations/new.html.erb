@@ -44,13 +44,13 @@
 
           <div class="third-row">
             <div class="left">
-              <label for="country">Country (Optional)</label>
+              <label for="country">Country</label>
               <div>
                 <%= f.collection_select(:country_id, Country.all, :id, :name, {}, {id: "country", class:"input"}) %>
               </div>
             </div>
             <div class="right">
-              <label for="city">City (Optional)</label>
+              <label for="city">City</label>
               <div>
                 <%= f.text_field :city, placeholder:"City", id: "city", class: "input" %>
               </div>
@@ -59,14 +59,14 @@
 
           <div class="fourth-row">
             <div class="left">
-              <label for="gender">Gender (Optional)</label>
+              <label for="gender">Gender</label>
               <div>
                 <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {id: "gender", class:"input"}) %>
               </div>
             </div>
             
             <div class="right">
-              <label for="birthday" id="birthday_label">Date of birth (Optional)</label>
+              <label for="birthday" id="birthday_label">Date of birth</label>
               <div>
                 <%= raw sprintf(f.date_select(:birthday, with_css_classes:'birthday', id:"birthday", use_month_numbers: true, prompt:'--', start_year: 1930, end_year: (Time.now.year), date_separator: '%s'), " / ", " / ") %>
               </div>

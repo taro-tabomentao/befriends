@@ -7,6 +7,6 @@ class UserEventsController < ApplicationController
       redirect_to user_path(current_user)
     else
       redirect_to event_path(@event)
-    end 
+    end
   end
 end
