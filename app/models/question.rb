@@ -5,4 +5,15 @@ class Question < ApplicationRecord
   belongs_to_active_hash :status
   belongs_to :user
   has_many :answers
+
+  with_options numericality: { other_than: 1 } do
+    validates :country_id
+    validates :category_id
+    validates :status_id
+  end
+  
+  with_options presence: true do
+    validates :title
+    validates :text
+  end
 end
