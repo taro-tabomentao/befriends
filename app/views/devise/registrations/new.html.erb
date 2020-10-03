@@ -14,13 +14,13 @@
           <%= render 'shared/error_messages', model: f.object %>
           <div class="first-row">
             <div class="left">
-              <label for="full_name">Full Name</label>
+              <%= f.label :full_name, "Full Name", for: "full_name" %>
               <div>
                 <%= f.text_field :full_name, placeholder:"Full Name", id: "full_name", class:"input", autofocus: true %>
               </div>
             </div>
             <div class="right">
-              <label for="email">Email</label>
+              <%= f.label :email, "Email", for: "email" %>
               <div>
                 <%= f.email_field :email, placeholder:"Email", id: "email", class: "input" %>
               </div>
@@ -29,13 +29,13 @@
 
           <div class="second-row">
             <div class="left">
-              <label for="password">Password</label>
+              <%= f.label :password, "Password", for: "password" %>
               <div>
                 <%= f.password_field :password, placeholder:"Password", id: "password", class:"input" %>
               </div>
             </div>
             <div class="right">
-              <label for="password_confirmation">Password Confirmation</label>
+              <%= f.label :password_confirmation, "Password Comformation", for: "password_confirmation" %>
               <div>
                 <%= f.password_field :password_confirmation, placeholder:"Password Confirmation", id: "password_confirmation", class: "input" %>
               </div>
@@ -44,13 +44,13 @@
 
           <div class="third-row">
             <div class="left">
-              <label for="country">Country</label>
+              <%= f.label :country, "Country", for: "country" %>
               <div>
                 <%= f.collection_select(:country_id, Country.all, :id, :name, {}, {id: "country", class:"input"}) %>
               </div>
             </div>
             <div class="right">
-              <label for="city">City</label>
+              <%= f.label :city, "City", for: "city" %>
               <div>
                 <%= f.text_field :city, placeholder:"City", id: "city", class: "input" %>
               </div>
@@ -59,14 +59,14 @@
 
           <div class="fourth-row">
             <div class="left">
-              <label for="gender">Gender</label>
+              <%= f.label :gender, "Gender", for: "gender" %>
               <div>
                 <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {id: "gender", class:"input"}) %>
               </div>
             </div>
             
             <div class="right">
-              <label for="birthday" id="birthday_label">Date of birth</label>
+              <%= f.label :birthday, "Date of birth", for: "birthday", id: "birthday_label" %>
               <div>
                 <%= raw sprintf(f.date_select(:birthday, with_css_classes:'birthday', id:"birthday", use_month_numbers: true, prompt:'--', start_year: 1930, end_year: (Time.now.year), date_separator: '%s'), " / ", " / ") %>
               </div>
@@ -75,14 +75,14 @@
 
           <div class="fifth-row">
             <div class="left">
-              <label for="language">Language (Optional)</label>
+              <%= f.label :language, "Language", for: "language" %>
               <div>
                 <%= f.text_field :language, placeholder:"language", id: "language", class: "input" %>
               </div>
             </div>
             
             <div class="right">
-              <label for="image">Image (Optional)</label>
+              <%= f.label :image, "Image", for: "image" %>
               <div><%= f.file_field :image %></div>
             </div>
           </div>
