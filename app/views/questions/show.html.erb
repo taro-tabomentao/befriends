@@ -12,7 +12,7 @@
       </p>
       <h2>Detail</h2>
       <p class="content">
-        <%= @question.text %>
+        <%= simple_format(@question.text) %>
       </p>
     </div>
   </div>
@@ -44,7 +44,7 @@
       <% @answers.each do |answer| %>
         <li class="answer-item">
           <div class="upper-container">
-            <div class="content"><%= answer.content %></div>
+            <div class="content"><%= simple_format(answer.content) %></div>
           </div>
         </li>
       <% end %>
