@@ -22,13 +22,14 @@
     </div>
   </div>
 </section>
-<section class="btn-wrapper"> 
-  <div class="btn-wrapper-inner-bottom">
-    <p class="btn"><%= link_to "Edit this article", edit_article_path(@article) %></p>
-    <p class="btn"><%= link_to "Delete this article", article_path(@article),method: :delete %></p>
-  </div>
-</section>
-
+<% if user_signed_in? && current_user.id == @article.user_id %>
+  <section class="btn-wrapper"> 
+    <div class="btn-wrapper-inner-bottom">
+      <p class="btn"><%= link_to "Edit this article", edit_article_path(@article) %></p>
+      <p class="btn"><%= link_to "Delete this article", article_path(@article),method: :delete %></p>
+    </div>
+  </section>
+<% end %>
 <div class="footer">
   <%= render "shared/footer"%>
 <div>

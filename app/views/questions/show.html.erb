@@ -17,16 +17,26 @@
     </div>
   </div>
 </section>
-<section class="btn-wrapper"> 
-  <div class="btn-wrapper-inner-top">
-    <p class="btn"><%= link_to "Comment", new_question_answer_path( @question) %></p>
-  </div>
-  <div class="btn-wrapper-inner-bottom">
-    <p class="btn"><%= link_to "Edit this question", edit_question_path(@question) %></p>
-    <p class="btn"><%= link_to "Delete this question", question_path(@question),method: :delete %></p>
-  </div>
-</section>
 
+<% if user_signed_in? %>
+  <section class="btn-wrapper"> 
+    <div class="btn-wrapper-inner-top">
+      <p class="btn"><%= link_to "Comment", new_question_answer_path( @question) %></p>
+    </div>
+    <% if current_user.id == @question.user_id %>
+      <div class="btn-wrapper-inner-bottom">
+        <p class="btn"><%= link_to "Edit this question", edit_question_path(@question) %></p>
+        <p class="btn"><%= link_to "Delete this question", question_path(@question),method: :delete %></p>
+      </div>
+    <% end %>
+  </section>
+<% else %>
+  <section class="btn-wrapper"> 
+    <div class="btn-wrapper-inner-top">
+      <p class="btn"><%= link_to "Comment", new_user_session_path %></p>
+    </div>
+  </section>
+<% end %>
 <section class="answer-wrapper">
   <div class="answers">
     <h2>Answers</h2>
