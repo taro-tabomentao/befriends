@@ -12,7 +12,13 @@
       <div class="wrapper">
         <div class="place">
           <p class="row">Place: </p>
-          <p><%= @event.place %></p>
+          <% if user_signed_in? && @event.online == true && @user_events.exists?(user_id: current_user.id) %>
+            <p><%= @event.place %></p>
+          <% elsif @event.online == false %>
+            <p><%= @event.place %></p>
+          <% else %>
+            <p>This is online event. The link to join shows only for participants</p>
+          <% end %>
         </div>
         <div class="time">
           <p class="row">Start Time:  <%= @event.start_time %></p>
@@ -35,7 +41,11 @@
 <% if user_signed_in? %>
   <section class="btn-wrapper"> 
     <div class="btn-wrapper-inner-top">
-      <p class="btn"><%= link_to "Join this event", event_user_events_path(@event), method: :post %></p>
+      <% if @user_events.exists?(user_id: current_user.id) %>
+        <p class="btn2">You have already joined this event</p>
+      <% else %>
+        <p class="btn"><%= link_to "Join this event", event_user_events_path(@event), method: :post %></p>
+      <% end %>
     </div>
     <% if current_user.id == @event.user_events.first.user_id %>
     <div class="btn-wrapper-inner-bottom">
