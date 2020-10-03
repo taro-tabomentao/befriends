@@ -8,6 +8,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_one_attached :image
   has_many :events, through: :user_events
+  has_many :user_events
   has_many :articles
   has_many :questions
   has_many :answers

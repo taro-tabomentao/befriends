@@ -32,15 +32,25 @@
     </div>
   </div>
 </section>
-<section class="btn-wrapper"> 
-  <div class="btn-wrapper-inner-top">
-    <p class="btn"><%= link_to "Join this event", event_user_events_path(@event), method: :post %></p>
-  </div>
-  <div class="btn-wrapper-inner-bottom">
-    <p class="btn"><%= link_to "Edit this event", edit_event_path(@event) %></p>
-    <p class="btn"><%= link_to "Delete this event", event_path(@event),method: :delete %></p>
-  </div>
-</section>
+<% if user_signed_in? %>
+  <section class="btn-wrapper"> 
+    <div class="btn-wrapper-inner-top">
+      <p class="btn"><%= link_to "Join this event", event_user_events_path(@event), method: :post %></p>
+    </div>
+    <% if current_user.id == @event.user_events.first.user_id %>
+    <div class="btn-wrapper-inner-bottom">
+      <p class="btn"><%= link_to "Edit this event", edit_event_path(@event) %></p>
+      <p class="btn"><%= link_to "Delete this event", event_path(@event),method: :delete %></p>
+    </div>
+    <% end %>
+  </section>
+<% else %>
+  <section class="btn-wrapper"> 
+    <div class="btn-wrapper-inner-top">
+      <p class="btn"><%= link_to "Join this event", new_user_session_path, method: :post %></p>
+    </div>
+  </section>
+<% end %>
 
 <div class="footer">
   <%= render "shared/footer"%>
