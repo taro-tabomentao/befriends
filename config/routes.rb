@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   resources :questions do
     resources :answers, only: [:new, :create]
   end
-  resources :users, only: :show
+  resources :users, only: [:show, :edit, :update]
   root to: "countries#index"
 end
