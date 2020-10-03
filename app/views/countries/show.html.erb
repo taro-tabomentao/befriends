@@ -30,11 +30,11 @@
       <div class="tab-1-content-inner">
         <% if user_signed_in? %>
           <div class="btn-newpost">
-            <%= link_to "Go to My Page to Start a New Event", user_path(current_user), class: "btn-lg" %>
+            <%= link_to "Start a New Event", new_event_path, class: "btn-lg" %>
           </div>
         <% else %>
           <div class="btn-newpost">
-            <%= link_to "Go to My Page to Start a New Event", new_user_session_path, class: "btn-lg" %>
+            <%= link_to "Start a New Event", new_user_session_path, class: "btn-lg" %>
           </div>
         <% end %>
         <div class="latest-events">
@@ -57,11 +57,11 @@
       <div class="tab-2-content-inner">
         <% if user_signed_in? %>
           <div class="btn-newpost">
-            <%= link_to "Go to My Page to Write a New Article", user_path(current_user), class: "btn-lg" %>
+            <%= link_to "Write a New Article", new_article_path, class: "btn-lg" %>
           </div>
         <% else %>
           <div class="btn-newpost">
-            <%= link_to "Go to My Page to Write a New Article", new_user_session_path, class: "btn-lg" %>
+            <%= link_to "Write a New Article", new_user_session_path, class: "btn-lg" %>
           </div>
         <% end %>
         <div class="latest-articles">
@@ -85,11 +85,11 @@
       <div class="tab-3-content-inner">
         <% if user_signed_in? %>
           <div class="btn-newpost">
-            <%= link_to "Go to My Page to Ask Your Question", user_path(current_user), class: "btn-lg" %>
+            <%= link_to "Ask Your Question", new_question_path, class: "btn-lg" %>
           </div>
         <% else %>
           <div class="btn-newpost">
-            <%= link_to "Go to My Page to Ask Your Question", new_user_session_path, class: "btn-lg" %>
+            <%= link_to "Ask Your Question", new_user_session_path, class: "btn-lg" %>
           </div>
         <% end %>
         <div class="latest-questions">
