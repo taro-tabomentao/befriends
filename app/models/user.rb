@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :articles
   has_many :questions
   has_many :answers
+  has_many :comments
 
   with_options numericality: { other_than: 1 } do
     validates :country_id
