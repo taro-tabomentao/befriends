@@ -22,14 +22,39 @@
     </div>
   </div>
 </section>
-<% if user_signed_in? && current_user.id == @article.user_id %>
+<% if user_signed_in? %>
   <section class="btn-wrapper"> 
-    <div class="btn-wrapper-inner-bottom">
-      <p class="btn"><%= link_to "Edit this article", edit_article_path(@article) %></p>
-      <p class="btn"><%= link_to "Delete this article", article_path(@article),method: :delete %></p>
+    <div class="btn-wrapper-inner-top">
+      <p class="btn"><%= link_to "Comment", new_article_comment_path( @article) %></p>
+    </div>
+    <% if current_user.id == @article.user_id %>
+      <div class="btn-wrapper-inner-bottom">
+        <p class="btn"><%= link_to "Edit this article", edit_article_path(@article) %></p>
+        <p class="btn"><%= link_to "Delete this article", article_path(@article),method: :delete %></p>
+      </div>
+    <% end %>
+  </section>
+<% else %>
+  <section class="btn-wrapper"> 
+    <div class="btn-wrapper-inner-top">
+      <p class="btn"><%= link_to "Comment", new_user_session_path %></p>
     </div>
   </section>
 <% end %>
+<section class="answer-wrapper">
+  <div class="answers">
+    <h2>Comments</h2>
+    <ul class="answer-list">
+      <% @comments.each do |comment| %>
+        <li class="answer-item">
+          <div class="upper-container">
+            <div class="content"><%= simple_format(comment.content) %></div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</section>
 <div class="footer">
   <%= render "shared/footer"%>
 <div>

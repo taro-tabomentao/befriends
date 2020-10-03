@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   resources :events do
     resources :user_events, only: :create
   end
-  resources :articles
+  resources :articles do
+    resources :comments, only: [:new, :create]
+  end
   resources :questions do
     resources :answers, only: [:new, :create]
   end
