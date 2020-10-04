@@ -6,7 +6,7 @@ class Event < ApplicationRecord
   has_many :user_events
   has_many :users, through: :user_events, dependent: :destroy
 
-  with_options numericality: { other_than: 1 } do
+  with_options numericality: { other_than: 1, message: 'has to be selected' } do
     validates :country_id
     validates :category_id
   end
@@ -20,6 +20,6 @@ class Event < ApplicationRecord
     validates :image
   end
 
-  validates :online, inclusion: {in: [true, false]}
+  validates :online, inclusion: {in: [true, false], message: 'has to be selected'}
 
 end

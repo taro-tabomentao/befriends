@@ -6,7 +6,7 @@ class Question < ApplicationRecord
   belongs_to :user
   has_many :answers
 
-  with_options numericality: { other_than: 1 } do
+  with_options numericality: { other_than: 1, message: 'has to be selected' } do
     validates :country_id
     validates :category_id
   end

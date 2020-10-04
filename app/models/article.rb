@@ -6,7 +6,7 @@ class Article < ApplicationRecord
   has_many :comments
   has_one_attached :image
 
-  with_options numericality: { other_than: 1 } do
+  with_options numericality: { other_than: 1, message: 'has to be selected' } do
     validates :country_id
     validates :category_id
   end

@@ -14,7 +14,7 @@ class User < ApplicationRecord
   has_many :answers
   has_many :comments
 
-  with_options numericality: { other_than: 1 } do
+  with_options numericality: { other_than: 1, message: 'has to be selected' } do
     validates :gender_id
   end
 
