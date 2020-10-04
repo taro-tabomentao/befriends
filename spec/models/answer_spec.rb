@@ -7,7 +7,7 @@ RSpec.describe Answer, type: :model do
     end
 
     context '新規登録がうまくいくとき' do
-      it '全ての項目（content)が存在すれば、登録出来る' do
+      it '全ての項目（user_id, question_id, content)が存在すれば、登録出来る' do
         expect(@answer).to be_valid
       end
     end

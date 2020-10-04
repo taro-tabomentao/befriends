@@ -8,13 +8,15 @@ RSpec.describe User, type: :model do
       @user.image = fixture_file_upload('public/images/test_image.png')
     end
     context '新規登録がうまくいくとき' do
-      it '全ての項目（full_name, email, password, password_confirmation, gender_id, country_id, city, birthday, language, image）が存在すれば、登録出来る' do
+      it '全ての項目（full_name, email, password, password_confirmation, gender_id, birthday）が存在すれば、登録出来る' do
         expect(@user).to be_valid
       end
 
-      it 'languageとimageがなくても登録出来る' do
-        @user.language = nil
+      it 'languageとimage, city，country_idがなくても登録出来る' do
+        @user.city = nil
+        @user.country_id = 1
         @user.image = nil
+        @user.language = nil
         expect(@user).to be_valid
       end
     end
@@ -66,19 +68,7 @@ RSpec.describe User, type: :model do
       it "gender_idが'--'だと登録出来ない" do
         @user.gender_id = 1
         @user.valid?
-        expect(@user.errors.full_messages).to include 'Gender must be other than 1'
-      end
-
-      it "country_idが'--'だと登録出来ない" do
-        @user.country_id = 1
-        @user.valid?
-        expect(@user.errors.full_messages).to include 'Country must be other than 1'
-      end
-
-      it 'cityが空だと登録出来ない' do
-        @user.city = nil
-        @user.valid?
-        expect(@user.errors.full_messages).to include "City can't be blank"
+        expect(@user.errors.full_messages).to include 'Gender has to be selected'
       end
 
       it 'birthdayが空だと登録出来ない' do

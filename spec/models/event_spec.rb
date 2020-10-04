@@ -5,7 +5,6 @@ RSpec.describe Event, type: :model do
     before do
       @event = FactoryBot.build(:event)
       @event.image = fixture_file_upload('public/images/test_image.png')
-      @event.online = 1
     end
 
     context '新規登録がうまくいくとき' do
@@ -18,7 +17,7 @@ RSpec.describe Event, type: :model do
       it "country_idが'--'だと登録出来ない" do
         @event.country_id = 1
         @event.valid?
-        expect(@event.errors.full_messages).to include 'Country must be other than 1'
+        expect(@event.errors.full_messages).to include 'Country has to be selected'
       end
 
       it 'titleが空だと登録できない' do
@@ -30,7 +29,7 @@ RSpec.describe Event, type: :model do
       it "category_idが'--'だと登録出来ない" do
         @event.category_id = 1
         @event.valid?
-        expect(@event.errors.full_messages).to include 'Category must be other than 1'
+        expect(@event.errors.full_messages).to include 'Category has to be selected'
       end
 
       it 'start_timeが空だと登録できない' do
@@ -48,7 +47,7 @@ RSpec.describe Event, type: :model do
       it 'onlineが空だと登録できない' do
         @event.online = nil
         @event.valid?
-        expect(@event.errors.full_messages).to include "Online can't be blank"
+        expect(@event.errors.full_messages).to include "Online has to be selected"
       end
 
       it 'placeが空だと登録できない' do

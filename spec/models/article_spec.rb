@@ -8,7 +8,7 @@ RSpec.describe Article, type: :model do
     end
 
     context '新規登録がうまくいくとき' do
-      it '全ての項目（title, country_id, category_id, content）が存在すれば、登録出来る' do
+      it '全ての項目（user_id, title, country_id, category_id, content）が存在すれば、登録出来る' do
         expect(@article).to be_valid
       end
     end
@@ -17,7 +17,7 @@ RSpec.describe Article, type: :model do
       it "country_idが'--'だと登録出来ない" do
         @article.country_id = 1
         @article.valid?
-        expect(@article.errors.full_messages).to include 'Country must be other than 1'
+        expect(@article.errors.full_messages).to include 'Country has to be selected'
       end
 
       it 'titleが空だと登録できない' do
@@ -29,7 +29,7 @@ RSpec.describe Article, type: :model do
       it "category_idが'--'だと登録出来ない" do
         @article.category_id = 1
         @article.valid?
-        expect(@article.errors.full_messages).to include 'Category must be other than 1'
+        expect(@article.errors.full_messages).to include 'Category has to be selected'
       end
 
       it 'contentが空だと登録できない' do
