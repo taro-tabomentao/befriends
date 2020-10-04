@@ -79,7 +79,6 @@ span {
   opacity: 0.7;
 }
 
-
 // ボタン
 
 .btn {
@@ -283,6 +282,7 @@ span {
   justify-content: center;
   text-align: center;
   width: 70%;
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -360,8 +360,8 @@ span {
   object-fit: cover;
 }
 
-.title-event {
-  width: 200px;
+.title-event, .title-article {
+  width: 300px;
   height: 100px;
   padding-top: 10px; 
   font-size: 1.2rem;
@@ -369,7 +369,7 @@ span {
   overflow: hidden;
 }
 
-// タブの中身3
+// タブコンテンツ Q&A
 
 .list-question .wrapper-row {
   display: flex;
