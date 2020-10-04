@@ -1,4 +1,4 @@
-/* 全体のレイアウト */
+// 全体のレイアウト
 * {
   box-sizing: border-box;
 }
@@ -11,46 +11,50 @@ body {
 
 h1 {
   margin: 0;
-  color: #fff;
+  color:#666;
+}
+
+h2 {
+  margin: 0;
+  color:#666;
 }
 
 p {
   margin: 0;
-  color: #fff;
+  color:#666;
+
 }
 
 a {
   text-decoration: none;
-  color: #fff;
+  color:#666;
+
 }
 
 ul {
   list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-// ボタン
 
-.btn-newpost {
-  text-align: center;
-}
-.btn-lg {
-  background: #ff8800;
+// 共通の設定
+// フォント色
+
+.white {
   color: #fff;
-  font-size: 1.5rem;
+}
+
+.orange {
+  color: #ff8800;
+}
+
+//エレメント
+
+.heading {
   text-align: center;
-  border: none;
-  cursor: pointer;
-  padding: 20px 50px;
-  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.45);
-  border-radius: 10px;
-}
-
-.btn:hover {
-  opacity: 0.9;
-}
-
-.btn-lg:hover {
-  opacity: 0.9;
+  font-size: 2rem;
+  margin-bottom: 4rem; 
 }
 
 // トップページ
@@ -60,60 +64,50 @@ ul {
   position: relative;
   top: 100px;
   width: 100%;
-  height: 85vh;
+  height: 80vh;
   background: image-url('nepal.JPG') no-repeat center center/cover;
   display: flex;
   justify-content: center;
-  align-items: center;
+  // 文字の位置を調整する
+  padding-top: 200px;
 }
 
 .showcase-content {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-align: center;
-  top: -100px;
 }
 
 .showcase-content h1 {
   font-weight: bold;
   font-size: 4rem;
   margin: 0 0 2rem;
-  text-shadow: 1px 1px 0 #666;
+  text-shadow: 2px 2px 0 #666;
 }
 
 .showcase-content p {
   text-transform: uppercase;
-  color: #fff;
   font-size: 2rem;
-  text-shadow: 1px 1px 0 #666;
+  text-shadow: 2px 2px 0 #666;
 }
 
-// 国選択
+// 国を選択する部分
 
 .country-list {
   position: relative;
   padding: 3rem 1rem;
   background: #fff;
-  color: #666666;
 }
 
 .region-name {
   font-size: 2rem;
-  text-shadow: 1px 1px 0 #666;
+  text-shadow: 2px 2px 0 #666;
   text-align: center;
-}
-
-.country-list ul {
-  margin: 0;
-  padding: 0;
 }
 
 .country-list .wrapper-top, .country-list .wrapper-bottom {
   display: flex;
   justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .country-list .wrapper-inner {
@@ -154,13 +148,13 @@ ul {
 
 .country-list .africa {
   background: image-url('africa.jpg') no-repeat center center/cover;
-  border-radius: 2rem;
 }
 
 .country-list .middle-east {
   background: image-url('middle-east.jpg') no-repeat center center/cover;
 }
 
+// 国リスト
 .country-list .country-item {
   display: flex;
   flex-direction: column;
@@ -175,10 +169,6 @@ ul {
 
 .country-list .country li {
   padding: 4px 0;
-}
-
-.country-list .country li a {
-  color: #666666; 
 }
 
 .country-list .country li a:hover {
@@ -328,3 +318,78 @@ ul {
 .tab-3-content-inner .question-item { 
   padding-bottom: 30px;
 }
+
+
+// ボタン
+
+.btn-newpost {
+  text-align: center;
+}
+
+.btn-lg {
+  background: #ff8800;
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  padding: 20px 50px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.45);
+  border-radius: 10px;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn-lg:hover {
+  opacity: 0.9;
+}
+
+// レスポンシブデザイン
+// iPad mini以下
+@media screen and (max-width: 768px) {
+    // ショーケース
+  .showcase {
+    padding-top: 160px;
+  }
+
+  .showcase-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .showcase-content p {
+    font-size: 1.5rem;
+  }
+
+  // 国を選択する部分
+
+  .region-name {
+    font-size: 3rem;
+  }
+
+  .country-list .wrapper-top, .country-list .wrapper-bottom {
+    display: block;
+  }
+
+  .country-list .wrapper-inner {
+    width: 100%;
+  }
+
+  // 国リスト
+  .country-list .country-item {
+    height: 200px;
+    text-align: center;
+  }
+
+  .country-list .country {
+    margin: 10px 0;
+  }
+
+  .country-list .country li {
+    padding: 4px 0;
+    font-size: 1.5rem;
+  }
+
+}
+

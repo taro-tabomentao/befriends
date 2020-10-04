@@ -16,6 +16,8 @@ header {
 header .container {
   display: flex;
   justify-content:space-between;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 header a {
@@ -32,16 +34,32 @@ header a:hover {
 
 // ナビゲーションメニュー
 
-nav ul {
-  padding: 0;
-  font-size: 1rem;
-  color: #666666;
+nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  vertical-align: middle;
+}
+
+nav ul {
+  padding: 0;
+  font-size: 1rem;
+  color: #666;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 nav li {
   margin-right: 20px;
+}
+
+// レスポンシブデザイン
+// iPad mini以下
+@media screen and (max-width: 768px) {
+  header .container {
+    display: block;
+  }
+  nav li:last-child {
+    margin-right: 0px;
+  }
 }
