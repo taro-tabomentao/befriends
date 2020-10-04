@@ -1,42 +1,54 @@
 <%= render "shared/header"%>
 
-<section class="event-show"> 
+<section class="item-show"> 
   <div class="title">
     <h1><%= @question.title %></h1>
   </div>
-  <div class="body">
-    <div class="wrapper-bottom">
-      <h2>Country</h2>
-      <p class="content">
-        <%= @question.country.name %>
-      </p>
-      <h2>Detail</h2>
-      <p class="content">
-        <%= simple_format(@question.text) %>
-      </p>
+  <div class="container">
+    <div class="container-inner">
+      <div class="wrapper-bottom">
+        <div class="country">
+          <h2>Country</h2>
+          <p class="content">
+            <%= @question.country.name %>
+          </p>
+        </div>
+        <div class="detail">
+          <h2>Detail</h2>
+          <p class="content"><%= safe_join(@question.text.split("\n"),tag(:br))%></p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
-
 <% if user_signed_in? %>
   <section class="btn-wrapper"> 
     <div class="btn-wrapper-inner-top">
-      <p class="btn"><%= link_to "Comment", new_question_answer_path( @question) %></p>
+      <div class="newpost">
+        <span class="heading-sm">Do you have answer?  </span>
+        <%= link_to "Click here", new_question_answer_path(@question), class: "heading-sm link blue" %>
+      </div>
     </div>
-    <% if current_user.id == @question.user_id %>
+    <% if current_user.id == @question.user.id %>
       <div class="btn-wrapper-inner-bottom">
-        <p class="btn"><%= link_to "Edit this question", edit_question_path(@question) %></p>
-        <p class="btn"><%= link_to "Delete this question", question_path(@question),method: :delete %></p>
+        <%= link_to edit_question_path(@question) do %>
+          <p class="btn-md">Edit this question</p>
+        <% end %>
+        <%= link_to question_path(@question), method: :delete do %>
+          <p class="btn-md">Delete this question</p>
+        <% end %>
       </div>
     <% end %>
   </section>
 <% else %>
   <section class="btn-wrapper"> 
-    <div class="btn-wrapper-inner-top">
-      <p class="btn"><%= link_to "Comment", new_user_session_path %></p>
+    <div class="newpost">
+      <span class="heading-sm">Do you have answer?  </span>
+      <%= link_to "Click here", new_user_session_path, class: "heading-sm link blue" %>
     </div>
   </section>
 <% end %>
+
 <section class="answer-wrapper">
   <div class="answers">
     <h2>Answers</h2>
@@ -44,7 +56,7 @@
       <% @answers.each do |answer| %>
         <li class="answer-item">
           <div class="upper-container">
-            <div class="content"><%= simple_format(answer.content) %></div>
+            <div class="content"><%= safe_join(answer.content.split("\n"),tag(:br))%>/div>
           </div>
         </li>
       <% end %>

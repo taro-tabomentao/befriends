@@ -62,7 +62,7 @@
       <% @comments.each do |comment| %>
         <li class="answer-item">
           <div class="upper-container">
-            <div class="content"><%= simple_format(comment.content) %></div>
+            <div class="content"><%= safe_join(comment.content.split("\n"),tag(:br))%></div>
           </div>
         </li>
       <% end %>
