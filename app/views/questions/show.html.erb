@@ -56,7 +56,7 @@
       <% @answers.each do |answer| %>
         <li class="answer-item">
           <div class="upper-container">
-            <div class="content"><%= safe_join(answer.content.split("\n"),tag(:br))%>/div>
+            <div class="content"><%= safe_join(answer.content.split("\n"),tag(:br))%></div>
           </div>
         </li>
       <% end %>

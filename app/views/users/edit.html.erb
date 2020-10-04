@@ -5,11 +5,11 @@
     <div class="container-inner">
       <div class="wrapper-title">
         <% if @user.image.attached? %>
-          <%= image_tag @user.image, class: "image" %>
+          <%= image_tag @user.image, class: "image", style: "border-radius: 50%;" %>
         <% else %>
           <%= image_tag "general_user.png", class: "image" %>
         <% end %>
-        <h2 class="title">User Registration</h2>
+        <h2 class="title">Edit User Information</h2>
       </div>
 
       <hr>
@@ -91,7 +91,7 @@
             </div>
           </div>
 
-          <div class='row'>
+          <div class='row row-btn'>
             <%= f.submit "Update", id: "register-btn", class: "btn" %>
           </div>
       <% end %>
