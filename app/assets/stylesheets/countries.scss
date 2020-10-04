@@ -37,6 +37,10 @@ ul {
   padding: 0;
 }
 
+span {
+  color: #666;
+}
+
 
 // 共通の設定
 // フォント色
@@ -49,13 +53,54 @@ ul {
   color: #ff8800;
 }
 
+.blue {
+  color: #4e9fd6;
+}
+
 //エレメント
 
 .heading {
   text-align: center;
   font-size: 2rem;
-  margin-bottom: 4rem; 
 }
+
+.heading-sm {
+  text-align: center;
+  font-size: 1.5rem; 
+}
+
+.link {
+  text-decoration: underline;
+  font-style: italic;
+  cursor: pointer;
+}
+
+.link:hover {
+  opacity: 0.7;
+}
+
+
+// ボタン
+.btn-lg {
+  background: #ff8800;
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  padding: 20px 50px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.45);
+  border-radius: 10px;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn-lg:hover {
+  opacity: 0.9;
+}
+
 
 // トップページ
 
@@ -112,6 +157,10 @@ ul {
 
 .country-list .wrapper-inner {
   width: 23%;
+}
+
+.country-list .heading {
+  margin-bottom: 4rem; 
 }
 
 .country-list .region {
@@ -179,11 +228,26 @@ ul {
 
 //  ショーケース
 .country-showcase {
-  height: 50vh;
-  background: #ff8800;
+  position: relative;
+  height: 70vh;
+  background: image-url('country-background.jpg') no-repeat center center/contain;
+  top: 100px;
 }
-.country-showcase .showcase-content {
-  padding-top: 10rem;
+
+.country-showcase-content {
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -50px;
+}
+
+.country-showcase h1 {
+  font-weight: bold;
+  font-size: 4rem;
+  margin: 0 0 2rem;
+  text-shadow: 2px 2px 0 #666;
 }
 
 // タブ
@@ -213,12 +277,11 @@ ul {
 .tabs p {
   padding-top: 0.5rem;
   font-size: 1.5rm;
-  color: #666666;
 }
 
 .tabs .container div {
   padding: 1.5rem 0;
-  color: #666666;
+  color: #666;
 }
 
 .tabs .container div:hover {
@@ -239,9 +302,12 @@ ul {
   display: block !important;
 }
 
+// タブコンテンツ 共通項目
 
-// タブの中身
-
+.tab-content .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
 .tab-1-content-inner, .tab-2-content-inner, .tab-3-content-inner, .tab-4-content-inner, .tab-5-content-inner {
   padding: 48px 16px;
@@ -251,18 +317,20 @@ ul {
   padding: 0;
 }
 
-.tab-content div {
-  color: #666666;
+.newpost {
+  margin-bottom: 2rem;
+  text-align: center;
 }
-//タブの中身1
 
-.tab-1-content-inner .event-list {
+//タブコンテンツ イベント
+
+.list-event {
   display: flex;
   justify-content: start;
   flex-wrap: wrap;
 }
 
-.tab-1-content-inner .event-item {
+.item-event {
   padding-bottom: 30px;
   padding-right: 30px;
 }
@@ -273,13 +341,17 @@ ul {
   object-fit: cover;
 }
 
-.tab-content .title{
+.title-event {
   width: 300px;
   height: 100px;
-  padding-top: 5px; 
+  padding-top: 10px; 
   font-size: 1.2rem;
   word-wrap: break-word;
   overflow: hidden;
+}
+
+.category-wrapper .category {
+
 }
 
 //タブの中身2
@@ -317,33 +389,6 @@ ul {
 }
 .tab-3-content-inner .question-item { 
   padding-bottom: 30px;
-}
-
-
-// ボタン
-
-.btn-newpost {
-  text-align: center;
-}
-
-.btn-lg {
-  background: #ff8800;
-  color: #fff;
-  font-size: 1.5rem;
-  text-align: center;
-  border: none;
-  cursor: pointer;
-  padding: 20px 50px;
-  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.45);
-  border-radius: 10px;
-}
-
-.btn:hover {
-  opacity: 0.9;
-}
-
-.btn-lg:hover {
-  opacity: 0.9;
 }
 
 // レスポンシブデザイン
