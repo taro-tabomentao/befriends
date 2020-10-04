@@ -25,7 +25,6 @@
 
 .top-image .name {
   font-size: 2rem;
-  color: #666666;
   text-align: center;
 }
 
@@ -46,18 +45,18 @@
   justify-content: center;
   text-align: center;
   width: 90%;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
 .user-tabs p {
   padding-top: 0.5rem;
-  font-size: 1.5rm;
-  color: #666666;
+  font-size: 1rem;
 }
 
 .user-tabs .container div {
   padding: 1.5rem 0;
-  color: #666666;
+  color: #666;
 }
 
 .user-tabs .container div:hover {
@@ -72,18 +71,77 @@
 
 // マイページ プロフィール
 
-.category, .data {
-  color: #666;
+.tab-4-content-inner .wrapper-btn {
+  text-align: center;
 }
 
-.category {
+.tab-4-content-inner .profile {
+  position: relative;
+  top: 50px;
+  text-align: center;
+}
+
+.tab-4-content-inner .profile h2 {
+  font-size: 2rem;
+  margin-bottom: 30px; 
+}
+
+.tab-4-content-inner .category {
   display: inline-block;
   font-size: 1.3rem;
   margin-bottom: 10px;
   border-bottom: 1px solid #666;
 }
 
-.data {
+.tab-4-content-inner .data {
   margin-bottom: 20px;
-  margin-left: 10px;
+}
+
+// マイページ フレンド
+
+.tab-5-content-inner .friends {
+  text-align: center;
+}
+
+.tab-5-content-inner p {
+  margin-top: 3rem;
+  font-size: 5rem;
+}
+
+
+// レスポンシブデザイン
+// iPad mini以下
+@media screen and (max-width: 768px) {
+  //トップ画面
+  .user-top {
+    height: 400px;
+  }
+  
+  .top-image .image {
+    width: 150px;
+    height: 150px;
+    margin-top: 6rem;
+  }
+  
+  .top-image .name {
+    font-size: 2rem;
+  }
+
+  //タブ
+
+  .user-tabs .container {
+    width: 100%;
+  }
+
+  .user-tabs p {
+    font-size: 0.5rem;
+  }
+
+  .user-tabs .container div {
+    padding: 1rem 0;
+  }
+
+  .user-tabs .icon {
+    font-size: 2rem;
+  }
 }
