@@ -1,8 +1,8 @@
 // 新規投稿画面
 
 .question {
-  color: black;
   margin-bottom: 10px;
+  color: black;
 }
 
 .event_management .wrapper{
@@ -37,6 +37,10 @@
 
 .event_management .content {
   height: 400px;
+}
+
+.event_management .row {
+  text-align: center;
 }
 
 // 詳細画面
@@ -134,11 +138,25 @@
   justify-content: space-between;
 }
 
-
-
-
-
 .footer {
   position: relative;
   top: 100px;
 }
+
+
+// レスポンシブデザイン
+// iPad mini以下
+@media screen and (max-width: 768px) {
+  .registration-main .row {
+    display: block;
+  }
+
+  .registration-main .left, .registration-main .right {
+    margin-top: 20px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
