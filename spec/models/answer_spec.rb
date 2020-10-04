@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Answer, type: :model do
-  describe 'クエスチョン新規登録' do
+  describe 'アンサー新規登録' do
     before do
       @answer = FactoryBot.build(:answer)
     end
