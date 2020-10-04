@@ -1,6 +1,6 @@
 <%= render "shared/header"%>
 
-<section class="user-management">
+<section class="input-field">
   <div class="container">
     <div class="container-inner">
       <div class="wrapper-title">
@@ -12,7 +12,7 @@
 
       <%= form_with model: @user, url: registration_path(@user), class: 'registration-main', local: true do |f| %>
           <%= render 'shared/error_messages', model: f.object %>
-          <div class="first-row">
+          <div class="row">
             <div class="left">
               <%= f.label :full_name, "Full Name", for: "full_name" %>
               <div>
@@ -27,7 +27,7 @@
             </div>
           </div>
 
-          <div class="second-row">
+          <div class="row">
             <div class="left">
               <%= f.label :password, "Password", for: "password" %>
               <div>
@@ -42,29 +42,13 @@
             </div>
           </div>
 
-          <div class="third-row">
-            <div class="left">
-              <%= f.label :country, "Country", for: "country" %>
-              <div>
-                <%= f.collection_select(:country_id, Country.all, :id, :name, {}, {id: "country", class:"input"}) %>
-              </div>
-            </div>
-            <div class="right">
-              <%= f.label :city, "City", for: "city" %>
-              <div>
-                <%= f.text_field :city, placeholder:"City", id: "city", class: "input" %>
-              </div>
-            </div>
-          </div>
-
-          <div class="fourth-row">
+          <div class="row">
             <div class="left">
               <%= f.label :gender, "Gender", for: "gender" %>
               <div>
                 <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {id: "gender", class:"input"}) %>
               </div>
             </div>
-            
             <div class="right">
               <%= f.label :birthday, "Date of birth", for: "birthday", id: "birthday_label" %>
               <div>
@@ -73,22 +57,38 @@
             </div>
           </div>
 
-          <div class="fifth-row">
+          <div class="row">
             <div class="left">
-              <%= f.label :language, "Language", for: "language" %>
+              <%= f.label :country, "Country(Optional)", for: "country" %>
+              <div>
+                <%= f.collection_select(:country_id, Country.all, :id, :name, {}, {id: "country", class:"input"}) %>
+              </div>
+            </div>
+            <div class="right">
+              <%= f.label :city, "City(Optional)", for: "city" %>
+              <div>
+                <%= f.text_field :city, placeholder:"City", id: "city", class: "input" %>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="left">
+              <%= f.label :language, "Language(Optional)", for: "language" %>
               <div>
                 <%= f.text_field :language, placeholder:"language", id: "language", class: "input" %>
               </div>
             </div>
             
             <div class="right">
-              <%= f.label :image, "Image", for: "image" %>
+              <%= f.label :image, "Image(Optional)", for: "image" %>
               <div><%= f.file_field :image %></div>
             </div>
           </div>
 
-          <div class='fifth-row'>
-            <%= f.submit "register", id: "register-btn" %>
+          <div class='row'>
+            <%= f.submit "Register", id: "register-btn", class: "btn" %>
           </div>
 
       <% end %>

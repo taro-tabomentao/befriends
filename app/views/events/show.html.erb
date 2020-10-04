@@ -1,40 +1,44 @@
 <%= render "shared/header"%>
 
-<section class="event-show"> 
+<section class="item-show"> 
   <div class="title">
     <h1><%= @event.title %></h1>
   </div>
-  <div class="body">
-    <div class="top-info">
-      <div class="image">
-        <%= image_tag @event.image.variant(resize:'500x500') %>
-      </div>
-      <div class="wrapper">
-        <div class="place">
-          <p class="row">Place: </p>
-          <% if user_signed_in? && @event.online == true && @user_events.exists?(user_id: current_user.id) %>
-            <p><%= @event.place %></p>
-          <% elsif @event.online == false %>
-            <p><%= @event.place %></p>
-          <% else %>
-            <p>This is online event. The link to join shows only for participants</p>
-          <% end %>
+  <div class="container">
+    <div class="container-inner">
+      <div class="top-info">
+        <div class="image">
+          <%= image_tag @event.image.variant(resize: '300x300') %>
         </div>
-        <div class="time">
-          <p class="row">Start Time:  <%= @event.start_time %></p>
-          <p class="row">End Time:  <%= @event.end_time %></p>
+        <div class="wrapper">
+          <div class="place">
+            <p class="row">Place: </p>
+            <% if user_signed_in? && @event.online == true && @user_events.exists?(user_id: current_user.id) %>
+              <p class="row"><%= @event.place %></p>
+            <% elsif @event.online == false %>
+              <p class="row"><%= @event.place %></p>
+            <% else %>
+              <p class="row">This is online event. The link to join shows only for participants</p>
+            <% end %>
+          </div>
+          <div class="time">
+            <p class="row">Start Time:  <%= @event.start_time %></p>
+            <p class="row">End Time:  <%= @event.end_time %></p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="wrapper-bottom">
-      <h2>Country</h2>
-      <p class="content">
-        <%= @event.country.name %>
-      </p>
-      <h2>Detail</h2>
-      <p class="content">
-        <%= simple_format(@event.content) %>
-      </p>
+      <div class="wrapper-bottom">
+        <div class="country">
+          <h2>Country</h2>
+          <p class="content">
+            <%= @event.country.name %>
+          </p>
+        </div>
+        <div class="detail">
+          <h2>Detail</h2>
+          <p class="content"><%= safe_join(@event.content.split("\n"),tag(:br))%></p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -42,22 +46,32 @@
   <section class="btn-wrapper"> 
     <div class="btn-wrapper-inner-top">
       <% if @user_events.exists?(user_id: current_user.id) %>
-        <p class="btn2">You have already joined this event</p>
+        <div class="newpost">
+          <span class="heading-sm">You have already joined this event</span>
+        </div>
       <% else %>
-        <p class="btn"><%= link_to "Join this event", event_user_events_path(@event), method: :post %></p>
+        <div class="newpost">
+          <span class="heading-sm">Join this Event?  </span>
+          <%= link_to "Click here", event_user_events_path(@event), method: :post, class: "heading-sm link blue" %>
+        </div>
       <% end %>
     </div>
     <% if current_user.id == @event.user_events.first.user_id %>
     <div class="btn-wrapper-inner-bottom">
-      <p class="btn"><%= link_to "Edit this event", edit_event_path(@event) %></p>
-      <p class="btn"><%= link_to "Delete this event", event_path(@event),method: :delete %></p>
+      <%= link_to edit_event_path(@event) do %>
+        <p class="btn-md">Edit this event</p>
+      <% end %>
+      <%= link_to event_path(@event), method: :delete do %>
+        <p class="btn-md">Delete this event</p>
+      <% end %>
     </div>
     <% end %>
   </section>
 <% else %>
   <section class="btn-wrapper"> 
-    <div class="btn-wrapper-inner-top">
-      <p class="btn"><%= link_to "Join this event", new_user_session_path, method: :post %></p>
+    <div class="newpost">
+      <span class="heading-sm">Join this Event?  </span>
+      <%= link_to "Click here", new_user_session_path, class: "heading-sm link blue" %>
     </div>
   </section>
 <% end %>

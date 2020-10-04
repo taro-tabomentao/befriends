@@ -1,24 +1,23 @@
 <%= render "shared/header"%>
 
-<section class="user-management">
+<section class="input-field">
   <div class="container">
     <div class="container-inner">
       <div class="wrapper-title">
-        <h2 class="title">Let's ask question to your friends!</h2>
+        <h2 class="title">Comment</h2>
       </div>
 
       <hr>
 
-      <%= form_with model:[@article, @comment], local: true, class: "event_management" do |f| %>
+      <%= form_with model:[@article, @comment], local: true, class: "input_management" do |f| %>
         <%= render 'shared/error_messages', model: f.object %>
         <div class="wrapper">
-          <p class="question">Comment here</p>
           <div><%= f.text_area :content, class:"input content" %></div>
         </div>
 
-        <div class='wrapper'>
-          <div><%= f.submit "Post", id: "register-btn"%></div>
-        </div>
+          <div class='wrapper row'>
+            <div><%= f.submit "Post", id: "register-btn", class: "btn" %></div>
+          </div>
       <% end %>
     </div>
   </div>

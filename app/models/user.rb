@@ -15,17 +15,15 @@ class User < ApplicationRecord
   has_many :comments
 
   with_options numericality: { other_than: 1 } do
-    validates :country_id
     validates :gender_id
   end
 
   with_options presence: true do
     validates :full_name
-    validates :city
     validates :birthday
   end
 
-  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
-  validates_format_of :password, with: PASSWORD_REGEX, message: 'includes both letters and numbers'
+  # PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
+  # validates_format_of :password, with: PASSWORD_REGEX, message: 'includes both letters and numbers'
   
 end

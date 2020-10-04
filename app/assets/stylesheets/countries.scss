@@ -1,4 +1,4 @@
-/* 全体のレイアウト */
+// 全体のレイアウト
 * {
   box-sizing: border-box;
 }
@@ -11,28 +11,98 @@ body {
 
 h1 {
   margin: 0;
-  color: #fff;
+  color:#666;
+}
+
+h2 {
+  margin: 0;
+  color:#666;
 }
 
 p {
   margin: 0;
-  color: #fff;
+  color:#666;
+
 }
 
 a {
   text-decoration: none;
-  color: #fff;
+  color:#666;
+
 }
 
 ul {
   list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+span {
+  color: #666;
+}
+
+
+// 共通の設定
+// フォント色
+
+.white {
+  color: #fff;
+}
+
+.orange {
+  color: #ff8800;
+}
+
+.blue {
+  color: #4e9fd6;
+}
+
+//エレメント
+
+.heading {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.heading-sm {
+  text-align: center;
+  font-size: 1.5rem; 
+}
+
+.link {
+  text-decoration: underline;
+  font-style: italic;
+  cursor: pointer;
+}
+
+.link:hover {
+  opacity: 0.7;
 }
 
 // ボタン
 
-.btn-newpost {
-  text-align: center;
+.btn {
+  display: inline-block;
+  background: #ff8800;
+  width: 400px;
+  padding: 10px 15px;
+  font-size: 1.5rem;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.45);
+  cursor: pointer; 
 }
+
+.btn-md {
+  padding: 20px 40px;
+  background: #ff8800;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.45);
+  color: #fff;
+}
+
 .btn-lg {
   background: #ff8800;
   color: #fff;
@@ -46,11 +116,11 @@ ul {
 }
 
 .btn:hover {
-  opacity: 0.9;
+  opacity: 0.7;
 }
 
 .btn-lg:hover {
-  opacity: 0.9;
+  opacity: 0.7;
 }
 
 // トップページ
@@ -60,64 +130,59 @@ ul {
   position: relative;
   top: 100px;
   width: 100%;
-  height: 85vh;
+  height: 80vh;
   background: image-url('nepal.JPG') no-repeat center center/cover;
   display: flex;
   justify-content: center;
-  align-items: center;
+  // 文字の位置を調整する
+  padding-top: 200px;
 }
 
 .showcase-content {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-align: center;
-  top: -100px;
 }
 
 .showcase-content h1 {
   font-weight: bold;
   font-size: 4rem;
   margin: 0 0 2rem;
-  text-shadow: 1px 1px 0 #666;
+  text-shadow: 2px 2px 0 #666;
 }
 
 .showcase-content p {
   text-transform: uppercase;
-  color: #fff;
   font-size: 2rem;
-  text-shadow: 1px 1px 0 #666;
+  text-shadow: 2px 2px 0 #666;
 }
 
-// 国選択
+// 国を選択する部分
 
 .country-list {
   position: relative;
   padding: 3rem 1rem;
   background: #fff;
-  color: #666666;
 }
 
 .region-name {
   font-size: 2rem;
-  text-shadow: 1px 1px 0 #666;
+  text-shadow: 2px 2px 0 #666;
   text-align: center;
-}
-
-.country-list ul {
-  margin: 0;
-  padding: 0;
 }
 
 .country-list .wrapper-top, .country-list .wrapper-bottom {
   display: flex;
   justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .country-list .wrapper-inner {
   width: 23%;
+}
+
+.country-list .heading {
+  margin-bottom: 4rem;
+  font-weight: normal; 
 }
 
 .country-list .region {
@@ -154,13 +219,13 @@ ul {
 
 .country-list .africa {
   background: image-url('africa.jpg') no-repeat center center/cover;
-  border-radius: 2rem;
 }
 
 .country-list .middle-east {
   background: image-url('middle-east.jpg') no-repeat center center/cover;
 }
 
+// 国リスト
 .country-list .country-item {
   display: flex;
   flex-direction: column;
@@ -177,10 +242,6 @@ ul {
   padding: 4px 0;
 }
 
-.country-list .country li a {
-  color: #666666; 
-}
-
 .country-list .country li a:hover {
   opacity: 0.7;
 }
@@ -189,11 +250,26 @@ ul {
 
 //  ショーケース
 .country-showcase {
-  height: 50vh;
-  background: #ff8800;
+  position: relative;
+  height: 70vh;
+  background: image-url('country-background.jpg') no-repeat center center/contain;
+  top: 100px;
 }
-.country-showcase .showcase-content {
-  padding-top: 10rem;
+
+.country-showcase-content {
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -50px;
+}
+
+.country-showcase h1 {
+  font-weight: bold;
+  font-size: 4rem;
+  margin: 0 0 2rem;
+  text-shadow: 2px 2px 0 #666;
 }
 
 // タブ
@@ -217,18 +293,18 @@ ul {
   justify-content: center;
   text-align: center;
   width: 70%;
+  max-width: 800px;
   margin: 0 auto;
 }
 
 .tabs p {
   padding-top: 0.5rem;
   font-size: 1.5rm;
-  color: #666666;
 }
 
 .tabs .container div {
   padding: 1.5rem 0;
-  color: #666666;
+  color: #666;
 }
 
 .tabs .container div:hover {
@@ -249,9 +325,12 @@ ul {
   display: block !important;
 }
 
+// タブコンテンツ 共通項目
 
-// タブの中身
-
+.tab-content .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
 .tab-1-content-inner, .tab-2-content-inner, .tab-3-content-inner, .tab-4-content-inner, .tab-5-content-inner {
   padding: 48px 16px;
@@ -261,18 +340,27 @@ ul {
   padding: 0;
 }
 
-.tab-content div {
-  color: #666666;
+.newpost {
+  margin-bottom: 2rem;
+  text-align: center;
 }
-//タブの中身1
 
-.tab-1-content-inner .event-list {
+//タブコンテンツ イベント、記事
+
+.wrapper-category .category {
+  display: block;
+  border: none;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.list-event, .list-article  {
   display: flex;
   justify-content: start;
   flex-wrap: wrap;
 }
 
-.tab-1-content-inner .event-item {
+.item-event, .item-article {
   padding-bottom: 30px;
   padding-right: 30px;
 }
@@ -283,48 +371,168 @@ ul {
   object-fit: cover;
 }
 
-.tab-content .title{
+.title-event, .title-article {
   width: 300px;
   height: 100px;
-  padding-top: 5px; 
+  padding-top: 10px; 
   font-size: 1.2rem;
   word-wrap: break-word;
   overflow: hidden;
 }
 
-//タブの中身2
+// タブコンテンツ Q&A
 
-.tab-2-content-inner .article-list {
+.list-question .wrapper-row {
   display: flex;
-  justify-content: start;
-  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 30px;
 }
 
-.tab-2-content-inner .article-item {
-  padding-bottom: 30px;
-  padding-right: 30px;
-}
-
-// タブの中身3
-
-.tab-3-content-inner .status {
-  padding: 5px 10px;
+.status-question-open {
+  padding: 20px 30px;
   border-radius: 2px;
-  background-color: #ff8800;
   color: #fff;
-  display: inline-block;
+  background: #ff8800;
+}
+
+.status-question-close {
+  padding: 20px 30px;
+  border-radius: 2px;
+  color: #fff;
+  background: gray;
 }
 
 .tab-3-content-inner .upper-container {
-  // display: flex;
-  align-items: center;
   margin-bottom: 10px;
 } 
 
-.tab-3-content-inner .question-title {
-  padding-top: 10px;
-  word-wrap: break-word;
+.title-question {
+  padding: 0 20px;
+  overflow: hidden;
 }
-.tab-3-content-inner .question-item { 
-  padding-bottom: 30px;
+
+
+
+// レスポンシブデザイン
+// iPad mini以下
+@media screen and (max-width: 768px) {
+    // ショーケース
+  .showcase {
+    padding-top: 160px;
+  }
+
+  .showcase-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .showcase-content p {
+    font-size: 1.5rem;
+  }
+
+  // 国を選択する部分
+
+  .region-name {
+    font-size: 3rem;
+  }
+
+  .country-list .wrapper-top, .country-list .wrapper-bottom {
+    display: block;
+  }
+
+  .country-list .wrapper-inner {
+    width: 100%;
+  }
+
+  // 国リスト
+  .country-list .country-item {
+    height: 200px;
+    text-align: center;
+  }
+
+  .country-list .country {
+    margin: 10px 0;
+  }
+
+  .country-list .country li {
+    padding: 4px 0;
+    font-size: 1.5rem;
+  }
+
+  // 国別ページ
+
+  //  ショーケース
+  .country-showcase-content {
+    top: 0px;
+  }
+
+  .country-showcase h1 {
+    font-size: 3rem;
+  }
+
+
+  // タブ
+  .tabs {
+    padding-top: 0;
+  }
+
+  .tabs .icon {
+    font-size: 2rem;
+    padding: 5px; 
+  }
+
+  .tabs .container {
+    width: 80%;
+  }
+//タブコンテンツ イベント、記事
+
+.wrapper-category .category {
+  display: block;
+  border: none;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
 }
+
+.item-event, .item-article {
+  padding-bottom: 10px;
+  padding-right: 0px;
+}
+
+.tab-content img {
+  width: 100%;
+}
+
+  // タブの中身3
+
+  .list-question .wrapper-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  .status-question-open {
+    padding: 20px 30px;
+    border-radius: 2px;
+    color: #fff;
+    background: orange;
+  }
+
+  .status-question-close {
+    padding: 20px 30px;
+    border-radius: 2px;
+    color: #fff;
+    background: gray;
+  }
+
+  .tab-3-content-inner .upper-container {
+    margin-bottom: 10px;
+  } 
+
+  .title-question {
+    padding: 0 20px;
+    overflow: hidden;
+  }
+
+
+
+}
+

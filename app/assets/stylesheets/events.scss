@@ -1,15 +1,15 @@
 // 新規投稿画面
 
 .question {
-  color: black;
   margin-bottom: 10px;
+  color: black;
 }
 
-.event_management .wrapper{
+.input_management .wrapper{
   margin-top: 40px;
 }
 
-.event_management .input {
+.input_management .input {
   width: 100%;
   padding: 10px 15px;
 }
@@ -35,62 +35,83 @@
   padding: 10px 15px;
 }
 
-.event_management .content {
+.input_management .content {
   height: 400px;
 }
 
+.input_management .row {
+  text-align: center;
+}
+
 // 詳細画面
-.event-show {
+.item-show {
   position: relative;
   top: 100px;
-  height: 50%;
+  width: 100%;
 }
 
-.event-show .title {
+.item-show .title {
   padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.event-show h1 {
-  color: #666;
+.item-show h1 {
   font-size: 2rem;
 }
 
-.event-show .body {
-  padding: 20px 20px 100px;;
-}
-
-.event-show .body {
+.item-show .container {
   background: #f0f3f7;
 }
 
-.event-show .image{
-  text-align: center;
-  margin-bottom: 20px;
+.item-show .container-inner {
+  padding-top: 20px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.event-show .wrapper {
+.item-show .image{
+  text-align: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.item-show .wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 50px;
 }
 
-.event-show .place, .event-show .time {
+.item-show .place, .item-show .time {
   padding: 30px 60px;
   background-color: #fff;
   margin-right: 20px;
   border-radius: 10px;
 }
 
-.event-show  p, .event-show h2 {
-  color: #666;
-}
-
-.event-show .row {
+.item-show .row {
   margin-bottom: 5px;
 }
 
-.event-show .content {
+.item-show h2 {
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+.item-show .country, .item-show .detail {
+  width: 100%;
+  padding-bottom: 50px;
+  padding-left: 15px; 
+}
+
+.item-show .content {
   word-wrap: break-word;
+  font-size: 1.3rem;
+}
+
+.item-show .row {
+  font-size: 1.3rem;
 }
 
 .btn-wrapper {
@@ -98,31 +119,8 @@
   top: 100px;
 }
 
-.btn {
-  display: inline-block;
-  padding: 20px 60px;
-  background: #ff8800;
-  text-align: center;
-  margin: 20px auto;
-  border-radius: 10px;
-  font-size: 1.5rem;
-  cursor: pointer;
-  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.45);
-}
-
-.btn2 {
-  display: inline-block;
-  padding: 20px 60px;
-  background: #ff8800;
-  text-align: center;
-  margin: 20px auto;
-  border-radius: 10px;
-  font-size: 1.5rem;
-  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.45);
-}
-
-.btn2:hover {
-  opacity: 1.0;
+.btn-wrapper .newpost {
+  margin: 3rem 0;
 }
 
 .btn-wrapper-inner-top {
@@ -131,14 +129,105 @@
 
 .btn-wrapper-inner-bottom {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  padding-bottom: 3rem;
 }
 
-
-
-
+.btn-wrapper-inner-bottom p:first-child {
+  margin-right: 10px;
+}
 
 .footer {
   position: relative;
   top: 100px;
 }
+
+
+// レスポンシブデザイン
+// iPad mini以下
+@media screen and (max-width: 768px) {
+  .registration-main .row {
+    display: block;
+  }
+
+  .registration-main .left, .registration-main .right {
+    margin-top: 20px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .item-show {
+    top: 150px;
+  }
+  
+  .item-show h1 {
+    font-size: 1rem;
+  }
+  
+  .item-show .wrapper {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .item-show .place, .item-show .time {
+    padding: 10px 20px;
+    margin-right: 0px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .item-show .row {
+    margin-bottom: 5px;
+  }
+  
+  .item-show h2 {
+    margin-bottom: 10px;
+  }
+  
+  .btn-wrapper-inner-top {
+    text-align: center;
+  }
+
+  .btn-wrapper-inner-top .heading-sm {
+    font-size: 1rem;
+    padding-top: 1rem;
+  }
+
+  .btn-wrapper {
+    top: 150px;
+  }
+
+  .btn-wrapper-inner-bottom {
+    display: block;
+    padding-bottom: 3rem;
+  }
+  
+  .btn-wrapper-inner-bottom p:first-child {
+    margin-right: 0px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .item-show .content {
+    font-size: 1rem;
+  }
+
+  .item-show h2 {
+    font-size: 1rem;
+  }
+  
+  .item-show .row {
+    font-size: 1rem;
+  }
+
+  .btn-md {
+    font-size: 1rem;
+  }
+  
+  .footer {
+    top: 150px;
+  }
+}
+

@@ -1,38 +1,36 @@
-.user-management {
+.input-field {
   position: relative;
   top: 100px;
-  // background: url('../../images/nepal.JPG') no-repeat center center/cover;
-  padding: 100px 0;
+  padding: 30px 0;
 }
 
-.user-management .container {
+.input-field .container {
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
-  border: 1px solid #666;
   background-color: #fff;
 }
 
-.user-management .container-inner {
+.input-field .container-inner {
   margin: 50px;
 }
 
-.user-management .wrapper-title {
+.input-field .wrapper-title {
   text-align: center;
   margin-bottom: 1rem;
 }
 
-.user-management .image {
+.input-field .image {
   width: 200px;
   height: 200px;
 }
-.user-management .title {
-  margin: 10px 0 0 0;
+.input-field .title {
+  margin-top: 10px;
 }
 
 // フォーム
 
-.registration-main .first-row, .registration-main .second-row, .registration-main .third-row, .registration-main .fourth-row, .registration-main .fifth-row {
+.registration-main .row {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
@@ -46,7 +44,7 @@
   margin-right: 30px;
 }
  
-#full_name, #email, #password, #password_confirmation, #country, #city, #birthday, #gender, #language {
+.input-field .input {
   width: 100%;
   padding: 10px 15px;
   border: 1px solid #666;
@@ -72,19 +70,18 @@
   width: 26%
 }
 
-#register-btn {
-  display: inline-block;
-  background: #ff8800;
-  width: 100%;
-  padding: 10px 15px;
-  font-size: 1.5rem;
-  color: #fff;
-  border-radius: 2px;
-  border: 1px solid #666;
-  cursor: pointer; 
-}
+// レスポンシブデザイン
+// iPad mini以下
+@media screen and (max-width: 768px) {
+  .registration-main .row {
+    display: block;
+  }
 
-#register-btn:hover {
-  opacity: 0.9;
-}
+  .registration-main .left, .registration-main .right {
+    margin-top: 20px;
+  }
 
+  .btn {
+    width: 100%;
+  }
+}
