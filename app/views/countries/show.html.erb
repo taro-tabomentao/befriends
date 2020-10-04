@@ -45,7 +45,7 @@
             <% @events.each do |event| %>
               <li class="item-event">
                 <%= link_to event_path(event.id) do %>
-                  <div class="image-event"><%= image_tag event.image %></div>
+                  <div class="image-event"><%= image_tag event.image.variant(resize: '300x200') %></div>
                   <div class="title-event"><%= event.title %></div>
                 <% end %>
               </li>
@@ -74,7 +74,7 @@
             <% @articles.each do |article| %>
               <li class="item-article">
                 <%= link_to article_path(article.id) do %>
-                  <div class="image-article"><%= image_tag article.image %></div>
+                  <div class="image-article"><%= image_tag article.image.variant(resize: '300x200') %></div>
                   <div class="title-article"><%= article.title %></div>
                 <% end %>
               </li>
