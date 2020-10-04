@@ -54,26 +54,28 @@
         </div>
       </div>
     </div>  
-    <!-- Tab Content 2 -->
+    <%# タブコンテント 記事 %>
     <div id="tab-2-content" class="tab-content-item">
       <div class="tab-2-content-inner">
         <% if user_signed_in? %>
-          <div class="btn-newpost">
-            <%= link_to "Write a New Article", new_article_path, class: "btn-lg" %>
+          <div class="newpost">
+            <span class="heading-sm">Write a New Article?  </span>
+            <%= link_to "Click here", new_article_path, class: "heading-sm link blue" %>
           </div>
         <% else %>
-          <div class="btn-newpost">
-            <%= link_to "Write a New Article", new_user_session_path, class: "btn-lg" %>
+          <div class="newpost">
+            <span class="heading-sm">Start a New Article?  </span>
+            <%= link_to "Click here", new_user_session_path, class: "heading-sm link blue" %>
           </div>
         <% end %>
-        <div class="latest-articles">
-          <h2>Latest Articles</h2>
-          <ul class="article-list">
+        <div class="wrapper-category">
+          <h2 class="category">Latest Articles</h2>
+          <ul class="list-article">
             <% @articles.each do |article| %>
-              <li class="article-item">
+              <li class="item-article">
                 <%= link_to article_path(article.id) do %>
-                  <div class="image"><%= image_tag article.image %></div>
-                  <div class="title"><%= article.title %></div>
+                  <div class="image-article"><%= image_tag article.image %></div>
+                  <div class="title-article"><%= article.title %></div>
                 <% end %>
               </li>
             <% end %>
@@ -86,23 +88,29 @@
     <div id="tab-3-content" class="tab-content-item">
       <div class="tab-3-content-inner">
         <% if user_signed_in? %>
-          <div class="btn-newpost">
-            <%= link_to "Ask Your Question", new_question_path, class: "btn-lg" %>
+          <div class="newpost">
+            <span class="heading-sm">Ask Your Question?  </span>
+            <%= link_to "Click here", new_question_path, class: "heading-sm link blue" %>
           </div>
         <% else %>
-          <div class="btn-newpost">
-            <%= link_to "Ask Your Question", new_user_session_path, class: "btn-lg" %>
+          <div class="newpost">
+            <span class="heading-sm">Ask Your Question?  </span>
+            <%= link_to "Click here", new_user_session_path, class: "heading-sm link blue" %>
           </div>
         <% end %>
-        <div class="latest-questions">
-          <h2>Latest Questions</h2>
-          <ul class="question-list">
+        <div class="wrapper-category">
+          <h2 class="category">Latest Questions</h2>
+          <ul class="list-question">
           <% @questions.each do |question| %>
-            <li class="question-item">
+            <li class="item-question">
               <%= link_to question_path(question.id) do %>
-                <div class="upper-container">
-                  <div class="status"><%= question.status.name %></div>
-                  <div class="question-title"><%= question.title %></div>
+                <div class="wrapper-row">
+                  <% if question.status_id == 1 %>
+                    <div class="status-question-open"><%= question.status.name %></div>
+                  <% else %>
+                    <div class="status-question-close"><%= question.status.name %></div>
+                  <% end %>
+                  <div class="title-question"><%= question.title %></div>
                 </div>
               <% end %>
             </li>

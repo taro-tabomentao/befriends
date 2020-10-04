@@ -322,15 +322,22 @@ span {
   text-align: center;
 }
 
-//タブコンテンツ イベント
+//タブコンテンツ イベント、記事
 
-.list-event {
+.wrapper-category .category {
+  display: block;
+  border: none;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.list-event, .list-article  {
   display: flex;
   justify-content: start;
   flex-wrap: wrap;
 }
 
-.item-event {
+.item-event, .item-article {
   padding-bottom: 30px;
   padding-right: 30px;
 }
@@ -342,7 +349,7 @@ span {
 }
 
 .title-event {
-  width: 300px;
+  width: 200px;
   height: 100px;
   padding-top: 10px; 
   font-size: 1.2rem;
@@ -350,46 +357,38 @@ span {
   overflow: hidden;
 }
 
-.category-wrapper .category {
-
-}
-
-//タブの中身2
-
-.tab-2-content-inner .article-list {
-  display: flex;
-  justify-content: start;
-  flex-wrap: wrap;
-}
-
-.tab-2-content-inner .article-item {
-  padding-bottom: 30px;
-  padding-right: 30px;
-}
-
 // タブの中身3
 
-.tab-3-content-inner .status {
-  padding: 5px 10px;
+.list-question .wrapper-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.status-question-open {
+  padding: 20px 30px;
   border-radius: 2px;
-  background-color: #ff8800;
   color: #fff;
-  display: inline-block;
+  background: orange;
+}
+
+.status-question-close {
+  padding: 20px 30px;
+  border-radius: 2px;
+  color: #fff;
+  background: gray;
 }
 
 .tab-3-content-inner .upper-container {
-  // display: flex;
-  align-items: center;
   margin-bottom: 10px;
 } 
 
-.tab-3-content-inner .question-title {
-  padding-top: 10px;
-  word-wrap: break-word;
+.title-question {
+  padding: 0 20px;
+  overflow: hidden;
 }
-.tab-3-content-inner .question-item { 
-  padding-bottom: 30px;
-}
+
+
 
 // レスポンシブデザイン
 // iPad mini以下
@@ -435,6 +434,82 @@ span {
     padding: 4px 0;
     font-size: 1.5rem;
   }
+
+  // 国別ページ
+
+  //  ショーケース
+  .country-showcase-content {
+    top: 0px;
+  }
+
+  .country-showcase h1 {
+    font-size: 3rem;
+  }
+
+
+  // タブ
+  .tabs {
+    padding-top: 0;
+  }
+
+  .tabs .icon {
+    font-size: 2rem;
+    padding: 5px; 
+  }
+
+  .tabs .container {
+    width: 80%;
+  }
+//タブコンテンツ イベント、記事
+
+.wrapper-category .category {
+  display: block;
+  border: none;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.item-event, .item-article {
+  padding-bottom: 10px;
+  padding-right: 0px;
+}
+
+.tab-content img {
+  width: 100%;
+}
+
+  // タブの中身3
+
+  .list-question .wrapper-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  .status-question-open {
+    padding: 20px 30px;
+    border-radius: 2px;
+    color: #fff;
+    background: orange;
+  }
+
+  .status-question-close {
+    padding: 20px 30px;
+    border-radius: 2px;
+    color: #fff;
+    background: gray;
+  }
+
+  .tab-3-content-inner .upper-container {
+    margin-bottom: 10px;
+  } 
+
+  .title-question {
+    padding: 0 20px;
+    overflow: hidden;
+  }
+
+
 
 }
 
