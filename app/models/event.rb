@@ -15,9 +15,11 @@ class Event < ApplicationRecord
     validates :title
     validates :start_time
     validates :end_time
-    validates :online
     validates :place
     validates :content
     validates :image
   end
+
+  validates :online, inclusion: {in: [true, false]}
+
 end
