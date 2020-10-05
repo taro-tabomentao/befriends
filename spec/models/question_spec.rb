@@ -31,12 +31,6 @@ RSpec.describe Question, type: :model do
         expect(@question.errors.full_messages).to include 'Category has to be selected'
       end
 
-      it "status_idが'--'だと登録出来ない" do
-        @question.status_id = 1
-        @question.valid?
-        expect(@question.errors.full_messages).to include 'Status has to be selected'
-      end
-
       it 'textが空だと登録できない' do
         @question.text = nil
         @question.valid?

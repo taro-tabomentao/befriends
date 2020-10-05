@@ -7,10 +7,11 @@ class Category < ActiveHash::Base
     { id: 5,  name: 'Culture' },
     { id: 6,  name: 'Travel' },
     { id: 7,  name: 'Food & Drink' },
-    { id: 8,  name: 'Sports' },
-    { id: 9,  name: 'Music' },
-    { id: 10, name: 'Shopping' },
-    { id: 11, name: 'Anime/Manga' },
-    { id: 12, name: 'Others' },
+    { id: 8,  name: 'Language' },
+    { id: 9,  name: 'Sports' },
+    { id: 10, name: 'Music' },
+    { id: 11, name: 'Shopping' },
+    { id: 12, name: 'Anime/Manga' },
+    { id: 13, name: 'Others' },
   ]
 end

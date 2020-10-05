@@ -4,12 +4,11 @@ class Question < ApplicationRecord
   belongs_to_active_hash :category
   belongs_to_active_hash :status
   belongs_to :user
-  has_many :answers
+  has_many :answers, dependent: :destroy
 
   with_options numericality: { other_than: 1, message: 'has to be selected' } do
     validates :country_id
     validates :category_id
-    validates :status_id
   end
 
   with_options presence: true do
