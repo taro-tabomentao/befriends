@@ -262,3 +262,5 @@ https://befriends-28755.herokuapp.com/
 <br>
 
 # ローカルでの動作方法
+- Ruby 2.6.5
+- Rails 6.0.3.3
