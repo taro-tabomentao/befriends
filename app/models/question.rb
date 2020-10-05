@@ -9,7 +9,6 @@ class Question < ApplicationRecord
   with_options numericality: { other_than: 1, message: 'has to be selected' } do
     validates :country_id
     validates :category_id
-    validates :status_id
   end
 
   with_options presence: true do
