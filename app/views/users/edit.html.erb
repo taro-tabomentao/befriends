@@ -9,7 +9,7 @@
         <% else %>
           <%= image_tag "general_user.png", class: "image" %>
         <% end %>
-        <h2 class="title">Edit User Information</h2>
+        <h2 class="title">Edit Profile</h2>
       </div>
 
       <hr>
@@ -27,21 +27,6 @@
               <%= f.label :email, "Email", for: "email" %>
               <div>
                 <%= f.email_field :email, placeholder:"Email", id: "email", class: "input" %>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="left">
-              <%= f.label :password, "Password", for: "password" %>
-              <div>
-                <%= f.password_field :password, placeholder:"Password", id: "password", class:"input" %>
-              </div>
-            </div>
-            <div class="right">
-              <%= f.label :password_confirmation, "Password Comformation", for: "password_confirmation" %>
-              <div>
-                <%= f.password_field :password_confirmation, placeholder:"Password Confirmation", id: "password_confirmation", class: "input" %>
               </div>
             </div>
           </div>
