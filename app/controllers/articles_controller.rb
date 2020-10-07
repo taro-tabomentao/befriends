@@ -15,7 +15,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
-    @comments = Comment.where(article_id: params[:id]).order(id: 'desc')
+    @comments = Comment.where(article_id: params[:id]).includes(:user)
   end
 
   def edit
