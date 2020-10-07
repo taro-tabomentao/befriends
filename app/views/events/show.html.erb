@@ -73,7 +73,13 @@
           <%= link_to "Click here", event_user_events_path(@event), method: :post, class: "heading-sm link blue" %>
         </div>
       <% end %>
-    </div>
+      </div>
+      <div class="btn-wrapper-inner-top">
+        <div class="newpost">
+          <span class="heading-sm">Any comments?  </span>
+          <%= link_to "Click here", new_event_event_comment_path(@event), class: "heading-sm link blue" %>
+        </div>
+      </div>
     <% if current_user.id == @event.user_events.first.user_id %>
     <div class="btn-wrapper-inner-bottom">
       <%= link_to edit_event_path(@event) do %>
@@ -93,6 +99,25 @@
     </div>
   </section>
 <% end %>
+
+<section class="answer-wrapper">
+  <div class="answers">
+    <h2>Comments</h2>
+    <ul class="answer-list">
+      <% @event_comments.each do |event_comment| %>
+        <li class="answer-item">
+          <div class="upper-container">
+            <%= link_to user_path(event_comment.user_id) do %>
+            <div class="name blue"><%= event_comment.user.full_name%></div>
+            <% end %>
+            <div class="content"><%= safe_join(event_comment.content.split("\n"),tag(:br))%></div>
+            <div class="time"><%= event_comment.created_at %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</section>
 
 <div class="footer">
   <%= render "shared/footer"%>
