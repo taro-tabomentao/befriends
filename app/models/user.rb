@@ -13,6 +13,7 @@ class User < ApplicationRecord
   has_many :questions
   has_many :answers
   has_many :comments
+  has_many :event_comments
 
   with_options numericality: { other_than: 1, message: 'has to be selected' } do
     validates :gender_id

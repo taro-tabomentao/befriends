@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_03_113900) do
+ActiveRecord::Schema.define(version: 2020_10_07_083204) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -64,6 +64,16 @@ ActiveRecord::Schema.define(version: 2020_10_03_113900) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "event_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "event_id", null: false
+    t.text "content", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["event_id"], name: "index_event_comments_on_event_id"
+    t.index ["user_id"], name: "index_event_comments_on_user_id"
+  end
+
   create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.integer "country_id", null: false
@@ -83,7 +93,7 @@ ActiveRecord::Schema.define(version: 2020_10_03_113900) do
     t.integer "category_id", null: false
     t.integer "status_id", null: false
     t.string "title", null: false
-    t.text "text", null: false
+    t.text "content", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_questions_on_user_id"
@@ -122,6 +132,8 @@ ActiveRecord::Schema.define(version: 2020_10_03_113900) do
   add_foreign_key "articles", "users"
   add_foreign_key "comments", "articles"
   add_foreign_key "comments", "users"
+  add_foreign_key "event_comments", "events"
+  add_foreign_key "event_comments", "users"
   add_foreign_key "questions", "users"
   add_foreign_key "user_events", "events"
   add_foreign_key "user_events", "users"

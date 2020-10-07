@@ -5,6 +5,7 @@ class Event < ApplicationRecord
   has_one_attached :image
   has_many :user_events
   has_many :users, through: :user_events, dependent: :destroy
+  has_many :event_comments, dependent: :destroy
 
   with_options numericality: { other_than: 1, message: 'has to be selected' } do
     validates :country_id
