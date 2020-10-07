@@ -56,7 +56,11 @@
       <% @answers.each do |answer| %>
         <li class="answer-item">
           <div class="upper-container">
+             <%= link_to user_path(answer.user_id) do %>
+            <div class="name blue"><%= answer.user.full_name%></div>
+            <% end %>
             <div class="content"><%= safe_join(answer.content.split("\n"),tag(:br))%></div>
+            <div class="time"><%= answer.created_at %>
           </div>
         </li>
       <% end %>
