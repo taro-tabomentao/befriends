@@ -15,7 +15,7 @@
         </div>
         <div class="detail">
           <h2>Detail</h2>
-          <p class="content"><%= safe_join(@question.text.split("\n"),tag(:br))%></p>
+          <p class="content"><%= safe_join(@question.content.split("\n"),tag(:br))%></p>
         </div>
       </div>
     </div>

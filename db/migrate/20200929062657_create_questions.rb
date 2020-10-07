@@ -6,7 +6,7 @@ class CreateQuestions < ActiveRecord::Migration[6.0]
       t.integer     :category_id,   null: false
       t.integer     :status_id,     null: false
       t.string      :title,         null: false
-      t.text        :text,          null: false
+      t.text        :content,       null: false
       t.timestamps
     end
   end
