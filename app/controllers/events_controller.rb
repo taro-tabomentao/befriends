@@ -15,7 +15,8 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    @user_events = UserEvent.where(event_id: params[:id])
+    @user_events = UserEvent.where(event_id: params[:id]).includes(:user)
+    @event_comments = EventComment.where(event_id: params[:id]).includes(:user)
   end
 
   def edit

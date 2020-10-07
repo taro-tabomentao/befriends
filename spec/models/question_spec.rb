@@ -32,9 +32,9 @@ RSpec.describe Question, type: :model do
       end
 
       it 'textが空だと登録できない' do
-        @question.text = nil
+        @question.content = nil
         @question.valid?
-        expect(@question.errors.full_messages).to include "Text can't be blank"
+        expect(@question.errors.full_messages).to include "Content can't be blank"
       end
 
       it 'Userが紐付いていないと保存できない' do

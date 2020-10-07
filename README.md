@@ -158,6 +158,7 @@ https://befriends-28755.herokuapp.com/
 - has_many :answers
 - has_many :events, through: :user_events
 - has_many :user_events
+- has_many :event_comments
 
 <br>
 
@@ -244,6 +245,7 @@ https://befriends-28755.herokuapp.com/
 
 - has_many :users, through: :user_events
 - has_many :user_events
+- has_many :event_comments
 
 <br>
 
@@ -258,6 +260,20 @@ https://befriends-28755.herokuapp.com/
 - belongs_to :user
 - belongs_to :event
 
+<br>
+
+## event_comments テーブル
+
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| user          | references | null: false, foreign_key: true |
+| event         | references | null: false, foreign_key: true |
+| comment       | text       | null: false                    |
+
+### Association
+
+- belongs_to :user
+- belongs_to :comment
 
 <br>
 

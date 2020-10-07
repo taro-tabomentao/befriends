@@ -43,10 +43,10 @@ class QuestionsController < ApplicationController
   private
 
   def new_question_params
-    params.require(:question).permit(:title, :category_id, :country_id, :text).merge(user_id: current_user.id, status_id: 1)
+    params.require(:question).permit(:title, :category_id, :country_id, :content).merge(user_id: current_user.id, status_id: 1)
   end
 
   def edit_question_params
-    params.require(:question).permit(:title, :category_id, :country_id, :text, :status_id).merge(user_id: current_user.id)
+    params.require(:question).permit(:title, :category_id, :country_id, :content, :status_id).merge(user_id: current_user.id)
   end
 end

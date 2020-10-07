@@ -106,7 +106,7 @@
   text-decoration: underline;
 }
 
-.item-show .country, .item-show .detail {
+.item-show .country, .item-show .detail, .item-show .user {
   width: 100%;
   padding-bottom: 50px;
   padding-left: 15px; 
@@ -115,6 +115,10 @@
 .item-show .content {
   word-wrap: break-word;
   font-size: 1.3rem;
+}
+
+.item-show .link-content:hover {
+  opacity: 0.7;
 }
 
 .item-show .row {
@@ -168,6 +172,15 @@
   padding: 10px 20px;
   font-size: 1.2rem;
   word-wrap: break-word;
+}
+
+.list-participant .name {
+  font-style: bold;
+  font-size: 1.3rem;
+}
+
+.list-participant .name:hover {
+  opacity: 0.7;
 }
 
 .footer {
@@ -258,6 +271,27 @@
   .btn-md {
     font-size: 1rem;
   }
+
+  .list-participant {
+    display: flex;
+    justify-content: start;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+
+  .list-participant img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .item-participant {
+    width: 150px;
+  }
+
+  .list-participant .name {
+    font-size: 1rem;
+  }
+
   
   .footer {
     top: 150px;

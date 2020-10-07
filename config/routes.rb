@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :countries, only: [:index,:show]
   resources :events do
     resources :user_events, only: :create
+    resources :event_comments, only: [:new, :create]
   end
   resources :articles do
     resources :comments, only: [:new, :create]
