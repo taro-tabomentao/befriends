@@ -271,6 +271,27 @@
   .btn-md {
     font-size: 1rem;
   }
+
+  .list-participant {
+    display: flex;
+    justify-content: start;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+
+  .list-participant img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .item-participant {
+    width: 150px;
+  }
+
+  .list-participant .name {
+    font-size: 1rem;
+  }
+
   
   .footer {
     top: 150px;
