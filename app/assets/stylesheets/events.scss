@@ -56,6 +56,13 @@
   margin: 0 auto;
 }
 
+.item-show .image {
+  text-align: center;
+}
+.item-show img {
+  width: 90%;
+}
+
 .item-show h1 {
   font-size: 2rem;
 }
@@ -135,6 +142,32 @@
 
 .btn-wrapper-inner-bottom p:first-child {
   margin-right: 10px;
+}
+
+.list-participant {
+  display: flex;
+  justify-content: start;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.list-participant img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.item-participant {
+  margin-right: 20px;
+  margin-bottom: 20px;
+  width: 200px;
+  color: #666;
+}
+
+.item-participant .name {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  word-wrap: break-word;
 }
 
 .footer {
