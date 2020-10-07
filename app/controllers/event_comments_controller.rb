@@ -1,12 +1,12 @@
 class EventCommentsController < ApplicationController
   def new
     @event = Event.find(params[:event_id])
-    @event_comment = event_comment.new
+    @event_comment = EventComment.new
   end
 
   def create
     @event = Event.find(params[:event_id])
-    @event_comment = Event_comment.new(event_comment_params)
+    @event_comment = EventComment.new(event_comment_params)
     if @event_comment.valid?
       @event_comment.save
       redirect_to event_path(@event)
