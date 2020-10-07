@@ -62,7 +62,11 @@
       <% @comments.each do |comment| %>
         <li class="answer-item">
           <div class="upper-container">
+            <%= link_to user_path(comment.user_id) do %>
+            <div class="name blue"><%= comment.user.full_name%></div>
+            <% end %>
             <div class="content"><%= safe_join(comment.content.split("\n"),tag(:br))%></div>
+            <div class="time"><%= comment.created_at %>
           </div>
         </li>
       <% end %>

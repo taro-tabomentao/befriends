@@ -22,3 +22,15 @@
 .answer-wrapper h2, .answer-wrapper li {
   color: #666;
 }
+
+.answer-wrapper .name{
+  font-style: bold;
+  padding-bottom: 10px;
+  text-decoration: underline;
+  cursor: pointer;
+  font-style: italic;
+}
+
+.answer-wrapper .time {
+  padding-top: 10px;
+}
