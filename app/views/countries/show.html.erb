@@ -41,7 +41,7 @@
         <% end %>
         <div class="wrapper-category">
           <h2 class="category">Latest Events</h2>
-          <ul class="list-event">
+          <ul class="list-event slider">
             <% @events.each do |event| %>
               <li class="item-event">
                 <%= link_to event_path(event.id) do %>
@@ -70,7 +70,7 @@
         <% end %>
         <div class="wrapper-category">
           <h2 class="category">Latest Articles</h2>
-          <ul class="list-article">
+          <ul class="list-article slider">
             <% @articles.each do |article| %>
               <li class="item-article">
                 <%= link_to article_path(article.id) do %>
