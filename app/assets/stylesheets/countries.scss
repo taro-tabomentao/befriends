@@ -361,8 +361,9 @@ span {
 }
 
 .item-event, .item-article {
-  padding-bottom: 30px;
-  padding-right: 30px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
 .tab-content img {
@@ -411,7 +412,20 @@ span {
   overflow: hidden;
 }
 
+.fa-caret-square-left {
+  font-size: 50px;
+  position: absolute;
+  top: 70px;
+  z-index: 100;
+}
 
+.fa-caret-square-right {
+  font-size: 50px;
+  position: absolute;
+  top: 70px;
+  right: 0px;
+  z-index: 100;
+}
 
 // レスポンシブデザイン
 // iPad mini以下
