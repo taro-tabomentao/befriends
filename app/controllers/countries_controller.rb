@@ -13,7 +13,13 @@ class CountriesController < ApplicationController
   def show
     @country = Country.find(params[:id])
     @events = Event.where(country_id: params[:id]).order(id: 'desc')
+    @education_events = Event.where(country_id: params[:id], category_id: 11).order(id: 'desc')
+    @sports_events = Event.where(country_id: params[:id], category_id: 12).order(id: 'desc')
+    @language_events = Event.where(country_id: params[:id], category_id: 10).order(id: 'desc')
     @articles = Article.where(country_id: params[:id]).order(id: 'desc')
+    @life_articles = Article.where(country_id: params[:id], category_id: 2).order(id: 'desc')
+    @community_articles = Article.where(country_id: params[:id], category_id: 5).order(id: 'desc')
+    @food_articles = Article.where(country_id: params[:id], category_id: 9).order(id: 'desc')
     @questions = Question.where(country_id: params[:id]).order(id: 'desc')
   end
 end
