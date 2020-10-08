@@ -52,6 +52,45 @@
             <% end %>
           </ul>
         </div>
+        <div class="wrapper-category">
+          <h2 class="category">Language Events</h2>
+          <ul class="list-event slider">
+            <% @language_events.each do |language_event| %>
+              <li class="item-event">
+                <%= link_to event_path(language_event.id) do %>
+                  <div class="image-event"><%= image_tag language_event.image.variant(resize: '300x200') %></div>
+                  <div class="title-event"><%= language_event.title %></div>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="wrapper-category">
+          <h2 class="category">Sports Events</h2>
+          <ul class="list-event slider">
+            <% @sports_events.each do |sports_event| %>
+              <li class="item-event">
+                <%= link_to event_path(sports_event.id) do %>
+                  <div class="image-event"><%= image_tag sports_event.image.variant(resize: '300x200') %></div>
+                  <div class="title-event"><%= sports_event.title %></div>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="wrapper-category">
+          <h2 class="category">Educational Events</h2>
+          <ul class="list-event slider">
+            <% @education_events.each do |education_event| %>
+              <li class="item-event">
+                <%= link_to event_path(education_event.id) do %>
+                  <div class="image-event"><%= image_tag education_event.image.variant(resize: '300x200') %></div>
+                  <div class="title-event"><%= education_event.title %></div>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
       </div>
     </div>  
     <%# タブコンテント 記事 %>
@@ -68,6 +107,32 @@
             <%= link_to "Click here", new_user_session_path, class: "heading-sm link blue" %>
           </div>
         <% end %>
+        <div class="wrapper-category">
+          <h2 class="category">Latest Articles</h2>
+          <ul class="list-article slider">
+            <% @articles.each do |article| %>
+              <li class="item-article">
+                <%= link_to article_path(article.id) do %>
+                  <div class="image-article"><%= image_tag article.image.variant(resize: '300x200') %></div>
+                  <div class="title-article"><%= article.title %></div>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="wrapper-category">
+          <h2 class="category">Latest Articles</h2>
+          <ul class="list-article slider">
+            <% @articles.each do |article| %>
+              <li class="item-article">
+                <%= link_to article_path(article.id) do %>
+                  <div class="image-article"><%= image_tag article.image.variant(resize: '300x200') %></div>
+                  <div class="title-article"><%= article.title %></div>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
         <div class="wrapper-category">
           <h2 class="category">Latest Articles</h2>
           <ul class="list-article slider">
