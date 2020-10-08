@@ -4,11 +4,19 @@
     <nav>
       <ul>
         <% if user_signed_in? %>
-          <li><%= link_to current_user.full_name, user_path(current_user.id) %></li>
-          <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+          <%= link_to user_path(current_user.id) do%>
+            <li><%= current_user.full_name %></li>
+          <% end %>
+          <%= link_to destroy_user_session_path, method: :delete do%>
+            <li>Log out</li>
+          <% end %>
         <% else %>
-          <li><%= link_to "Sign up", new_user_registration_path %></li>
-          <li><%= link_to "Log in", new_user_session_path %></li>
+          <%= link_to new_user_registration_path do%>
+            <li>Sign up</li>
+          <% end %>
+          <%= link_to new_user_session_path do%>
+            <li>Log in</li>
+          <% end %>
         <% end %>
       </ul>
     </nav>
