@@ -6,6 +6,13 @@ class Question < ApplicationRecord
   belongs_to :user
   has_many :answers, dependent: :destroy
 
+  def self.search(search)
+    if search != ""
+      Question.where(['title LIKE(?) OR content LIKE(?)', "%#{search}%", "%#{search}%"])
+    else
+      Question.all
+    end
+  end
   with_options numericality: { other_than: 1, message: 'has to be selected' } do
     validates :country_id
     validates :category_id
