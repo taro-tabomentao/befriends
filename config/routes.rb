@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   end
   resources :articles do
     resources :comments, only: [:new, :create]
+    collection do
+      get 'search'
+    end
   end
   resources :questions do
     resources :answers, only: [:new, :create]

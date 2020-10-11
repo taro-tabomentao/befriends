@@ -111,6 +111,10 @@
             <%= link_to "Click here", new_user_session_path, class: "heading-sm link blue" %>
           </div>
         <% end %>
+        <%= form_with(url: search_articles_path, local: true, method: :get, class: "search-form") do |form| %>
+        <%= form.text_field :keyword, placeholder: "Search Articles", class: "search-input" %>
+        <%= form.submit "Search", class: "search-btn" %>
+        <% end %>
         <div class="wrapper-category">
           <h2 class="category">Latest Articles</h2>
           <ul class="list-article slider">
