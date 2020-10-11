@@ -33,7 +33,6 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 4.0.0'
   gem 'factory_bot_rails'
-  gem 'faker'
 end
 
 group :development do
@@ -62,6 +61,7 @@ gem 'font-awesome-sass', '~> 5.13.0'
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 gem 'pry-rails'
+gem 'faker'
 
 group :production do
   gem 'rails_12factor'
