@@ -333,7 +333,7 @@ span {
 }
 
 .tab-1-content-inner, .tab-2-content-inner, .tab-3-content-inner, .tab-4-content-inner, .tab-5-content-inner {
-  padding: 48px 16px;
+  padding: 48px 0;
 }
 
 .tab-content ul {
@@ -449,6 +449,14 @@ span {
   border: none;
   font-size: 1rem;
   border-radius: 10px;
+}
+
+.user-tab-content img {
+  width: 300px
+}
+
+.user-tab-content .title-event {
+  width: 300px;
 }
 
 // レスポンシブデザイン

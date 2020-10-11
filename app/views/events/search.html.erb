@@ -1,0 +1,41 @@
+<%= render "shared/header"%>
+
+<section class="search-content">
+  <div class="container">
+    <%# タブコンテント イベント %>
+    <div class="search-content-inner">
+      <% if user_signed_in? %>
+        <div class="newpost">
+          <span class="heading-sm">Start a New Event?  </span>
+          <%= link_to "Click here", new_event_path, class: "heading-sm link blue" %>
+        </div>
+      <% else %>
+        <div class="newpost">
+          <span class="heading-sm">Start a New Event?  </span>
+          <%= link_to "Click here", new_user_session_path, class: "heading-sm link blue" %>
+        </div>
+      <% end %>
+      <%= form_with(url: search_events_path, local: true, method: :get, class: "search-form") do |form| %>
+      <%= form.text_field :keyword, placeholder: "Search Events", class: "search-input" %>
+      <%= form.submit "Search", class: "search-btn" %>
+      <% end %>
+      <div class="wrapper-category">
+        <h2 class="category">Search Result</h2>
+        <ul class="list-event">
+          <% @events.each do |event| %>
+            <li class="item-event">
+              <%= link_to event_path(event.id) do %>
+                <div class="image-event"><%= image_tag event.image.variant(resize: '300x200') %></div>
+                <div class="title-event"><%= event.title %></div>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="footer">
+  <%= render "shared/footer"%>
+<div>
