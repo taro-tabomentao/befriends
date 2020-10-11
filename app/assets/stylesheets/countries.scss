@@ -379,6 +379,14 @@ span {
   overflow: hidden;
 }
 
+.slider-image {
+  width: 100%;
+}
+
+.slider-title {
+  width: 100%;
+}
+
 
 
 // タブコンテンツ Q&A
@@ -439,6 +447,7 @@ span {
 
 .search-form .search-input {
   width: 40%;
+  max-width: 500px;
   margin-right: 10px;
   padding: 10px 15px;
   font-size: 1rem;
@@ -446,12 +455,18 @@ span {
 
 .search-form .search-btn {
   width: 20%;
+  max-width: 200px;
   padding: 10px 15px;
   background-color: #ff8800;
   color: #fff;
   border: none;
   font-size: 1rem;
   border-radius: 10px;
+}
+
+.questions-container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 // レスポンシブデザイン
