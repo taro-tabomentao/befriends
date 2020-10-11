@@ -379,12 +379,15 @@ span {
   overflow: hidden;
 }
 
+
+
 // タブコンテンツ Q&A
 
 .list-question .wrapper-row {
   display: flex;
   align-items: center;
   margin-bottom: 30px;
+  padding: 0 20px;
 }
 
 .status-question-open {
@@ -435,28 +438,20 @@ span {
 }
 
 .search-form .search-input {
-  width: 30%;
+  width: 40%;
   margin-right: 10px;
   padding: 10px 15px;
   font-size: 1rem;
 }
 
 .search-form .search-btn {
-  width: 10%;
+  width: 20%;
   padding: 10px 15px;
   background-color: #ff8800;
   color: #fff;
   border: none;
   font-size: 1rem;
   border-radius: 10px;
-}
-
-.user-tab-content img {
-  width: 300px
-}
-
-.user-tab-content .title-event {
-  width: 300px;
 }
 
 // レスポンシブデザイン
@@ -558,8 +553,6 @@ span {
   .status-question-open {
     padding: 20px 30px;
     border-radius: 2px;
-    color: #fff;
-    background: orange;
   }
 
   .status-question-close {
