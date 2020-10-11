@@ -2,13 +2,23 @@
   position: relative;
   top: 100px;
   padding: 30px 0;
+  background: image-url('devise.jpeg') no-repeat center center/cover;
 }
 
+.event-field, .article-field, .question-field {
+  background: image-url('uyuni.jpg') no-repeat center center/cover;
+}
+
+
 .input-field .container {
-  width: 100%;
+  width: 80%;
   max-width: 800px;
   margin: 0 auto;
   background-color: #fff;
+  padding: 5px 0;
+  border-radius: 20px;
+  margin-top: 50px;
+  box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.5);
 }
 
 .input-field .container-inner {
