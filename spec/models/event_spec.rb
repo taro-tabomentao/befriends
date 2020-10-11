@@ -47,7 +47,7 @@ RSpec.describe Event, type: :model do
       it 'onlineが空だと登録できない' do
         @event.online = nil
         @event.valid?
-        expect(@event.errors.full_messages).to include "Online has to be selected"
+        expect(@event.errors.full_messages).to include 'Online has to be selected'
       end
 
       it 'placeが空だと登録できない' do

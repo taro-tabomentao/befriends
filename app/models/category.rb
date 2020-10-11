@@ -14,6 +14,6 @@ class Category < ActiveHash::Base
     { id: 12, name: 'Sports' },
     { id: 13, name: 'Music' },
     { id: 14, name: 'Anime/Manga' },
-    { id: 15, name: 'Others' },
+    { id: 15, name: 'Others' }
   ]
 end

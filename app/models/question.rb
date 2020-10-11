@@ -7,7 +7,7 @@ class Question < ApplicationRecord
   has_many :answers, dependent: :destroy
 
   def self.search(search)
-    if search != ""
+    if search != ''
       Question.where(['title LIKE(?) OR content LIKE(?)', "%#{search}%", "%#{search}%"])
     else
       Question.all
