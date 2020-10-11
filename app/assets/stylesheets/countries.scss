@@ -428,6 +428,29 @@ span {
 .slick-slide a:focus {
   outline:none;
 }
+
+.search-form {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.search-form .search-input {
+  width: 30%;
+  margin-right: 10px;
+  padding: 10px 15px;
+  font-size: 1rem;
+}
+
+.search-form .search-btn {
+  width: 10%;
+  padding: 10px 15px;
+  background-color: #ff8800;
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  border-radius: 10px;
+}
+
 // レスポンシブデザイン
 // iPad mini以下
 @media screen and (max-width: 768px) {
