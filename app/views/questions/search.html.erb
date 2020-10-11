@@ -1,0 +1,46 @@
+<%= render "shared/header"%>
+
+<section class="search-content">
+  <div class="questions-container">
+    <div class="tab-3-content-inner">
+      <% if user_signed_in? %>
+        <div class="newpost">
+          <span class="heading-sm">Ask Your Question?  </span>
+          <%= link_to "Click here", new_question_path, class: "heading-sm link blue" %>
+        </div>
+      <% else %>
+        <div class="newpost">
+          <span class="heading-sm">Ask Your Question?  </span>
+          <%= link_to "Click here", new_user_session_path, class: "heading-sm link blue" %>
+        </div>
+      <% end %>
+      <%= form_with(url: search_questions_path, local: true, method: :get, class: "search-form") do |form| %>
+      <%= form.text_field :keyword, placeholder: "Search Questions", class: "search-input" %>
+      <%= form.submit "Search", class: "search-btn" %>
+      <% end %>
+      <div class="wrapper-category">
+        <h2 class="category">Latest Questions</h2>
+        <ul class="list-question">
+        <% @questions.each do |question| %>
+          <li class="item-question">
+            <%= link_to question_path(question.id) do %>
+              <div class="wrapper-row">
+                <% if question.status_id == 1 %>
+                  <div class="status-question-open"><%= question.status.name %></div>
+                <% else %>
+                  <div class="status-question-close"><%= question.status.name %></div>
+                <% end %>
+                <div class="title-question"><%= question.title %></div>
+              </div>
+            <% end %>
+          </li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>  
+</section>
+
+<div class="footer">
+  <%= render "shared/footer"%>
+<div>

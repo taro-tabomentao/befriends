@@ -40,6 +40,10 @@ class QuestionsController < ApplicationController
     @answers = Answer.where(question_id: params[:id]).includes(:user)
   end
 
+  def search
+    @questions = Question.search(params[:keyword]).order(id: 'desc')
+  end
+
   private
 
   def new_question_params

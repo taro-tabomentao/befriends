@@ -6,6 +6,13 @@ class Article < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_one_attached :image
 
+  def self.search(search)
+    if search != ''
+      Article.where(['title LIKE(?) OR content LIKE(?)', "%#{search}%", "%#{search}%"])
+    else
+      Article.all
+    end
+  end
   with_options numericality: { other_than: 1, message: 'has to be selected' } do
     validates :country_id
     validates :category_id

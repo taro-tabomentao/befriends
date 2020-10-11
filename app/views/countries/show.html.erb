@@ -39,14 +39,18 @@
             <%= link_to "Click here", new_user_session_path, class: "heading-sm link blue" %>
           </div>
         <% end %>
+        <%= form_with(url: search_events_path, local: true, method: :get, class: "search-form") do |form| %>
+        <%= form.text_field :keyword, placeholder: "Search Events", class: "search-input" %>
+        <%= form.submit "Search", class: "search-btn" %>
+        <% end %>
         <div class="wrapper-category">
           <h2 class="category">Latest Events</h2>
           <ul class="list-event slider">
             <% @events.each do |event| %>
               <li class="item-event">
                 <%= link_to event_path(event.id) do %>
-                  <div class="image-event"><%= image_tag event.image.variant(resize: '300x200') %></div>
-                  <div class="title-event"><%= event.title %></div>
+                  <div class="image-event slider-image"><%= image_tag event.image.variant(resize: '300x200') %></div>
+                  <div class="title-event slider-title"><%= event.title %></div>
                 <% end %>
               </li>
             <% end %>
@@ -58,8 +62,8 @@
             <% @language_events.each do |language_event| %>
               <li class="item-event">
                 <%= link_to event_path(language_event.id) do %>
-                  <div class="image-event"><%= image_tag language_event.image.variant(resize: '300x200') %></div>
-                  <div class="title-event"><%= language_event.title %></div>
+                  <div class="image-event slider-image"><%= image_tag language_event.image.variant(resize: '300x200') %></div>
+                  <div class="title-event slider-title"><%= language_event.title %></div>
                 <% end %>
               </li>
             <% end %>
@@ -71,8 +75,8 @@
             <% @sports_events.each do |sports_event| %>
               <li class="item-event">
                 <%= link_to event_path(sports_event.id) do %>
-                  <div class="image-event"><%= image_tag sports_event.image.variant(resize: '300x200') %></div>
-                  <div class="title-event"><%= sports_event.title %></div>
+                  <div class="image-event slider-image"><%= image_tag sports_event.image.variant(resize: '300x200') %></div>
+                  <div class="title-event slider-title"><%= sports_event.title %></div>
                 <% end %>
               </li>
             <% end %>
@@ -84,8 +88,8 @@
             <% @education_events.each do |education_event| %>
               <li class="item-event">
                 <%= link_to event_path(education_event.id) do %>
-                  <div class="image-event"><%= image_tag education_event.image.variant(resize: '300x200') %></div>
-                  <div class="title-event"><%= education_event.title %></div>
+                  <div class="image-event slider-image"><%= image_tag education_event.image.variant(resize: '300x200') %></div>
+                  <div class="title-event slider-title"><%= education_event.title %></div>
                 <% end %>
               </li>
             <% end %>
@@ -107,14 +111,18 @@
             <%= link_to "Click here", new_user_session_path, class: "heading-sm link blue" %>
           </div>
         <% end %>
+        <%= form_with(url: search_articles_path, local: true, method: :get, class: "search-form") do |form| %>
+        <%= form.text_field :keyword, placeholder: "Search Articles", class: "search-input" %>
+        <%= form.submit "Search", class: "search-btn" %>
+        <% end %>
         <div class="wrapper-category">
           <h2 class="category">Latest Articles</h2>
           <ul class="list-article slider">
             <% @articles.each do |article| %>
               <li class="item-article">
                 <%= link_to article_path(article.id) do %>
-                  <div class="image-article"><%= image_tag article.image.variant(resize: '300x200') %></div>
-                  <div class="title-article"><%= article.title %></div>
+                  <div class="image-article slider-image"><%= image_tag article.image.variant(resize: '300x200') %></div>
+                  <div class="title-article slider-title"><%= article.title %></div>
                 <% end %>
               </li>
             <% end %>
@@ -126,8 +134,8 @@
             <% @life_articles.each do |life_article| %>
               <li class="item-article">
                 <%= link_to article_path(life_article.id) do %>
-                  <div class="image-article"><%= image_tag life_article.image.variant(resize: '300x200') %></div>
-                  <div class="title-article"><%= life_article.title %></div>
+                  <div class="image-article slider-image"><%= image_tag life_article.image.variant(resize: '300x200') %></div>
+                  <div class="title-article slider-title"><%= life_article.title %></div>
                 <% end %>
               </li>
             <% end %>
@@ -139,8 +147,8 @@
             <% @community_articles.each do |community_article| %>
               <li class="item-article">
                 <%= link_to article_path(community_article.id) do %>
-                  <div class="image-article"><%= image_tag community_article.image.variant(resize: '300x200') %></div>
-                  <div class="title-article"><%= community_article.title %></div>
+                  <div class="image-article slider-image"><%= image_tag community_article.image.variant(resize: '300x200') %></div>
+                  <div class="title-article slider-title"><%= community_article.title %></div>
                 <% end %>
               </li>
             <% end %>
@@ -152,8 +160,8 @@
             <% @food_articles.each do |food_article| %>
               <li class="item-article">
                 <%= link_to article_path(food_article.id) do %>
-                  <div class="image-article"><%= image_tag food_article.image.variant(resize: '300x200') %></div>
-                  <div class="title-article"><%= food_article.title %></div>
+                  <div class="image-article slider-image"><%= image_tag food_article.image.variant(resize: '300x200') %></div>
+                  <div class="title-article slider-title"><%= food_article.title %></div>
                 <% end %>
               </li>
             <% end %>
@@ -176,6 +184,10 @@
             <%= link_to "Click here", new_user_session_path, class: "heading-sm link blue" %>
           </div>
         <% end %>
+        <%= form_with(url: search_questions_path, local: true, method: :get, class: "search-form") do |form| %>
+        <%= form.text_field :keyword, placeholder: "Search Questions", class: "search-input" %>
+        <%= form.submit "Search", class: "search-btn" %>
+        <% end %>
         <div class="wrapper-category">
           <h2 class="category">Latest Questions</h2>
           <ul class="list-question">
@@ -197,6 +209,7 @@
         </div>
       </div>
     </div>  
+  </div>
 </section>
 
 <%= render "shared/footer"%>

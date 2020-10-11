@@ -40,6 +40,10 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def search
+    @articles = Article.search(params[:keyword]).order(id: 'desc')
+  end
+
   private
 
   def article_params

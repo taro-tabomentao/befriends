@@ -1,0 +1,40 @@
+<%= render "shared/header"%>
+
+<section class="search-content">
+  <div class="container">
+    <div class="search-content-inner">
+      <% if user_signed_in? %>
+        <div class="newpost">
+          <span class="heading-sm">Write a New Article?  </span>
+          <%= link_to "Click here", new_article_path, class: "heading-sm link blue" %>
+        </div>
+      <% else %>
+        <div class="newpost">
+          <span class="heading-sm">Write a New Article?  </span>
+          <%= link_to "Click here", new_user_session_path, class: "heading-sm link blue" %>
+        </div>
+      <% end %>
+      <%= form_with(url: search_articles_path, local: true, method: :get, class: "search-form") do |form| %>
+      <%= form.text_field :keyword, placeholder: "Search Articles", class: "search-input" %>
+      <%= form.submit "Search", class: "search-btn" %>
+      <% end %>
+      <div class="wrapper-category">
+        <h2 class="category">Search Result</h2>
+        <ul class="list-event">
+          <% @articles.each do |article| %>
+            <li class="item-article">
+              <%= link_to article_path(article.id) do %>
+                <div class="image-article"><%= image_tag article.image.variant(resize: '300x200') %></div>
+                <div class="title-article"><%= article.title %></div>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="footer">
+  <%= render "shared/footer"%>
+<div>

@@ -65,6 +65,8 @@
 
 .item-show h1 {
   font-size: 2rem;
+  max-width: 800px;
+  word-break: break-word;
 }
 
 .item-show .container {
@@ -188,6 +190,33 @@
   top: 100px;
 }
 
+.search-content {
+  position: relative;
+  top: 100px;
+}
+
+.search-content .newpost {
+  padding-top: 3rem;
+}
+
+.search-content img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.search-content .title-event {
+  width: 300px;
+  height: 100px;
+  padding-top: 10px; 
+  font-size: 1.2rem;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+.category {
+  padding-left: 20px;
+}
 
 // レスポンシブデザイン
 // iPad mini以下
