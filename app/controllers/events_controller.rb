@@ -42,7 +42,7 @@ class EventsController < ApplicationController
   end
 
   def search
-    @events = Event.search(params[:keyword])
+    @events = Event.search(params[:keyword]).order(id: 'desc')
   end
 
   private
