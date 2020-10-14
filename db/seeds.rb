@@ -63,7 +63,6 @@ event.save!
 # UserEvent.create!(
 #   user_id: 2,
 #   event_id: 2
-# )
 
 # #イベントコメント
 # EventComment.create!(
