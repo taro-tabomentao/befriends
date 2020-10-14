@@ -20,7 +20,7 @@
     city: city,
     birthday: birthday,
   )
-  user.image.attach(io: File.open("./db/fixtures/icon#{i}.jpg"), filename: "icon#{i}.jpg" )
+  user.image.attach(io: File.open("./db/fixtures/icon1.jpg"), filename: "icon1.jpg" )
 end
 
 #イベント
