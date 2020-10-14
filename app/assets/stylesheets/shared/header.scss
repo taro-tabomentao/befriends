@@ -64,6 +64,10 @@ nav li {
     display: block;
   }
   nav li:last-child {
-    margin-right: 0px;
+    margin-left: 10px;
+    margin-right: 0px
+  }
+  nav li:first-child {
+    margin-right: 10px;
   }
 }
