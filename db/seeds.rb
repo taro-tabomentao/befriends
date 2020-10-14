@@ -38,6 +38,7 @@ event = Event.new(
 event.image.attach(io: File.open("./db/fixtures/event0.jpg"), filename: "event0.jpg" )
 event.save!
 
+
 #イベント2
 event = Event.new(
   title: "Test",
