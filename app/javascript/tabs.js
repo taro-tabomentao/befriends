@@ -1,4 +1,4 @@
-document.addEventListener("turbolinks:load", () => {
+window.addEventListener("load", () => {
   const tabItems = document.querySelectorAll('.tab-item');
   const tabContentItems = document.querySelectorAll('.tab-content-item');
   
