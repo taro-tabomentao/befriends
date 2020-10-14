@@ -425,6 +425,7 @@ span {
   position: absolute;
   top: 70px;
   z-index: 100;
+  cursor: pointer;
 }
 
 .fa-caret-square-right {
@@ -433,6 +434,15 @@ span {
   top: 70px;
   right: 0px;
   z-index: 100;
+  cursor: pointer;
+}
+
+.fa-caret-square-left:hover{
+  opacity: 0.7
+}
+
+.fa-caret-square-right:hover {
+  opacity: 0.7
 }
 
 .slick-slide a:focus {

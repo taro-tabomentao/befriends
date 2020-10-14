@@ -57,13 +57,13 @@
           </ul>
         </div>
         <div class="wrapper-category">
-          <h2 class="category">Events to learn new language</h2>
+          <h2 class="category">Learn about new things</h2>
           <ul class="list-event slider">
-            <% @language_events.each do |language_event| %>
+            <% @education_events.each do |education_event| %>
               <li class="item-event">
-                <%= link_to event_path(language_event.id) do %>
-                  <div class="image-event slider-image"><%= image_tag language_event.image.variant(resize: '300x200') %></div>
-                  <div class="title-event slider-title"><%= language_event.title %></div>
+                <%= link_to event_path(education_event.id) do %>
+                  <div class="image-event slider-image"><%= image_tag education_event.image.variant(resize: '300x200') %></div>
+                  <div class="title-event slider-title"><%= education_event.title %></div>
                 <% end %>
               </li>
             <% end %>
@@ -77,19 +77,6 @@
                 <%= link_to event_path(sports_event.id) do %>
                   <div class="image-event slider-image"><%= image_tag sports_event.image.variant(resize: '300x200') %></div>
                   <div class="title-event slider-title"><%= sports_event.title %></div>
-                <% end %>
-              </li>
-            <% end %>
-          </ul>
-        </div>
-        <div class="wrapper-category">
-          <h2 class="category">Learn about new things</h2>
-          <ul class="list-event slider">
-            <% @education_events.each do |education_event| %>
-              <li class="item-event">
-                <%= link_to event_path(education_event.id) do %>
-                  <div class="image-event slider-image"><%= image_tag education_event.image.variant(resize: '300x200') %></div>
-                  <div class="title-event slider-title"><%= education_event.title %></div>
                 <% end %>
               </li>
             <% end %>
@@ -136,19 +123,6 @@
                 <%= link_to article_path(life_article.id) do %>
                   <div class="image-article slider-image"><%= image_tag life_article.image.variant(resize: '300x200') %></div>
                   <div class="title-article slider-title"><%= life_article.title %></div>
-                <% end %>
-              </li>
-            <% end %>
-          </ul>
-        </div>
-        <div class="wrapper-category">
-          <h2 class="category">Articles about community</h2>
-          <ul class="list-article slider">
-            <% @community_articles.each do |community_article| %>
-              <li class="item-article">
-                <%= link_to article_path(community_article.id) do %>
-                  <div class="image-article slider-image"><%= image_tag community_article.image.variant(resize: '300x200') %></div>
-                  <div class="title-article slider-title"><%= community_article.title %></div>
                 <% end %>
               </li>
             <% end %>

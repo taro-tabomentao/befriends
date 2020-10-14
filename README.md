@@ -1,74 +1,90 @@
-# アプリケーション名
-Befriends
+![title](https://gyazo.com/b949190c76f5b3091e867c60ddbf3600.png)
+
+Befriendsとは、世界各地のローカル情報に特化したソーシャルメディアサービス。
 
 <br> 
 
-# アプリケーション概要
-世界各地のローカル情報に特化したソーシャルメディアサービス。<br>
-Befriendsは「友達になる、（〜を）助ける」（[Weblio英和辞典より](https://ejje.weblio.jp/content/befriend)）という意味があり、イベント機能を使った交流を通して、友達になったり、記事、質問投稿機能を通して、世界各地に住む人たちを助ける（日本のローカル情報を提供）、助けてもらう（世界各地のローカル情報を取得）ことが出来る。
+## アプリケーション概要
+世界各地に住む地元の人達と交流したり、その人達の発信する地元の情報をチェックすることが出来るサービス。
+Befriendsの言葉の意味には「友達になる、（〜を）助ける」（[Weblio英和辞典より](https://ejje.weblio.jp/content/befriend)）という意味があり、移住する人や旅行する人たちに、現地に住む頼れる友人を作ってもらったり、現地の人たちからのリアルな現地情報を取得し、生活、旅行に役立てられるサービスを目指している。これを実現するために、主に下記三つの機能で構成されている。
+- イベント機能
+  - 自分でイベントを設定し、世界各地の人たちに参加してもらったり、誰かが開催するイベントに参加することで世界各地に交流の輪を広げる。
+- 記事機能
+  - 自分の地元に関する投稿をしたり、興味のある場所に関する投稿をチェックすることが出来る。
+- Q&A機能
+  - 疑問を現地に住む人たちに聞いたり、逆に自分の地元に関する質問に回答出来る。
 
 <br>
 
-# URL
+## URL
 https://befriends-28755.herokuapp.com/
 
 <br>
 
-# テスト用アカウント
-## Basic認証
-- ユーザー名：admin
-- パスワード：password
-
-<br>
-
-## サイト内テストアカウント情報
-- ユーザー名：user@gmail.com
-- パスワード：password123
-
-<br>
-
 # 利用方法
-- 各機能を利用するために、ユーザー登録を行う。
-  - ユーザー登録後、新規イベント、記事、質問投稿が出来る。
-  - 既存のイベントに対しては、参加することが出来る。
-  - 既存の記事に対しては、記事に対するコメント、質問に対しては、質問に対する答えを投稿することが出来る。
-  - マイページで自分が投稿、参加したイベント、投稿した記事、質問の一覧を管理出来る。 
-- ユーザー登録なしに投稿を閲覧することが出来る。
-- <strong>今回はJapanページに投稿を行っているので、Japanページにて操作を行って頂けますようお願いいたします。</strong>
+
+<strong>現環境においては、Japanページに投稿を行っているので、Japanページにて操作を行って頂けますようお願いいたします。<br>
+※トップページ赤枠部をクリックするとJapanページに遷移いたします。</strong>
+
+![Link](https://gyazo.com/ab8aff8a34fe4551ef86bcef6e1f2927.jpg)
+
+## 基本操作概要
+- ユーザー登録なしにサイトの閲覧可能。
+- ユーザー登録を行うことで、新規イベント投稿、ま既存イベントへのコメント、参加が出来る。また記事や質問の投稿、それに対するコメントや回答が出来る。
+- マイページで自分が投稿、参加したイベント、投稿した記事、質問の一覧を管理出来る。
 
 <br>
 
 # 目指した課題解決
-- 知らない国や土地で住み始める際に持つ不安（言葉も文化も違う場所で本当に生活していけるのか、）
-  - 現地に住む友達（助けてもらえる友達）がいることで、不安は軽くなる
-  - 現地の情報を得ることで、移住後の生活を想像したり、不安点を潰しておくことが出来る。
-- 旅行はガイドブックだけではなく、現地の人のオススメを知りたい。
-  - 現地に住む人たちのリアルな声を聞き、旅行を充実させることが出来る。
-  - 例）現地の人が通うローカルレストラン
-- 海外の文化や言葉を学びたいが、外国人と交流する機会が少ない。
-  - イベント機能を使い、世界中のどこからでも交流することが出来る
-  - 例）日本文化（特にアニメ）が好きなので、日本人とイベントで交流
+- 知らない国で住み始める際に持つ不安（常識が通用しない、言葉の壁、孤独感など）
+  - 現地に友達がいることで、上記不安は軽減される
+  - 現地情報を得ることで、移住後の生活を想像したり、不安点を潰しておくことが出来る。
+- 旅行はガイドブックだけではなく、地元の人のオススメするものを知りたい。
+  - 地元に住む人たちが発信するリアルな声を聞き、旅行を充実させることが出来る。
+  - 例）現地の人が通うローカルレストランやローカルスポット
+- 海外の文化や言葉を学びたいが、現地では外国人と交流する機会が少ない。
+  - オンラインイベント機能を使い、世界中のどこからでも交流することが出来る
+  - 例）日本文化（特にアニメ）が好きなので、日本人とオンラインイベントで交流したい
 
 <br>
 
 # 洗い出した要件
-- 国管理機能（一覧表示、詳細表示）
-- イベント管理機能（一覧表示、新規投稿、詳細表示、編集、削除）
+- 国別管理機能（一覧表示、詳細表示）
+  - 国別にデータを管理し、ユーザーが調べたい国の情報を取得しやすくするため
+- イベント管理機能（投稿、詳細表示、編集、削除）
+- イベントに対するコメント投稿機能
 - イベント参加機能
-- 記事管理機能（一覧表示、新規投稿、詳細表示、編集、削除）
-- コメント管理機能（一覧表示、新規投稿、編集、削除）
-- Q&A管理機能（一覧表示、新規投稿、詳細表示、編集、削除）
-- アンサー管理機能（一覧表示、新規投稿、編集、削除）
+- 記事管理機能（投稿、詳細表示、編集、削除）
+- 記事に対するコメント投稿機能
+- 質問管理機能（投稿、詳細表示、編集、削除）
+- 質問に対する回答投稿機能
 - ユーザー管理機能（新規登録、登録内容編集、ログイン、ログアウト、マイページ）
 - レスポンシブデザイン
-- フレンド機能
 - カテゴリ別表示機能
-- グッドボタン機能
-- 人気順表示機能
 - 検索機能
+- フレンド機能
+- グッドボタン機能
 - 多言語対応機能
 
 <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # 実装した機能についてのGIFと説明
 トップページ（国一覧表示）→国別ページへ移動
@@ -119,10 +135,7 @@ https://befriends-28755.herokuapp.com/
 
 # 実装予定の機能
 - フレンド機能
-- カテゴリ別表示機能
 - グッドボタン機能
-- 人気順表示機能
-- 検索機能
 - 多言語対応機能
 
 <br>
@@ -155,6 +168,55 @@ https://befriends-28755.herokuapp.com/
 - has_many :events, through: :user_events
 - has_many :user_events
 - has_many :event_comments
+
+<br>
+
+## events テーブル
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| title         | string     | null: false                    |
+| country_id    | integer    | null: false                    |
+| category_id   | integer    | null: false                    |
+| start_time    | datetime   | null: false                    |
+| end_time      | datetime   | null: false                    |
+| online        | boolean    | null: false                    |
+| place         | string     | null: false                    |
+| content       | text       | null: false                    |
+| image         | -          | Active Storage                 |
+
+### Association
+
+- has_many :users, through: :user_events
+- has_many :user_events
+- has_many :event_comments
+
+<br>
+
+## user_events テーブル
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| user          | references | null: false, foreign_key: true |
+| event         | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :event
+
+<br>
+
+## event_comments テーブル
+
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| user          | references | null: false, foreign_key: true |
+| event         | references | null: false, foreign_key: true |
+| comment       | text       | null: false                    |
+
+### Association
+
+- belongs_to :user
+- belongs_to :comment
 
 <br>
 
@@ -224,54 +286,6 @@ https://befriends-28755.herokuapp.com/
 
 <br>
 
-## events テーブル
-| Column        | Type       | Options                        |
-| ------------- | ---------- | ------------------------------ |
-| title         | string     | null: false                    |
-| country_id    | integer    | null: false                    |
-| category_id   | integer    | null: false                    |
-| start_time    | datetime   | null: false                    |
-| end_time      | datetime   | null: false                    |
-| online        | boolean    | null: false                    |
-| place         | string     | null: false                    |
-| content       | text       | null: false                    |
-| image         | -          | Active Storage                 |
-
-### Association
-
-- has_many :users, through: :user_events
-- has_many :user_events
-- has_many :event_comments
-
-<br>
-
-## user_events テーブル
-| Column        | Type       | Options                        |
-| ------------- | ---------- | ------------------------------ |
-| user          | references | null: false, foreign_key: true |
-| event         | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :user
-- belongs_to :event
-
-<br>
-
-## event_comments テーブル
-
-| Column        | Type       | Options                        |
-| ------------- | ---------- | ------------------------------ |
-| user          | references | null: false, foreign_key: true |
-| event         | references | null: false, foreign_key: true |
-| comment       | text       | null: false                    |
-
-### Association
-
-- belongs_to :user
-- belongs_to :comment
-
-<br>
 
 # ローカルでの動作方法
 - Ruby 2.6.5
