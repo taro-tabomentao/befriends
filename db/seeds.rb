@@ -1,7 +1,7 @@
 
 # ユーザー
 
-2.times do |n|
+2.times do |i|
   name = Faker::Name.name
   email = Faker::Internet.free_email
   password = "12345q"
@@ -19,7 +19,7 @@
     city: city,
     birthday: birthday,
   )
-  user.image.attach(io: File.open("./db/fixtures/icon#{n}.jpg"), filename: "icon#{n}.jpg" )
+  user.image.attach(io: File.open("./db/fixtures/icon#{i}.jpg"), filename: "icon#{i}.jpg" )
 end
 
 #イベント
@@ -51,59 +51,59 @@ event = Event.new(
 event.image.attach(io: File.open("./db/fixtures/event1.jpg"), filename: "event1.jpg" )
 event.save!
 
-#イベント参加
+# #イベント参加
 
-UserEvent.create!(
-  user_id: 1,
-  event_id: 1
-)
+# UserEvent.create!(
+#   user_id: user1.id,
+#   event_id: event1.id
+# )
 
-UserEvent.create!(
-  user_id: 1,
-  event_id: 2
-)
+# UserEvent.create!(
+#   user_id: user1.id,
+#   event_id: event2.id
+# )
 
-#イベントコメント
-EventComment.create!(
-  user_id: 2,
-  event_id: 1,
-  content: "Test Comment"
-)
+# #イベントコメント
+# EventComment.create!(
+#   user_id: 2,
+#   event_id: 1,
+#   content: "Test Comment"
+# )
 
-#記事
-article = Article.new(
-  user_id: 1,
-  title: "Test",
-  country_id: 32,
-  category_id: 2,
-  content: Faker::Lorem.characters
-)
-article.image.attach(io: File.open("./db/fixtures/event1.jpg"), filename: "event1.jpg" )
-article.save!
+# #記事
+# article = Article.new(
+#   user_id: 1,
+#   title: "Test",
+#   country_id: 32,
+#   category_id: 2,
+#   content: Faker::Lorem.characters
+# )
+# article.image.attach(io: File.open("./db/fixtures/event1.jpg"), filename: "event1.jpg" )
+# article.save!
 
-#記事コメント
-Comment.create!(
-  user_id: 2,
-  article_id: 1,
-  content: "Test Comment"
-)
+# #記事コメント
+# Comment.create!(
+#   user_id: 2,
+#   article_id: 1,
+#   content: "Test Comment"
+# )
 
-#クエスチョン
-question = Question.create(
-  user_id: 1,
-  title: "Test",
-  country_id: 32,
-  category_id: 2,
-  status_id: 1,
-  content: Faker::Lorem.characters
-)
+# #クエスチョン
+# question = Question.create(
+#   user_id: 1,
+#   title: "Test",
+#   country_id: 32,
+#   category_id: 2,
+#   status_id: 1,
+#   content: Faker::Lorem.characters
+# )
 
-#アンサー
-Answer.create!(
-  user_id: 2,
-  question_id: 1,
-  content: "Test Comment"
-)
+# #アンサー
+# Answer.create!(
+#   user_id: 2,
+#   question_id: 1,
+#   content: "Test Comment"
+# )
 
 
 
