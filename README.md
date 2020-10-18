@@ -141,7 +141,7 @@ Eメール: test@mail.com
 <br>
 
 # バージョン
-Ruby 2.6.5
+Ruby 2.6.5  
 Ruby on Rails 6.0.3.3
 
 
