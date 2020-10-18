@@ -126,7 +126,10 @@ Eメール: test@mail.com
 <br>
 
 ## レスポンシブデザイン
-![demo](https://i.gyazo.com/4dbec90cbd337ef47e2c4fbdfff8a4b1.gif)
+![demo](https://i.gyazo.com/4c0367bee547e6022684d6e209457944.gif)
+
+- スマホやタブレットなど画面の小さい媒体でも快適に見られるように実装。
+- Gifが見にくい場合はこちらの[mp4ファイル](https://i.gyazo.com/4c0367bee547e6022684d6e209457944.mp4)をクリック
 
 <br>
 
