@@ -22,8 +22,23 @@
   user.image.attach(io: File.open("./db/fixtures/icon#{i}.jpg"), filename: "icon#{i}.jpg" )
 end
 
+user = User.create!(
+  full_name: "Test Taro",
+  email: "test@mail.com",
+  password: "password",
+  password_confirmation: "password",
+  gender_id: 2,
+  country_id: 32,
+  city: "Tokyo",
+  birthday: "1990-3-16",
+  language: "Japanese, English"
+)
+user.image.attach(io: File.open("./db/fixtures/icon10.jpg"), filename: "icon10.jpg" )
+
+
+
 users = User.all
-user1, user2, user3, user4, user5, user6, user7, user8, user9, user10 = users
+user1, user2, user3, user4, user5, user6, user7, user8, user9, user10, user11 = users
 
 #イベント
 event = Event.new(
@@ -380,7 +395,7 @@ UserEvent.create!(
   event_id: event9.id
 )
 UserEvent.create!(
-  user_id: user10.id,
+  user_id: user11.id,
   event_id: event9.id
 )
 UserEvent.create!(
@@ -390,7 +405,7 @@ UserEvent.create!(
 
 #イベント10
 UserEvent.create!(
-  user_id: user10.id,
+  user_id: user11.id,
   event_id: event10.id
 )
 UserEvent.create!(
@@ -410,7 +425,7 @@ EventComment.create!(
 )
 
 EventComment.create!(
-  user_id: user10.id,
+  user_id: user11.id,
   event_id: event10.id,
   content: "Nice! We will have event soon, please check the date, so i will look forward to meeting you then:)"
 )
@@ -457,7 +472,7 @@ EventComment.create!(
   content: "We really enjoy this event last time! "
 )
 EventComment.create!(
-  user_id: user10.id,
+  user_id: user11.id,
   event_id: event9.id,
   content: "We will jave event on Nov 1st in Sports bar in Shibuya, Please just let me know if you have any interst. xxxx@gmail.com"
 )
@@ -616,8 +631,23 @@ article = Article.new(
 article.image.attach(io: File.open("./db/fixtures/article8.jpg"), filename: "article8.jpg" )
 article.save!
 
+article = Article.new(
+  user_id: user11.id,
+  title: "Great place for hiking in Kyoto",
+  country_id: 32,
+  category_id: 8,
+  content: "Most people think of golden temples like Kinkakuji or a line of red torii gates at Fushimi-Inari Shrine when visiting Kyoto. Still, another beautiful and tranquil area of Kyoto is the bamboo forest and gardens located next to Tenryu-ji Temple.
+
+  “I watched a YouTube video of a girl dressed in a kimono walking through the bamboo forest, and I knew it was something I definitely had to do myself,” admits Fern. An interior decorator living in Chicago, she headed to Kyoto with her boyfriend in hopes to rent a kimono for the day and walk the streets of Kyoto as well as stroll through the pathway surrounded by sprawling bamboo trees that soar up to the sky creating an alluring green glow.
+  
+  “We really enjoyed our experience walking around the entire Arashiyama area and especially the bamboo forest. It was a weekday in the offseason, so it wasn’t as busy,” advising people who want to visit to avoid the major rush periods when tourists overrun the area.
+  "
+)
+article.image.attach(io: File.open("./db/fixtures/article9.jpg"), filename: "article9.jpg" )
+article.save!
+
 articles = Article.all
-article1, article2, article3, article4, article5, article6, article7, article8 = articles
+article1, article2, article3, article4, article5, article6, article7, article8, article9 = articles
 
 #記事コメント
 Comment.create!(
@@ -661,6 +691,12 @@ Comment.create!(
   content: "Great article! Thank you for sharing:)"
 )
 
+Comment.create!(
+  user_id: user10.id,
+  article_id: article9.id,
+  content: "Great article! Thank you for sharing:)"
+)
+
 #クエスチョン
 question = Question.create(
   user_id: user1.id,
@@ -671,7 +707,7 @@ question = Question.create(
   content: Faker::Lorem.characters
 )
 question = Question.create(
-  user_id: user2.id,
+  user_id: user11.id,
   title: "Where is recommended place to visit in Tokushima?",
   country_id: 32,
   category_id: 8,
