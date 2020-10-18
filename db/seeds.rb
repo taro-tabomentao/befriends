@@ -391,11 +391,11 @@ UserEvent.create!(
 )
 #イベント9
 UserEvent.create!(
-  user_id: user9.id,
+  user_id: user11.id,
   event_id: event9.id
 )
 UserEvent.create!(
-  user_id: user11.id,
+  user_id: user9.id,
   event_id: event9.id
 )
 UserEvent.create!(
@@ -444,7 +444,7 @@ EventComment.create!(
 EventComment.create!(
   user_id: user4.id,
   event_id: event3.id,
-  content: "We will jave event on Nov 1st in Sports bar in Shibuya, Please just let me know if you have any interst. xxxx@gmail.com"
+  content: "We will have event on Nov 1st in Sports bar in Shibuya, Please just let me know if you have any interst. xxxx@gmail.com"
 )
 EventComment.create!(
   user_id: user5.id,
@@ -454,7 +454,7 @@ EventComment.create!(
 EventComment.create!(
   user_id: user6.id,
   event_id: event5.id,
-  content: "We will jave event on Nov 1st in Sports bar in Shibuya, Please just let me know if you have any interst. xxxx@gmail.com"
+  content: "We will have event on Nov 1st in Sports bar in Shibuya, Please just let me know if you have any interst. xxxx@gmail.com"
 )
 EventComment.create!(
   user_id: user7.id,
@@ -464,7 +464,7 @@ EventComment.create!(
 EventComment.create!(
   user_id: user8.id,
   event_id: event7.id,
-  content: "We will jave event on Nov 1st in Sports bar in Shibuya, Please just let me know if you have any interst. xxxx@gmail.com"
+  content: "We will have event on Nov 1st in Sports bar in Shibuya, Please just let me know if you have any interst. xxxx@gmail.com"
 )
 EventComment.create!(
   user_id: user9.id,
@@ -474,7 +474,7 @@ EventComment.create!(
 EventComment.create!(
   user_id: user11.id,
   event_id: event9.id,
-  content: "We will jave event on Nov 1st in Sports bar in Shibuya, Please just let me know if you have any interst. xxxx@gmail.com"
+  content: "We will have event on Nov 1st in Sports bar in Shibuya, Please just let me know if you have any interst. xxxx@gmail.com"
 )
 
 
