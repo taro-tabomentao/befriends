@@ -24,6 +24,14 @@ class User < ApplicationRecord
     validates :birthday
   end
 
+  def self.guest
+    find_or_initialize_by(full_name: 'Guest', email: 'guest@example.com', gender_id: 2, country_id: 32, city: 'Tokyo', birthday: '1990-3-16', language: 'Japanese, English') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.save
+      user.image.attach(io: File.open('./db/fixtures/icon10.jpg'), filename: 'icon10.jpg')
+    end
+  end
+
   # PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
   # validates_format_of :password, with: PASSWORD_REGEX, message: 'includes both letters and numbers'
 end
