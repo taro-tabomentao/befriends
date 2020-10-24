@@ -33,9 +33,11 @@
         </div>
 
       <% end %>
+      <div class="guest">
+        <%= link_to 'Guest Login', users_guest_sign_in_path, method: :post, class: "btn btn-blue" %>
+      </div>
     </div>
   </div>
-  <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %>
 </section>
 
 <div class="footer">
