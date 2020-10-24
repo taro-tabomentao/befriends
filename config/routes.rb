@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
+  devise_scope :user do
+    post 'users/guest_sign_in', to: 'users/sessions#new_guest'
+  end
   resources :countries, only: [:index,:show]
   resources :events do
     resources :user_events, only: :create
@@ -21,5 +24,6 @@ Rails.application.routes.draw do
     end
   end
   resources :users, only: [:show, :edit, :update]
+  　
   root to: "countries#index"
 end
