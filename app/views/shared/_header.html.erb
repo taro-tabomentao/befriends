@@ -17,8 +17,15 @@
           <%= link_to new_user_session_path do%>
             <li>Log in</li>
           <% end %>
+          <%= link_to users_guest_sign_in_path, method: :post do %>
+            <li class="back-orange">Guest Log in</li>
+          <% end %>
         <% end %>
       </ul>
     </nav>
   </div>
 </header>
+
+      <div class="guest">
+        <%= link_to 'Guest Login', users_guest_sign_in_path, method: :post, class: "btn btn-blue" %>
+      </div>
