@@ -25,10 +25,10 @@ class User < ApplicationRecord
   end
 
   def self.guest
-    find_or_initialize_by(full_name: 'Guest', email: 'guest@example.com', gender_id: 2, country_id: 32, city: "Tokyo", birthday: "1990-3-16",language: "Japanese, English" ) do |user|
+    find_or_initialize_by(full_name: 'Guest', email: 'guest@example.com', gender_id: 2, country_id: 32, city: 'Tokyo', birthday: '1990-3-16', language: 'Japanese, English') do |user|
       user.password = SecureRandom.urlsafe_base64
       user.save
-      user.image.attach(io: File.open("./db/fixtures/icon10.jpg"), filename: "icon10.jpg" )
+      user.image.attach(io: File.open('./db/fixtures/icon10.jpg'), filename: 'icon10.jpg')
     end
   end
 
