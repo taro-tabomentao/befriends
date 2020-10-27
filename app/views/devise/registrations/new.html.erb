@@ -35,7 +35,7 @@
               </div>
             </div>
             <div class="right">
-              <%= f.label :password_confirmation, "Password Comformation", for: "password_confirmation" %>
+              <%= f.label :password_confirmation, "Password Confirmation", for: "password_confirmation" %>
               <div>
                 <%= f.password_field :password_confirmation, placeholder:"Password Confirmation", id: "password_confirmation", class: "input" %>
               </div>
@@ -96,6 +96,4 @@
   </div>
 </section>
 
-<div class="footer">
-  <%= render "shared/footer"%>
-<div>
+<%= render "shared/footer"%>
