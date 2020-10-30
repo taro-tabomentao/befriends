@@ -17,7 +17,7 @@ Befriendsの言葉の意味には「友達になる、（〜を）助ける」�
 <br>
 
 # 本番環境
-https://befriends-28755.herokuapp.com/  
+http://befriends.xyz/  
 トップページ右上の"Guest Log In"ボタンからゲストユーザーとしてログインすることが出来ます。
 
 ## Basic認証
@@ -138,8 +138,14 @@ https://befriends-28755.herokuapp.com/
 - 静的コード解析：Rubocop
 - マークアップ：HTML、CSS
 - フロントエンド：JavaScript
-- データベース：MySQL
-- インフラ：Heroku
+- データベース
+  - (開発環境) MySQL
+  - (本番環境) MariaDB
+- インフラ：AWS (EC2,S3,Route53)
+- Webサーバー：Nginx
+- アプリケーションサーバー
+  - (開発環境) Puma
+  - (本番環境) Unicorn
 - ソースコード管理：GitHub
 
 # データベース設計
