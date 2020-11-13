@@ -9,13 +9,18 @@
 
 <section class="country-list">
   <h2 class="heading">Choose country you want to check</h2>
+  <div class="container-warning">
+    <p class="warning">
+    ※右上の「Guest Log In」、もしくは「Sign Up」からログイン頂き、下記左部赤字の「Japan」リンクにアクセスし、ご使用をお願いいたします。<br>
+    本バージョンについては、「Japan」関連データを予め格納しておりますので、お手数ですが、よろしくお願いいたします。<p>
+  </div>
   <div class="wrapper-top">
     <div class="wrapper-inner">
       <div class="region asia">
         <p class="region-name white">Asia</p>
       </div>
       <div class="country">
-        <ul class="country-item">
+        <ul class="country-item ul-asia">
           <% @asia_countries.each do |asia_country| %>
             <li>
               <%= link_to country_path(asia_country.id) do %>

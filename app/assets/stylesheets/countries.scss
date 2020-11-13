@@ -184,8 +184,21 @@ span {
 }
 
 .country-list .heading {
-  margin-bottom: 4rem;
+  margin-bottom: 10px;
   font-weight: normal; 
+}
+
+.country-list .warning {
+  margin: 0 2rem 4rem;
+  text-align: center;
+  color: red;
+  font-size: 14px;
+}
+
+.ul-asia li:nth-child(5) a {
+  // border: 1px solid red;
+  color: red;
+  font-weight: bold;
 }
 
 .country-list .region {
