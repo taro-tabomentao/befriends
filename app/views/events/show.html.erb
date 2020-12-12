@@ -50,15 +50,15 @@
             <% @user_events.each do |user_event| %>
               <%if user_event.user.image.attached? %>
                 <li class="item-participant">
-                  <div><%= image_tag user_event.user.image %></div>
                   <%= link_to user_path(user_event.user_id) do %>
+                    <div><%= image_tag user_event.user.image %></div>
                     <div class="name"><%= user_event.user.full_name %></div>
                   <% end %>
                 </li>
               <% else %>
                 <li class="item-participant">
-                  <div><%= image_tag "general_user.png" %></div>
                   <%= link_to user_path(user_event.user_id) do %>
+                    <div><%= image_tag "general_user.png" %></div>
                     <div class="name"><%= user_event.user.full_name %></div>
                   <% end %>
                 </li>
