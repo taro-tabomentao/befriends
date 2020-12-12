@@ -23,7 +23,7 @@
 end
 
 user = User.create!(
-  full_name: "Test Taro",
+  full_name: "Shotaro Okawa",
   email: "test@mail.com",
   password: "password",
   password_confirmation: "password",
