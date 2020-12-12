@@ -58,7 +58,7 @@ http://befriends.xyz/
 - カテゴリ別表示機能
 - 検索機能
 - ゲストログイン機能
-- フレンド機能
+- フォロー機能
 - グッドボタン機能
 - 多言語対応機能
 
@@ -74,7 +74,7 @@ http://befriends.xyz/
 
 ## 国別ページ
 - 各国に関連付いたイベント、記事、質問投稿一覧を確認出来る。
-- ユーザービリティ向上のため、①タブ選択により非同期でページ切り替え②カルーセルスライダーを使った投稿一覧表示③検索機能を実装した。
+- ユーザービリティ向上のため、①タブ選択により非同期でページ切り替え②カルーセルスライダーを使った投稿一覧表示③検索機能を実装。
 
 ![demo](https://i.gyazo.com/272b68efda3f0fb1e030bd4ad6cf0cac.gif)
 
@@ -83,12 +83,19 @@ http://befriends.xyz/
 ## ユーザー管理機能
 - ユーザー新規登録、ログイン、ログアウト、登録内容編集、マイページ機能を実装。
 - ログインしていない時はグローバルナビゲーションにSign up（新規登録）とLog In（ログイン）が表示され、ボタンを押すと各機能画面に移動できる。
-- ログイン時は名前とLog out（ログアウト）ボタンが表示され、名前をクリックするとマイページに移動でき、自分に関連する投稿と、プロフィールが表示される。
+- ログイン時は名前とLog out（ログアウト）ボタンが表示され、名前をクリックするとマイページに移動でき、自分に関連する投稿と、プロフィール、フォロワーが表示される。
 - プロフィール画面から登録内容の編集を行うことが出来る。
 
-![demo](https://i.gyazo.com/4421455cb4b77d69d38fa082450855bb.gif)
+![demo](https://i.gyazo.com/22b0bed4a6a5f9e030b0539edfb4f326.gif)
 
 <br>
+
+## フォロー機能
+- 他ユーザーのページにある、Followボタンを押すと、フォロー出来る。
+- フォロー後、Ajaxにより、Followingボタンに変わる。それを押すと、フォローを外せる。
+- マイページから、フォローしているユーザー、フォローされているユーザーを確認できる。
+
+![demo](https://i.gyazo.com/45dbaea1461e8662b93921c4360a389a.gif)
 
 ## イベント、記事、Q&A機能
 - 国別ページ、もしくはマイページから新規投稿を行うことが出来る。（本項目のデモはイベントに関するものだが、記事、Q&Aについても操作、ページ構成はほぼ同じ）
@@ -113,7 +120,6 @@ http://befriends.xyz/
 <br>
 
 # 実装予定の機能
-- フレンド機能
 - グッドボタン機能
 - 多言語対応機能
 
@@ -137,7 +143,7 @@ http://befriends.xyz/
 - ソースコード管理：GitHub
 
 # データベース設計
-![ER図](https://gyazo.com/f63e6a8b11d112515bc5a562b8c793e3.png)
+![ER図](https://gyazo.com/d654820a315d5a0c91195fa843803e92.png)
 
 <br>
 
@@ -164,6 +170,7 @@ http://befriends.xyz/
 - has_many :events, through: :user_events
 - has_many :user_events
 - has_many :event_comments
+- has_many :relationships
 
 <br>
 
@@ -279,5 +286,18 @@ http://befriends.xyz/
 
 - belongs_to :user
 - belongs_to :question
+
+<br>
+
+## relationships テーブル
+
+| Column        | Type       | Options                                        |
+| ------------- | ---------- | ---------------------------------------------- |
+| follower      | references | null: false, foreign_key: { to_table: :users } |
+| following     | references | null: false, foreign_key: { to_table: :users } |
+
+### Association
+
+- belongs_to :user
 
 
