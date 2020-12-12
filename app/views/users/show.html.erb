@@ -154,17 +154,48 @@
     </div> 
     <%# タブコンテント フレンズ %>
     <div id="tab-5-content" class="tab-content-item">
-      <div class="tab-5-content-inner">
-        <div class="friends">
-          <p>Coming soon</p>
-          <%= form_with(model: current_user.following_relationships.build) do |f| %>
-            <%= f.hidden_field :following_id, value: @user.id %>
-            <%= f.submit "フォローする", class: "btn btn-outline-secondary" %>
-          <% end %>
-          <%= form_with(model: current_user.following_relationships.find_by(following_id: @user.id),method: :delete) do |f| %>
-            <%= f.hidden_field :following_id %>  
-            <%= f.submit "フォロー", class: "btn btn-outline-secondary" %>
-          <% end %>
+      <div class="tab-5-content-inner friends">
+        <div class="detail">
+          <h2>Followings</h2>
+          <ul class="list-participant">
+            <% @user.followings.each do |following| %>
+              <%if following.image.attached? %>
+                <li class="item-participant">
+                  <%= link_to user_path(following.id) do %>
+                    <div><%= image_tag following.image %></div>
+                    <div class="name"><%= following.full_name %></div>
+                  <% end %>
+                </li>
+              <% else %>
+                <li class="item-participant">
+                  <%= link_to user_path(following.id) do %>
+                    <div><%= image_tag "general_user.png" %></div>
+                    <div class="name"><%= following.full_name %></div>
+                  <% end %>
+                </li>
+              <% end %>                
+            <% end %>
+          </ul>
+          <h2>Followers</h2>
+          <ul class="list-participant">
+            <% @user.followers.each do |follower| %>
+              <%if follower.image.attached? %>
+                <li class="item-participant">
+                  <%= link_to user_path(follower.id) do %>
+                    <div><%= image_tag follower.image %></div>
+                    <div class="name"><%= follower.full_name %></div>
+                  <% end %>
+                </li>
+              <% else %>
+                <li class="item-participant">
+                  <%= link_to user_path(follower.id) do %>
+                    <div><%= image_tag "general_user.png" %></div>
+                    <div class="name"><%= follower.full_name %></div>
+                  <% end %>
+                </li>
+              <% end %>                
+            <% end %>
+          </ul>
         </div>
       </div>
     </div> 
