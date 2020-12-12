@@ -143,7 +143,7 @@ http://befriends.xyz/
 - ソースコード管理：GitHub
 
 # データベース設計
-![ER図](https://gyazo.com/d654820a315d5a0c91195fa843803e92.png)
+![ER図](https://i.gyazo.com/27172d76cc8bc70adff3ecb922d5e2e0.png)
 
 <br>
 
@@ -289,7 +289,7 @@ http://befriends.xyz/
 
 <br>
 
-## relationships テーブル
+## follow_relationships テーブル
 
 | Column        | Type       | Options                                        |
 | ------------- | ---------- | ---------------------------------------------- |

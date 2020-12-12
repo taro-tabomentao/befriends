@@ -740,6 +740,3 @@ Answer.create!(
   question_id: question2.id,
   content: "You should join Awa-odori which held in middle of August. It's one of most famous traditional dance festival."
 )
-
-
-

@@ -1,9 +1,9 @@
 class FollowRelationshipsController < ApplicationController
   def create
-    @user =User.find(params[:follow_relationship][:following_id])
+    @user = User.find(params[:follow_relationship][:following_id])
     current_user.follow(@user)
     respond_to do |format|
-      format.html {redirect_back(fallback_location: root_url)}
+      format.html { redirect_back(fallback_location: root_url)}
       format.js
     end
   end
@@ -16,5 +16,4 @@ class FollowRelationshipsController < ApplicationController
       format.js
     end
   end
-
 end
