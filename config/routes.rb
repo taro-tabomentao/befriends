@@ -24,5 +24,7 @@ Rails.application.routes.draw do
     end
   end
   resources :users, only: [:show, :edit, :update]
+  resources :follow_relationships, only: [:create, :destroy]
+
   root to: "countries#index"
 end
