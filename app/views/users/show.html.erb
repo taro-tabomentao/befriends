@@ -11,15 +11,9 @@
     <% if user_signed_in? && @user != current_user%>
     <div id="follow_form">
       <% if current_user.following?(@user) %>
-        <%= form_with(model: current_user.following_relationships.find_by(following_id: @user.id),method: :delete) do |f| %>
-          <%= f.hidden_field :following_id %>  
-          <%= f.submit "Follow", class: "follow-btn" %>
-        <% end %>
+         <%= render "unfollow" %>
       <% else %>
-        <%= form_with(model: current_user.following_relationships.build) do |f| %>
-          <%= f.hidden_field :following_id, value: @user.id %>
-          <%= f.submit "Following", class: "following-btn" %>
-        <% end %>
+         <%= render "follow" %>
       <% end %>
     </div>
   <% end %>
