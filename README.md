@@ -301,3 +301,4 @@ http://befriends.xyz/
 - belongs_to :user
 
 
+Test
