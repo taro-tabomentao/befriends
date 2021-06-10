@@ -299,6 +299,3 @@ http://befriends.xyz/
 ### Association
 
 - belongs_to :user
-
-
-Test
